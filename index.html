@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Utkarsh Singh — Data & Analytics Portfolio</title>
+  <meta name="description" content="Utkarsh Singh — Data Scientist & Business Analytics. Purdue University (B.S.) & University of Waterloo (M.S.). Open to Data Analyst, ML, Data Scientist, Business Analyst, Financial Analyst, Supply Chain, Customer Success, Strategy & Consulting roles." />
+  <meta name="author" content="Utkarsh Singh" />
+  <meta name="keywords" content="Data Science, Machine Learning, Business Analytics, Python, SQL, Tableau, Power BI, Portfolio" />
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    :root { --accent: #1d4ed8; --muted: #6b7280; --bg: #f8fafc; --card: #ffffff; --text: #0f172a; }
+    .dark { --bg: #0b1220; --card: #071026; --text: #e6eefc; --muted: #94a3b8; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+    .hero { background: linear-gradient(120deg, rgba(29,78,216,1) 0%, rgba(37,99,235,0.95) 45%, rgba(7,89,133,0.95) 100%); clip-path: ellipse(120% 80% at 50% 0%); }
+    .typewriter { border-right: .12em solid rgba(255,255,255,.7); white-space: nowrap; overflow: hidden; display:inline-block; }
+    .project-card { transition: transform .25s ease, box-shadow .25s ease; border-left: 4px solid var(--accent); background: var(--card); }
+    .project-card:hover { transform: translateY(-6px); box-shadow: 0 24px 40px rgba(2,6,23,0.12); }
+    .skill-bar { height: 10px; background: rgba(37,99,235,0.08); border-radius: 999px; overflow: hidden; }
+    .skill-fill { height: 100%; width: 0; background: linear-gradient(90deg,var(--accent),#2563eb); border-radius: 999px; transition: width 1s cubic-bezier(.22,.9,.36,1); }
+    .modal-backdrop { background: rgba(2,6,23,0.6); }
+    a:focus, button:focus, input:focus, textarea:focus { outline: 3px solid rgba(29,78,216,0.22); outline-offset: 2px; }
+    .transition-fade { opacity:0; transform: translateY(10px); transition: opacity .45s ease, transform .45s ease; }
+    .transition-fade.visible { opacity:1; transform: translateY(0); }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- HERO -->
+  <header class="hero text-white py-14 md:py-20">
+    <div class="container mx-auto px-4 text-center relative z-10">
+      <img src="https://github.com/utkarsh7653.png" alt="Utkarsh Singh" loading="lazy" class="w-28 h-28 rounded-full mx-auto border-4 border-white shadow-lg object-cover"/>
+      <h1 class="text-3xl md:text-5xl font-extrabold mt-5">Utkarsh Singh</h1>
+
+      <p class="mt-3 text-lg md:text-xl max-w-3xl mx-auto">
+        <span id="typewriter" class="typewriter"></span>
+      </p>
+
+      <div class="mt-6 flex items-center justify-center gap-3">
+        <a href="#contact" class="px-5 py-3 bg-white text-blue-800 rounded-lg font-medium shadow">Contact</a>
+        <!-- Relative link to CV in repo root. Place utkarshsinghresumetech.pdf in repo root. -->
+        <a id="downloadCV" href="./utkarshsinghresumetech.pdf" download class="px-5 py-3 border border-white/30 rounded-lg">Download CV</a>
+        <a href="https://github.com/utkarsh7653?tab=repositories" target="_blank" rel="noopener" class="px-4 py-3 bg-white/10 rounded-lg">Other Projects</a>
+      </div>
+
+      <div class="mt-6 flex justify-center gap-4">
+        <a href="https://github.com/utkarsh7653" target="_blank" rel="noopener" class="p-3 rounded-full bg-white/10 hover:bg-white/20"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/utkarsh-singh-a1127a192/" target="_blank" rel="noopener" class="p-3 rounded-full bg-white/10 hover:bg-white/20"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:u25singh@uwaterloo.ca" class="p-3 rounded-full bg-white/10 hover:bg-white/20"><i class="fas fa-envelope"></i></a>
+      </div>
+
+      <svg class="absolute inset-x-0 bottom-0 w-full" viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="var(--bg)" d="M0,40 C360,140 1080,0 1440,80 L1440,0 L0,0 Z"></path></svg>
+    </div>
+  </header>
+
+  <!-- NAV -->
+  <nav class="sticky top-0 bg-white dark:bg-[#021124] shadow z-40">
+    <div class="container mx-auto px-4 flex items-center justify-between py-3">
+      <a href="#" class="text-lg font-semibold text-blue-700">US</a>
+
+      <div class="hidden md:flex gap-6 items-center">
+        <a href="#about" class="nav-link text-sm hover:text-blue-600">About</a>
+        <a href="#projects" class="nav-link text-sm hover:text-blue-600">Projects</a>
+        <a href="#skills" class="nav-link text-sm hover:text-blue-600">Skills</a>
+        <a href="#education" class="nav-link text-sm hover:text-blue-600">Education</a>
+        <a href="#contact" class="nav-link text-sm hover:text-blue-600">Contact</a>
+        <button id="themeToggle" class="ml-2 px-2 py-1 rounded bg-gray-100 dark:bg-[#04243d]" aria-label="Toggle theme">
+          <i id="themeIcon" class="fas fa-moon text-blue-700"></i>
+        </button>
+      </div>
+
+      <div class="md:hidden flex items-center gap-2">
+        <button id="themeToggleMobile" class="p-2 rounded bg-gray-100" aria-label="Toggle theme"><i id="themeIconMobile" class="fas fa-moon text-blue-700"></i></button>
+        <button id="mobileToggle" aria-expanded="false" aria-label="Open menu" class="p-2 rounded-md text-blue-700"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+
+    <!-- mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden border-t">
+      <div class="px-4 py-3 flex flex-col gap-2">
+        <a href="#about" class="py-2">About</a>
+        <a href="#projects" class="py-2">Projects</a>
+        <a href="#skills" class="py-2">Skills</a>
+        <a href="#education" class="py-2">Education</a>
+        <a href="#contact" class="py-2">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mx-auto px-4 py-12 max-w-6xl">
+
+    <!-- ABOUT -->
+    <section id="about" class="mb-12 transition-fade">
+      <div class="grid md:grid-cols-3 gap-8 items-center">
+        <div class="md:col-span-2">
+          <h2 class="text-2xl font-bold mb-3">About</h2>
+          <p class="text-gray-700 dark:text-[#cbd5e1] mb-4">
+            I completed my <strong>B.S. in Business Analytics at Purdue University</strong> and recently finished my <strong>M.S. in Management Science at the University of Waterloo</strong>. Studying at these institutions and contributing to cross-border projects in the United States and Canada has strengthened my technical depth and my ability to adapt quickly to new teams and environments — demonstrating resilience and multicultural collaboration skills.
+          </p>
+
+          <p class="text-gray-700 dark:text-[#cbd5e1] mb-4">
+            <strong>Open to:</strong> Data Analyst, Machine Learning, Data Scientist, Business Analyst, Financial Analyst, Supply Chain, Customer Success, Strategy & Consulting.
+          </p>
+
+          <div class="flex gap-3">
+            <a href="#projects" class="px-4 py-2 bg-blue-600 text-white rounded shadow">See projects</a>
+            <a href="./utkarshsinghresumetech.pdf" download class="px-4 py-2 border rounded">Download CV</a>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-[#04243d] p-6 rounded-lg shadow">
+          <h3 class="font-semibold mb-2 dark:text-[#e6eefc]">Quick facts</h3>
+          <ul class="text-sm text-gray-700 dark:text-[#cbd5e1] space-y-2">
+            <li><strong>Education:</strong> Purdue University (B.S.) & University of Waterloo (M.S.)</li>
+            <li><strong>Location:</strong> Waterloo, Ontario, Canada</li>
+            <li><strong>Work preferences:</strong> Remote / Hybrid / On-site</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="mb-12 transition-fade">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold">Projects</h2>
+
+        <div class="flex gap-2 items-center">
+          <input id="projectSearch" placeholder="Search projects..." class="px-3 py-2 border rounded w-56" />
+          <select id="techFilter" class="px-3 py-2 border rounded">
+            <option value="all">All</option>
+            <option value="ml">Machine Learning</option>
+            <option value="analytics">Analytics</option>
+            <option value="nlp">NLP</option>
+            <option value="viz">Visualization</option>
+            <option value="sql">SQL</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="projectGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Parkinson's -->
+        <article class="project-card p-5 rounded-lg transition-fade" data-tech="ml,python">
+          <h3 class="font-semibold text-lg">Parkinson's Disease Progression Prediction</h3>
+          <p class="text-sm text-gray-600 dark:text-[#9fb0d6] mb-3">Regression + classification pipelines to predict UPDRS progression from biomedical & signal-derived features.</p>
+          <div class="flex gap-2 mb-3 flex-wrap">
+            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">Python</span>
+            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">Scikit-learn</span>
+            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">TensorFlow</span>
+          </div>
+          <div class="flex gap-2">
+            <button class="openProject btn px-3 py-2 bg-blue-600 text-white rounded" data-title="Parkinson's Disease Progression Prediction" data-desc="Built regression and classification pipelines, feature engineering, cross-validation, and ensembling to predict disease progression from voice and biomedical data." data-repo="https://github.com/utkarsh7653/Parkinson-s-Disease-Progression-Prediction">Details</button>
+            <a href="https://github.com/utkarsh7653/Parkinson-s-Disease-Progression-Prediction" target="_blank" class="px-3 py-2 border rounded">Repo</a>
+          </div>
+        </article>
+
+        <!-- Seqt2SQL -->
+        <article class="project-card p-5 rounded-lg transition-fade" data-tech="nlp,python">
+          <h3 class="font-semibold text-lg">Seqt2SQL (collaboration)</h3>
+          <p class="text-sm text-gray-600 dark:text-[#9fb0d6] mb-3">Sequence-to-SQL systems for converting natural language to structured queries (collaborative work).</p>
+          <div class="flex gap-2 mb-3">
+            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">NLP</span>
+            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">Transformers</span>
+          </div>
+          <div class="flex gap-2">
+            <button class="openProject btn px-3 py-2 bg-blue-600 text-white rounded" data-title="Seqt2SQL (collaboration)" data-desc="Worked on natural language to SQL parsing using transformer architectures and schema-aware decoding." data-repo="https://github.com/chirag300/Seqt2SQL">Details</button>
+            <a href="https://github.com/chirag300/Seqt2SQL" target="_blank" class="px-3 py-2 border rounded">Repo</a>
+          </div>
+        </article>
+
+        <!-- Youth substance -->
+        <article class="project-card p-5 rounded-lg transition-fade" data-tech="analytics,python,viz">
+          <h3 class="font-semibold text-lg">Data-Driven Analysis of Youth Substance Use (Canada)</h3>
+          <p class="text-sm text-gray-600 dark:text-[#9fb0d6] mb-3">Built & compared multiple predictive models and dashboards to identify social & demographic determinants of youth substance use.</p>
+          <div class="flex gap-2 mb-3">
+            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">Python</span>
+            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">Pandas</span>
+            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">Seaborn</span>
+          </div>
+          <div class="flex gap-2">
+            <button class="openProject btn px-3 py-2 bg-blue-600 text-white rounded" data-title="Youth Substance Use Analysis" data-desc="Analyzed survey and administrative datasets to model youth substance use and produced policy-ready visualizations." data-repo="https://github.com/utkarsh7653/Data-Driven-Analysis-of-Social-and-Demographic-Determinants-of-Youth-Substance-Use-in-Canada">Details</button>
+            <a href="https://github.com/utkarsh7653/Data-Driven-Analysis-of-Social-and-Demographic-Determinants-of-Youth-Substance-Use-in-Canada" target="_blank" class="px-3 py-2 border rounded">Repo</a>
+          </div>
+        </article>
+
+        <!-- Crop yield -->
+        <article class="project-card p-5 rounded-lg transition-fade" data-tech="ml,python">
+          <h3 class="font-semibold text-lg">Crop Yield Prediction</h3>
+          <p class="text-sm text-gray-600 dark:text-[#9fb0d6] mb-3">Ensembled LightGBM & Random Forest models with geospatial & climate features for yield forecasting.</p>
+          <div class="flex gap-2 mb-3">
+            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">LightGBM</span>
+            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">Geospatial</span>
+          </div>
+          <div class="flex gap-2">
+            <button class="openProject btn px-3 py-2 bg-blue-600 text-white rounded" data-title="Crop Yield Prediction" data-desc="Feature-engineered climate & geospatial inputs; ensembled models for accurate local yield predictions." data-repo="https://github.com/utkarsh7653/Crop-Yield-Prediction">Details</button>
+            <a href="https://github.com/utkarsh7653/Crop-Yield-Prediction" target="_blank" class="px-3 py-2 border rounded">Repo</a>
+          </div>
+        </article>
+
+        <!-- NGO funding -->
+        <article class="project-card p-5 rounded-lg transition-fade" data-tech="analytics,python,viz">
+          <h3 class="font-semibold text-lg">NGO Funding Analysis</h3>
+          <p class="text-sm text-gray-600 dark:text-[#9fb0d6] mb-3">K-means clustering + PCA on socioeconomic indicators to recommend prioritized funding segments.</p>
+          <div class="flex gap-2 mb-3">
+            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">Clustering</span>
+            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">PCA</span>
+          </div>
+          <div class="flex gap-2">
+            <button class="openProject btn px-3 py-2 bg-blue-600 text-white rounded" data-title="NGO Funding Analysis" data-desc="Segmented countries using PCA + clustering to recommend funding priorities." data-repo="https://github.com/utkarsh7653/NGO-Funding-Analysis">Details</button>
+            <a href="https://github.com/utkarsh7653/NGO-Funding-Analysis" target="_blank" class="px-3 py-2 border rounded">Repo</a>
+          </div>
+        </article>
+      </div>
+
+      <p class="mt-6 text-center">
+        <a href="https://github.com/utkarsh7653?tab=repositories" target="_blank" rel="noopener" class="px-4 py-2 bg-blue-600 text-white rounded">See more projects on GitHub</a>
+      </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="mb-12 transition-fade">
+      <h2 class="text-2xl font-bold mb-4">Skills</h2>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-6">
+        <div class="bg-white dark:bg-[#021f38] p-5 rounded-lg shadow">
+          <h3 class="font-semibold mb-3">Programming Languages</h3>
+          <ul class="text-gray-700 dark:text-[#cbd5e1] space-y-2">
+            <li>Python (Pandas, NumPy)</li>
+            <li>R (statistical modeling)</li>
+            <li>SQL (PostgreSQL, MySQL)</li>
+            <li>JavaScript / HTML / CSS</li>
+          </ul>
+        </div>
+
+        <div class="bg-white dark:bg-[#021f38] p-5 rounded-lg shadow">
+          <h3 class="font-semibold mb-3">Tools & Frameworks</h3>
+          <ul class="text-gray-700 dark:text-[#cbd5e1] space-y-2">
+            <li>TensorFlow, PyTorch</li>
+            <li>Scikit-learn, LightGBM, XGBoost</li>
+            <li>Tableau, Power BI, Matplotlib</li>
+            <li>Git, Docker, Flask</li>
+          </ul>
+        </div>
+
+        <div class="bg-white dark:bg-[#021f38] p-5 rounded-lg shadow">
+          <h3 class="font-semibold mb-3">Other Technologies</h3>
+          <ul class="text-gray-700 dark:text-[#cbd5e1] space-y-2">
+            <li>Machine Learning & Statistical Modeling</li>
+            <li>Feature Engineering, ETL pipelines</li>
+            <li>APIs, Big Data preprocessing</li>
+            <li>NLP & Explainability</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 items-center">
+        <div class="bg-white dark:bg-[#021f38] p-5 rounded shadow">
+          <h4 class="font-semibold mb-3">Skill levels</h4>
+          <div class="mb-3">
+            <div class="flex justify-between text-sm mb-1"><span>Python</span><span>95%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-percent="95"></div></div>
+          </div>
+          <div class="mb-3">
+            <div class="flex justify-between text-sm mb-1"><span>SQL</span><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-percent="90"></div></div>
+          </div>
+          <div class="mb-3">
+            <div class="flex justify-between text-sm mb-1"><span>Machine Learning</span><span>85%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-percent="85"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm mb-1"><span>Data Visualization</span><span>88%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-percent="88"></div></div>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-[#021f38] p-5 rounded shadow">
+          <h4 class="font-semibold mb-3">Skills radar</h4>
+          <canvas id="skillsRadar" width="400" height="320" aria-label="Radar chart showing skill strengths"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="mb-12 transition-fade">
+      <h2 class="text-2xl font-bold mb-4">Education</h2>
+      <div class="space-y-4">
+        <div class="bg-white dark:bg-[#021f38] p-4 rounded-lg shadow flex justify-between items-center">
+          <div>
+            <h3 class="font-semibold">M.S. — Management Science</h3>
+            <p class="text-sm text-gray-600 dark:text-[#cbd5e1]">University of Waterloo — Waterloo, ON</p>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-[#021f38] p-4 rounded-lg shadow flex justify-between items-center">
+          <div>
+            <h3 class="font-semibold">B.S. — Business Analytics</h3>
+            <p class="text-sm text-gray-600 dark:text-[#cbd5e1]">Purdue University — West Lafayette, IN</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="mb-12 transition-fade">
+      <h2 class="text-2xl font-bold mb-4">Get in touch</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white dark:bg-[#021f38] p-6 rounded shadow">
+          <h3 class="font-semibold mb-3">Contact info</h3>
+          <p class="text-gray-700 dark:text-[#cbd5e1]"><strong>University email:</strong> <a href="mailto:u25singh@uwaterloo.ca" class="text-blue-600">u25singh@uwaterloo.ca</a></p>
+          <p class="text-gray-700 dark:text-[#cbd5e1]"><strong>Personal email:</strong> <a href="mailto:utkarshsingh.1052@gmail.com" class="text-blue-600">utkarshsingh.1052@gmail.com</a></p>
+          <p class="text-gray-700 dark:text-[#cbd5e1] mt-2"><strong>GitHub:</strong> <a href="https://github.com/utkarsh7653" target="_blank" class="text-blue-600">github.com/utkarsh7653</a></p>
+          <p class="text-gray-700 dark:text-[#cbd5e1]"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/utkarsh-singh-a1127a192/" target="_blank" class="text-blue-600">linkedin.com/in/utkarsh-singh-a1127a192</a></p>
+        </div>
+
+        <div class="bg-white dark:bg-[#021f38] p-6 rounded shadow">
+          <h3 class="font-semibold mb-3">Send a message</h3>
+          <form id="contactForm" class="space-y-3" novalidate>
+            <div>
+              <label class="text-sm block mb-1">Name</label>
+              <input id="c_name" required class="w-full px-3 py-2 border rounded bg-white dark:bg-[#071a2b]" />
+            </div>
+            <div>
+              <label class="text-sm block mb-1">Email</label>
+              <input id="c_email" type="email" required class="w-full px-3 py-2 border rounded bg-white dark:bg-[#071a2b]" />
+            </div>
+            <div>
+              <label class="text-sm block mb-1">Message</label>
+              <textarea id="c_msg" rows="4" required class="w-full px-3 py-2 border rounded bg-white dark:bg-[#071a2b]"></textarea>
+            </div>
+            <div class="flex gap-2">
+              <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded">Send</button>
+              <button type="button" id="clearForm" class="px-4 py-2 border rounded">Clear</button>
+            </div>
+            <p id="contactStatus" class="text-sm text-green-600 hidden">Thanks — message recorded (demo).</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL -->
+  <div id="modal" class="fixed inset-0 hidden items-center justify-center z-50">
+    <div class="modal-backdrop absolute inset-0"></div>
+    <div role="dialog" aria-modal="true" aria-labelledby="modalTitle" class="bg-white dark:bg-[#071a2b] rounded-lg shadow-lg max-w-3xl w-full mx-4 z-50 overflow-auto">
+      <div class="p-6">
+        <div class="flex justify-between items-start">
+          <div>
+            <h3 id="modalTitle" class="text-xl font-semibold"></h3>
+            <p id="modalSub" class="text-sm text-gray-600 dark:text-[#9fb0d6]"></p>
+          </div>
+          <div>
+            <button id="closeModal" aria-label="Close" class="text-gray-500 dark:text-[#cbd5e1] hover:text-gray-800"><i class="fas fa-times"></i></button>
+          </div>
+        </div>
+
+        <div class="mt-4" id="modalBody"></div>
+        <div class="mt-6 flex gap-2">
+          <a id="modalRepo" class="px-4 py-2 bg-blue-600 text-white rounded" target="_blank" rel="noopener">Open repo</a>
+          <button id="modalCloseBtn" class="px-4 py-2 border rounded">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-white dark:bg-[#021124] border-t py-6 mt-8">
+    <div class="container mx-auto px-4 text-center text-sm text-gray-600 dark:text-[#9fb0d6]">
+      <div class="mb-3 flex justify-center gap-4">
+        <a href="https://github.com/utkarsh7653" target="_blank" rel="noopener" class="text-gray-700 dark:text-[#cbd5e1]"><i class="fab fa-github fa-lg"></i></a>
+        <a href="https://www.linkedin.com/in/utkarsh-singh-a1127a192/" target="_blank" rel="noopener" class="text-gray-700 dark:text-[#cbd5e1]"><i class="fab fa-linkedin-in fa-lg"></i></a>
+        <a href="mailto:utkarshsingh.1052@gmail.com" class="text-gray-700 dark:text-[#cbd5e1]"><i class="fas fa-envelope fa-lg"></i></a>
+      </div>
+      <div>© <span id="year"></span> Utkarsh Singh — Purdue University & University of Waterloo</div>
+      <div class="mt-1 text-xs text-gray-500 dark:text-[#7f9bb5]">Make sure <code>utkarshsinghresumetech.pdf</code> is in the repo root for the Download CV button to work.</div>
+    </div>
+  </footer>
+
+  <script>
+    // helper $
+    const $ = s => document.querySelector(s), $$ = s => Array.from(document.querySelectorAll(s));
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // dark mode (toggle + persist)
+    const root = document.documentElement, body = document.body;
+    function setDark(isDark) {
+      if (isDark) { document.documentElement.classList.add('dark'); localStorage.setItem('theme','dark'); }
+      else { document.documentElement.classList.remove('dark'); localStorage.setItem('theme','light'); }
+      // update icons
+      const moon = document.getElementById('themeIcon'), moonM = document.getElementById('themeIconMobile');
+      if (moon) moon.className = isDark ? 'fas fa-sun text-yellow-300' : 'fas fa-moon text-blue-700';
+      if (moonM) moonM.className = isDark ? 'fas fa-sun text-yellow-300' : 'fas fa-moon text-blue-700';
+    }
+    // initialize
+    const saved = localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    setDark(saved === 'dark');
+    $('#themeToggle')?.addEventListener('click', ()=> setDark(!document.documentElement.classList.contains('dark')));
+    $('#themeToggleMobile')?.addEventListener('click', ()=> setDark(!document.documentElement.classList.contains('dark')));
+
+    // mobile menu
+    const mobileToggle = $('#mobileToggle'), mobileMenu = $('#mobileMenu');
+    if (mobileToggle) {
+      mobileToggle.addEventListener('click', () => {
+        const hidden = mobileMenu.classList.toggle('hidden');
+        mobileToggle.setAttribute('aria-expanded', String(!hidden));
+      });
+    }
+    document.querySelectorAll('#mobileMenu a').forEach(a=> a.addEventListener('click', ()=> mobileMenu.classList.add('hidden')));
+
+    // typewriter
+    const phrases = [
+      'Data Scientist • Machine Learning • Business Analytics',
+      'B.S. — Business Analytics (Purdue University)',
+      'M.S. — Management Science (University of Waterloo)',
+      'I build data-driven solutions & clear dashboards for decision-makers'
+    ];
+    let pIdx=0, cIdx=0, forward=true; const speed=40; const tw = $('#typewriter');
+    function typeLoop(){
+      const text = phrases[pIdx];
+      if (forward) { cIdx++; tw.textContent = text.slice(0,cIdx); if (cIdx === text.length) { forward=false; setTimeout(typeLoop,1000); return; } }
+      else { cIdx--; tw.textContent = text.slice(0,cIdx); if (cIdx === 0) { forward=true; pIdx=(pIdx+1)%phrases.length; } }
+      setTimeout(typeLoop,speed);
+    }
+    typeLoop();
+
+    // animate skill bars on view
+    const skillFills = $$('.skill-fill');
+    const skillObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          skillFills.forEach(el => el.style.width = el.dataset.percent + '%');
+          obs.disconnect();
+        }
+      });
+    }, { threshold: 0.25 });
+    const skillsSection = $('#skills'); if (skillsSection) skillObserver.observe(skillsSection);
+
+    // radar chart
+    const ctx = document.getElementById('skillsRadar')?.getContext('2d');
+    if (ctx) {
+      new Chart(ctx, {
+        type: 'radar',
+        data: {
+          labels: ['Python','SQL','ML','Viz','NLP','Cloud'],
+          datasets: [{
+            label: 'Proficiency',
+            data: [95,90,85,88,70,65],
+            backgroundColor: 'rgba(29,78,216,0.12)',
+            borderColor: 'rgba(29,78,216,0.9)',
+            pointBackgroundColor: 'rgba(29,78,216,0.9)',
+            pointBorderColor: '#fff',
+            borderWidth: 2
+          }]
+        },
+        options: { scales: { r: { suggestedMin: 0, suggestedMax: 100, ticks: { stepSize: 20 } } }, plugins: { legend: { display: false } } }
+      });
+    }
+
+    // project filter & search
+    const projectGrid = $('#projectGrid'), cards = projectGrid ? Array.from(projectGrid.children) : [];
+    const searchInput = $('#projectSearch'), techFilter = $('#techFilter');
+    function filterProjects(){
+      const q = (searchInput.value || '').toLowerCase().trim(); const tech = (techFilter.value || 'all').toLowerCase();
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase(); const dataTech = (card.dataset.tech || '').toLowerCase();
+        const matchesQuery = q === '' || text.includes(q);
+        const matchesTech = tech === 'all' || dataTech.includes(tech);
+        card.style.display = (matchesQuery && matchesTech) ? 'block' : 'none';
+      });
+    }
+    searchInput?.addEventListener('input', filterProjects);
+    techFilter?.addEventListener('change', filterProjects);
+
+    // modal for project details
+    const modal = $('#modal'), closeModalBtn = $('#closeModal'), modalCloseBtn = $('#modalCloseBtn'), modalRepo = $('#modalRepo');
+    function openModal(title, desc, repo) {
+      $('#modalTitle').textContent = title;
+      $('#modalSub').textContent = '';
+      $('#modalBody').innerHTML = `<p class="text-gray-700 dark:text-[#9fb0d6]">${desc}</p>
+        <ul class="mt-3 text-sm text-gray-600 dark:text-[#9fb0d6]">
+          <li><strong>Highlights:</strong> feature engineering, cross-validation, explainability, stakeholder dashboards.</li>
+          <li><strong>Impact:</strong> produced actionable insights and reproducible analysis.</li>
+        </ul>`;
+      if (repo) { modalRepo.href = repo; modalRepo.classList.remove('hidden'); } else modalRepo.classList.add('hidden');
+      modal.classList.remove('hidden'); document.body.style.overflow = 'hidden';
+      closeModalBtn?.focus();
+    }
+    function closeModal() { modal.classList.add('hidden'); document.body.style.overflow=''; }
+
+    $$('.openProject').forEach(btn => btn.addEventListener('click', () => {
+      openModal(btn.dataset.title, btn.dataset.desc, btn.dataset.repo);
+    }));
+    closeModalBtn?.addEventListener('click', closeModal);
+    modalCloseBtn?.addEventListener('click', closeModal);
+    modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal(); });
+
+    // contact form demo
+    $('#contactForm')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = $('#c_name').value.trim(), email = $('#c_email').value.trim(), msg = $('#c_msg').value.trim();
+      if (!name || !email || !msg) { alert('Please fill all fields.'); return; }
+      $('#contactStatus').classList.remove('hidden'); setTimeout(()=> $('#contactStatus').classList.add('hidden'), 5000);
+      e.target.reset();
+    });
+    $('#clearForm')?.addEventListener('click', ()=> $('#contactForm').reset());
+
+    // small entrance fade animation
+    document.querySelectorAll('.transition-fade').forEach((el, i) => {
+      setTimeout(()=> el.classList.add('visible'), 100 + i * 80);
+    });
+
+    // accessible keyboard open on Enter for project cards
+    projectGrid?.querySelectorAll('.project-card').forEach(card => {
+      card.setAttribute('tabindex','0');
+      card.addEventListener('keydown', e => { if (e.key === 'Enter') { const btn = card.querySelector('.openProject'); btn && btn.click(); } });
+    });
+
+    // ensure download link works: check file exists (best-effort - browsers can't read local repo from client)
+    // NOTE: when deployed to GitHub Pages / Netlify, put utkarshsinghresumetech.pdf in repo root.
+  </script>
+</body>
+</html>
+
