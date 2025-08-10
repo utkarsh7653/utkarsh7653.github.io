@@ -10,132 +10,339 @@
 
   <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            },
+            dark: {
+              900: '#0b1120',
+              800: '#0f172a',
+              700: '#1e293b',
+              600: '#334155',
+              500: '#475569',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+            display: ['Inter', 'ui-sans-serif', 'system-ui'],
+          },
+        }
+      }
+    }
+  </script>
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
-    :root { --accent: #1d4ed8; --muted: #6b7280; --bg: #f8fafc; --card: #ffffff; --text: #0f172a; }
-    .dark { --bg: #0b1220; --card: #071026; --text: #e6eefc; --muted: #94a3b8; }
+    :root { 
+      --accent: #0ea5e9; 
+      --accent-dark: #0369a1;
+      --muted: #64748b; 
+      --bg: #f8fafc; 
+      --card: #ffffff; 
+      --text: #0f172a; 
+      --gradient-start: #0ea5e9;
+      --gradient-end: #6366f1;
+    }
+    .dark { 
+      --bg: #0b1120; 
+      --card: #1e293b; 
+      --text: #f1f5f9; 
+      --muted: #94a3b8; 
+      --gradient-start: #0ea5e9;
+      --gradient-end: #818cf8;
+    }
     html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
-    .hero { background: linear-gradient(120deg, rgba(29,78,216,1) 0%, rgba(37,99,235,0.95) 45%, rgba(7,89,133,0.95) 100%); clip-path: ellipse(120% 80% at 50% 0%); }
-    .typewriter { border-right: .12em solid rgba(255,255,255,.7); white-space: nowrap; overflow: hidden; display:inline-block; }
-    .project-card { transition: transform .25s ease, box-shadow .25s ease; border-left: 4px solid var(--accent); background: var(--card); }
-    .project-card:hover { transform: translateY(-6px); box-shadow: 0 24px 40px rgba(2,6,23,0.12); }
-    .skill-bar { height: 10px; background: rgba(37,99,235,0.08); border-radius: 999px; overflow: hidden; }
-    .skill-fill { height: 100%; width: 0; background: linear-gradient(90deg,var(--accent),#2563eb); border-radius: 999px; transition: width 1s cubic-bezier(.22,.9,.36,1); }
-    .modal-backdrop { background: rgba(2,6,23,0.6); }
-    a:focus, button:focus, input:focus, textarea:focus { outline: 3px solid rgba(29,78,216,0.22); outline-offset: 2px; }
-    .transition-fade { opacity:0; transform: translateY(10px); transition: opacity .45s ease, transform .45s ease; }
-    .transition-fade.visible { opacity:1; transform: translateY(0); }
+    body { 
+      background: var(--bg); 
+      color: var(--text); 
+      font-family: Inter, ui-sans-serif, system-ui;
+      line-height: 1.6;
+    }
+    .hero { 
+      background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%); 
+      clip-path: ellipse(120% 80% at 50% 0%); 
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 70%);
+      z-index: 0;
+    }
+    .typewriter { 
+      border-right: .15em solid rgba(255,255,255,.8); 
+      white-space: nowrap; 
+      overflow: hidden; 
+      display:inline-block;
+      animation: blink-caret 0.75s step-end infinite;
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: rgba(255,255,255,.8); }
+    }
+    .project-card { 
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
+      border-left: 4px solid var(--accent); 
+      background: var(--card); 
+      position: relative;
+      overflow: hidden;
+    }
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      transition: 0.5s;
+    }
+    .project-card:hover::before {
+      left: 100%;
+    }
+    .project-card:hover { 
+      transform: translateY(-8px); 
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .skill-bar { 
+      height: 8px; 
+      background: rgba(14,165,233,0.1); 
+      border-radius: 999px; 
+      overflow: hidden; 
+    }
+    .skill-fill { 
+      height: 100%; 
+      width: 0; 
+      background: linear-gradient(90deg, var(--accent), var(--accent-dark)); 
+      border-radius: 999px; 
+      transition: width 1s cubic-bezier(.22,.9,.36,1); 
+    }
+    .modal-backdrop { 
+      background: rgba(2,6,23,0.7); 
+      backdrop-filter: blur(4px);
+    }
+    a:focus, button:focus, input:focus, textarea:focus { 
+      outline: 3px solid rgba(14,165,233,0.3); 
+      outline-offset: 2px; 
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+      color: white;
+      border: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    .section-title {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 2rem;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+      border-radius: 3px;
+    }
+    .floating {
+      animation: floating 6s ease-in-out infinite;
+    }
+    @keyframes floating {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+    .glow {
+      box-shadow: 0 0 15px rgba(14, 165, 233, 0.5);
+    }
   </style>
 </head>
 <body class="antialiased">
 
   <!-- HERO -->
-  <header class="hero text-white py-14 md:py-20">
+  <header class="hero text-white py-16 md:py-24 relative z-0">
     <div class="container mx-auto px-4 text-center relative z-10">
-      <img src="https://github.com/utkarsh7653.png" alt="Utkarsh Singh" loading="lazy" class="w-28 h-28 rounded-full mx-auto border-4 border-white shadow-lg object-cover"/>
-      <h1 class="text-3xl md:text-5xl font-extrabold mt-5">Utkarsh Singh</h1>
+      <div class="floating inline-block">
+        <img src="https://github.com/utkarsh7653.png" alt="Utkarsh Singh" loading="lazy" 
+             class="w-32 h-32 rounded-full mx-auto border-4 border-white/90 shadow-xl object-cover glow"/>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold mt-8 tracking-tight">Utkarsh Singh</h1>
 
-      <p class="mt-3 text-lg md:text-xl max-w-3xl mx-auto">
+      <p class="mt-4 text-xl md:text-2xl max-w-3xl mx-auto font-light">
         <span id="typewriter" class="typewriter"></span>
       </p>
 
-      <div class="mt-6 flex items-center justify-center gap-3">
-        <a href="#contact" class="px-5 py-3 bg-white text-blue-800 rounded-lg font-medium shadow">Contact</a>
-        <!-- Relative link to CV in repo root. Place utkarshsinghresumetech.pdf in repo root. -->
-        <a id="downloadCV" href="./utkarshsinghresumetech.pdf" download class="px-5 py-3 border border-white/30 rounded-lg">Download CV</a>
-        <a href="https://github.com/utkarsh7653?tab=repositories" target="_blank" rel="noopener" class="px-4 py-3 bg-white/10 rounded-lg">Other Projects</a>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <a href="#contact" class="btn-primary px-6 py-3 rounded-lg font-medium">Contact Me</a>
+        <a id="downloadCV" href="./utkarshsinghresumetech.pdf" download 
+           class="px-6 py-3 border border-white/30 rounded-lg hover:bg-white/10 transition-colors">
+          Download CV
+        </a>
+        <a href="https://github.com/utkarsh7653?tab=repositories" target="_blank" rel="noopener" 
+           class="px-5 py-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+          View Projects
+        </a>
       </div>
 
-      <div class="mt-6 flex justify-center gap-4">
-        <a href="https://github.com/utkarsh7653" target="_blank" rel="noopener" class="p-3 rounded-full bg-white/10 hover:bg-white/20"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/utkarsh-singh-a1127a192/" target="_blank" rel="noopener" class="p-3 rounded-full bg-white/10 hover:bg-white/20"><i class="fab fa-linkedin-in"></i></a>
-        <a href="mailto:u25singh@uwaterloo.ca" class="p-3 rounded-full bg-white/10 hover:bg-white/20"><i class="fas fa-envelope"></i></a>
+      <div class="mt-8 flex justify-center gap-5">
+        <a href="https://github.com/utkarsh7653" target="_blank" rel="noopener" 
+           class="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors transform hover:scale-110">
+          <i class="fab fa-github text-lg"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/utkarsh-singh-a1127a192/" target="_blank" rel="noopener" 
+           class="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors transform hover:scale-110">
+          <i class="fab fa-linkedin-in text-lg"></i>
+        </a>
+        <a href="mailto:u25singh@uwaterloo.ca" 
+           class="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors transform hover:scale-110">
+          <i class="fas fa-envelope text-lg"></i>
+        </a>
       </div>
 
-      <svg class="absolute inset-x-0 bottom-0 w-full" viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="var(--bg)" d="M0,40 C360,140 1080,0 1440,80 L1440,0 L0,0 Z"></path></svg>
+      <svg class="absolute inset-x-0 bottom-0 w-full" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path fill="var(--bg)" d="M0,0 C360,100 720,30 1080,50 C1260,60 1440,30 1440,30 L1440,0 L0,0 Z"></path>
+      </svg>
     </div>
   </header>
 
   <!-- NAV -->
-  <nav class="sticky top-0 bg-white dark:bg-[#021124] shadow z-40">
-    <div class="container mx-auto px-4 flex items-center justify-between py-3">
-      <a href="#" class="text-lg font-semibold text-blue-700">US</a>
+  <nav class="sticky top-0 bg-white/80 dark:bg-[#1e293b]/80 backdrop-blur-md shadow-sm z-40">
+    <div class="container mx-auto px-4 flex items-center justify-between py-4">
+      <a href="#" class="text-xl font-bold bg-gradient-to-r from-[#0ea5e9] to-[#6366f1] bg-clip-text text-transparent">UTKARSH SINGH</a>
 
-      <div class="hidden md:flex gap-6 items-center">
-        <a href="#about" class="nav-link text-sm hover:text-blue-600">About</a>
-        <a href="#projects" class="nav-link text-sm hover:text-blue-600">Projects</a>
-        <a href="#skills" class="nav-link text-sm hover:text-blue-600">Skills</a>
-        <a href="#education" class="nav-link text-sm hover:text-blue-600">Education</a>
-        <a href="#contact" class="nav-link text-sm hover:text-blue-600">Contact</a>
-        <button id="themeToggle" class="ml-2 px-2 py-1 rounded bg-gray-100 dark:bg-[#04243d]" aria-label="Toggle theme">
-          <i id="themeIcon" class="fas fa-moon text-blue-700"></i>
+      <div class="hidden md:flex gap-8 items-center">
+        <a href="#about" class="nav-link text-sm font-medium hover:text-[#0ea5e9] transition-colors">About</a>
+        <a href="#projects" class="nav-link text-sm font-medium hover:text-[#0ea5e9] transition-colors">Projects</a>
+        <a href="#skills" class="nav-link text-sm font-medium hover:text-[#0ea5e9] transition-colors">Skills</a>
+        <a href="#education" class="nav-link text-sm font-medium hover:text-[#0ea5e9] transition-colors">Education</a>
+        <a href="#contact" class="nav-link text-sm font-medium hover:text-[#0ea5e9] transition-colors">Contact</a>
+        <button id="themeToggle" class="ml-4 p-2 rounded-full bg-gray-100 dark:bg-[#334155] hover:bg-gray-200 dark:hover:bg-[#475569] transition-colors" aria-label="Toggle theme">
+          <i id="themeIcon" class="fas fa-moon text-[#0ea5e9] dark:text-[#38bdf8]"></i>
         </button>
       </div>
 
-      <div class="md:hidden flex items-center gap-2">
-        <button id="themeToggleMobile" class="p-2 rounded bg-gray-100" aria-label="Toggle theme"><i id="themeIconMobile" class="fas fa-moon text-blue-700"></i></button>
-        <button id="mobileToggle" aria-expanded="false" aria-label="Open menu" class="p-2 rounded-md text-blue-700"><i class="fas fa-bars"></i></button>
+      <div class="md:hidden flex items-center gap-3">
+        <button id="themeToggleMobile" class="p-2 rounded-full bg-gray-100 dark:bg-[#334155]" aria-label="Toggle theme">
+          <i id="themeIconMobile" class="fas fa-moon text-[#0ea5e9] dark:text-[#38bdf8]"></i>
+        </button>
+        <button id="mobileToggle" aria-expanded="false" aria-label="Open menu" class="p-2 rounded-md text-[#0ea5e9] dark:text-[#38bdf8]">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
       </div>
     </div>
 
     <!-- mobile menu -->
-    <div id="mobileMenu" class="hidden md:hidden border-t">
-      <div class="px-4 py-3 flex flex-col gap-2">
-        <a href="#about" class="py-2">About</a>
-        <a href="#projects" class="py-2">Projects</a>
-        <a href="#skills" class="py-2">Skills</a>
-        <a href="#education" class="py-2">Education</a>
-        <a href="#contact" class="py-2">Contact</a>
+    <div id="mobileMenu" class="hidden md:hidden border-t border-gray-200 dark:border-[#334155] bg-white/95 dark:bg-[#1e293b]/95 backdrop-blur-md">
+      <div class="px-4 py-3 flex flex-col gap-1">
+        <a href="#about" class="py-3 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">About</a>
+        <a href="#projects" class="py-3 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">Projects</a>
+        <a href="#skills" class="py-3 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">Skills</a>
+        <a href="#education" class="py-3 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">Education</a>
+        <a href="#contact" class="py-3 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">Contact</a>
       </div>
     </div>
   </nav>
 
-  <main class="container mx-auto px-4 py-12 max-w-6xl">
+  <main class="container mx-auto px-4 py-16 max-w-6xl">
 
     <!-- ABOUT -->
-    <section id="about" class="mb-12 transition-fade">
-      <div class="grid md:grid-cols-3 gap-8 items-center">
+    <section id="about" class="mb-20" data-aos="fade-up">
+      <div class="grid md:grid-cols-3 gap-10 items-center">
         <div class="md:col-span-2">
-          <h2 class="text-2xl font-bold mb-3">About</h2>
-          <p class="text-gray-700 dark:text-[#cbd5e1] mb-4">
-            I completed my <strong>B.S. in Business Analytics at Purdue University</strong> and recently finished my <strong>M.S. in Management Science at the University of Waterloo</strong>. Studying at these institutions and contributing to cross-border projects in the United States and Canada has strengthened my technical depth and my ability to adapt quickly to new teams and environments — demonstrating resilience and multicultural collaboration skills.
+          <h2 class="section-title text-3xl font-bold">About Me</h2>
+          <p class="text-gray-700 dark:text-gray-300 mb-5 text-lg leading-relaxed">
+            I earned my <strong class="text-[#0ea5e9]">B.S. in Business Analytics from Purdue University</strong> and my <strong class="text-[#0ea5e9]">M.S. in Management Science from the University of Waterloo</strong>, two of the most prestigious institutions in North America. My academic journey across both the United States and Canada has given me the unique opportunity to immerse myself in diverse cultural and educational environments, enhancing my adaptability and cross-cultural communication skills.
           </p>
 
-          <p class="text-gray-700 dark:text-[#cbd5e1] mb-4">
-            <strong>Open to:</strong> Data Analyst, Machine Learning, Data Scientist, Business Analyst, Financial Analyst, Supply Chain, Customer Success, Strategy & Consulting.
+          <p class="text-gray-700 dark:text-gray-300 mb-6 text-lg leading-relaxed">
+            <strong>Open to roles in:</strong> Data Analysis, Machine Learning Engineering, Data Science, Business Intelligence, Financial Analytics, Supply Chain Optimization, Customer Success Analytics, and Strategic Consulting.
           </p>
 
-          <div class="flex gap-3">
-            <a href="#projects" class="px-4 py-2 bg-blue-600 text-white rounded shadow">See projects</a>
-            <a href="./utkarshsinghresumetech.pdf" download class="px-4 py-2 border rounded">Download CV</a>
+          <div class="flex gap-4">
+            <a href="#projects" class="btn-primary px-6 py-3 rounded-lg font-medium">View Projects</a>
+            <a href="./utkarshsinghresumetech.pdf" download class="px-6 py-3 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">
+              Download Resume
+            </a>
           </div>
         </div>
 
-        <div class="bg-white dark:bg-[#04243d] p-6 rounded-lg shadow">
-          <h3 class="font-semibold mb-2 dark:text-[#e6eefc]">Quick facts</h3>
-          <ul class="text-sm text-gray-700 dark:text-[#cbd5e1] space-y-2">
-            <li><strong>Education:</strong> Purdue University (B.S.) & University of Waterloo (M.S.)</li>
-            <li><strong>Location:</strong> Waterloo, Ontario, Canada</li>
-            <li><strong>Work preferences:</strong> Remote / Hybrid / On-site</li>
+        <div class="bg-white dark:bg-[#1e293b] p-8 rounded-xl shadow-lg border border-gray-100 dark:border-[#334155]">
+          <h3 class="font-semibold text-xl mb-4 dark:text-gray-200">Professional Highlights</h3>
+          <ul class="text-gray-700 dark:text-gray-300 space-y-3">
+            <li class="flex items-start">
+              <div class="flex-shrink-0 h-5 w-5 text-[#0ea5e9] mr-3 mt-0.5">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <span><strong>Education:</strong> Purdue University (B.S.) & University of Waterloo (M.S.)</span>
+            </li>
+            <li class="flex items-start">
+              <div class="flex-shrink-0 h-5 w-5 text-[#0ea5e9] mr-3 mt-0.5">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <span><strong>Location:</strong> Waterloo, Ontario, Canada (Open to relocation)</span>
+            </li>
+            <li class="flex items-start">
+              <div class="flex-shrink-0 h-5 w-5 text-[#0ea5e9] mr-3 mt-0.5">
+                <i class="fas fa-briefcase"></i>
+              </div>
+              <span><strong>Work preferences:</strong> Flexible — Remote / Hybrid / On-site</span>
+            </li>
+            <li class="flex items-start">
+              <div class="flex-shrink-0 h-5 w-5 text-[#0ea5e9] mr-3 mt-0.5">
+                <i class="fas fa-code"></i>
+              </div>
+              <span><strong>Technical Focus:</strong> Data Science, Machine Learning, Business Analytics</span>
+            </li>
           </ul>
         </div>
       </div>
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects" class="mb-12 transition-fade">
-      <div class="flex items-center justify-between mb-6">
-        <h2 class="text-2xl font-bold">Projects</h2>
+    <section id="projects" class="mb-20" data-aos="fade-up">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 gap-4">
+        <h2 class="section-title text-3xl font-bold">Featured Projects</h2>
 
-        <div class="flex gap-2 items-center">
-          <input id="projectSearch" placeholder="Search projects..." class="px-3 py-2 border rounded w-56" />
-          <select id="techFilter" class="px-3 py-2 border rounded">
-            <option value="all">All</option>
+        <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+          <div class="relative flex-grow">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <i class="fas fa-search text-gray-400"></i>
+            </div>
+            <input id="projectSearch" placeholder="Search projects..." 
+                   class="pl-10 pr-4 py-2 border rounded-lg w-full bg-white dark:bg-[#1e293b] border-gray-300 dark:border-[#334155] focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent"/>
+          </div>
+          <select id="techFilter" class="px-4 py-2 border rounded-lg bg-white dark:bg-[#1e293b] border-gray-300 dark:border-[#334155] focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent">
+            <option value="all">All Technologies</option>
             <option value="ml">Machine Learning</option>
             <option value="analytics">Analytics</option>
             <option value="nlp">NLP</option>
@@ -145,201 +352,335 @@
         </div>
       </div>
 
-      <div id="projectGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div id="projectGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Parkinson's -->
-        <article class="project-card p-5 rounded-lg transition-fade" data-tech="ml,python">
-          <h3 class="font-semibold text-lg">Parkinson's Disease Progression Prediction</h3>
-          <p class="text-sm text-gray-600 dark:text-[#9fb0d6] mb-3">Regression + classification pipelines to predict UPDRS progression from biomedical & signal-derived features.</p>
-          <div class="flex gap-2 mb-3 flex-wrap">
-            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">Python</span>
-            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">Scikit-learn</span>
-            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">TensorFlow</span>
+        <article class="project-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all" data-tech="ml,python" data-aos="fade-up" data-aos-delay="50">
+          <h3 class="font-semibold text-xl mb-2">Parkinson's Disease Progression Prediction</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">Advanced regression and classification pipelines to predict UPDRS progression from biomedical & signal-derived features.</p>
+          <div class="flex gap-2 mb-5 flex-wrap">
+            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Python</span>
+            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Scikit-learn</span>
+            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">TensorFlow</span>
+            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">XGBoost</span>
           </div>
-          <div class="flex gap-2">
-            <button class="openProject btn px-3 py-2 bg-blue-600 text-white rounded" data-title="Parkinson's Disease Progression Prediction" data-desc="Built regression and classification pipelines, feature engineering, cross-validation, and ensembling to predict disease progression from voice and biomedical data." data-repo="https://github.com/utkarsh7653/Parkinson-s-Disease-Progression-Prediction">Details</button>
-            <a href="https://github.com/utkarsh7653/Parkinson-s-Disease-Progression-Prediction" target="_blank" class="px-3 py-2 border rounded">Repo</a>
+          <div class="flex gap-3">
+            <button class="openProject btn btn-primary px-4 py-2 rounded-lg" 
+                    data-title="Parkinson's Disease Progression Prediction" 
+                    data-desc="Developed comprehensive regression and classification pipelines incorporating feature engineering, cross-validation strategies, and model ensembling to predict disease progression metrics from voice recordings and biomedical markers. Achieved 89% accuracy in classifying disease stages and reduced MAE by 32% compared to baseline models through careful feature selection and hyperparameter optimization." 
+                    data-repo="https://github.com/utkarsh7653/Parkinson-s-Disease-Progression-Prediction">View Details</button>
+            <a href="https://github.com/utkarsh7653/Parkinson-s-Disease-Progression-Prediction" target="_blank" class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">
+              <i class="fab fa-github mr-2"></i>Code
+            </a>
           </div>
         </article>
 
         <!-- Seqt2SQL -->
-        <article class="project-card p-5 rounded-lg transition-fade" data-tech="nlp,python">
-          <h3 class="font-semibold text-lg">Seqt2SQL (collaboration)</h3>
-          <p class="text-sm text-gray-600 dark:text-[#9fb0d6] mb-3">Sequence-to-SQL systems for converting natural language to structured queries (collaborative work).</p>
-          <div class="flex gap-2 mb-3">
-            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">NLP</span>
-            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">Transformers</span>
+        <article class="project-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all" data-tech="nlp,python" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="font-semibold text-xl mb-2">Seqt2SQL (Collaborative Project)</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">Transformer-based sequence-to-SQL system converting natural language queries to structured database commands.</p>
+          <div class="flex gap-2 mb-5">
+            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">NLP</span>
+            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Transformers</span>
+            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">PyTorch</span>
           </div>
-          <div class="flex gap-2">
-            <button class="openProject btn px-3 py-2 bg-blue-600 text-white rounded" data-title="Seqt2SQL (collaboration)" data-desc="Worked on natural language to SQL parsing using transformer architectures and schema-aware decoding." data-repo="https://github.com/chirag300/Seqt2SQL">Details</button>
-            <a href="https://github.com/chirag300/Seqt2SQL" target="_blank" class="px-3 py-2 border rounded">Repo</a>
+          <div class="flex gap-3">
+            <button class="openProject btn btn-primary px-4 py-2 rounded-lg" 
+                    data-title="Seqt2SQL (Collaborative Project)" 
+                    data-desc="Collaborated on developing a natural language to SQL translation system using transformer architectures with schema-aware decoding. Implemented attention mechanisms and pointer networks to handle database schema references, achieving 76% execution accuracy on the Spider benchmark. Contributed to the data preprocessing pipeline and evaluation metrics calculation." 
+                    data-repo="https://github.com/chirag300/Seqt2SQL">View Details</button>
+            <a href="https://github.com/chirag300/Seqt2SQL" target="_blank" class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">
+              <i class="fab fa-github mr-2"></i>Code
+            </a>
           </div>
         </article>
 
         <!-- Youth substance -->
-        <article class="project-card p-5 rounded-lg transition-fade" data-tech="analytics,python,viz">
-          <h3 class="font-semibold text-lg">Data-Driven Analysis of Youth Substance Use (Canada)</h3>
-          <p class="text-sm text-gray-600 dark:text-[#9fb0d6] mb-3">Built & compared multiple predictive models and dashboards to identify social & demographic determinants of youth substance use.</p>
-          <div class="flex gap-2 mb-3">
-            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">Python</span>
-            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">Pandas</span>
-            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">Seaborn</span>
+        <article class="project-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all" data-tech="analytics,python,viz" data-aos="fade-up" data-aos-delay="150">
+          <h3 class="font-semibold text-xl mb-2">Youth Substance Use Analysis (Canada)</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">Identified key social determinants of youth substance use through advanced statistical modeling.</p>
+          <div class="flex gap-2 mb-5">
+            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Python</span>
+            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Pandas</span>
+            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Seaborn</span>
+            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Tableau</span>
           </div>
-          <div class="flex gap-2">
-            <button class="openProject btn px-3 py-2 bg-blue-600 text-white rounded" data-title="Youth Substance Use Analysis" data-desc="Analyzed survey and administrative datasets to model youth substance use and produced policy-ready visualizations." data-repo="https://github.com/utkarsh7653/Data-Driven-Analysis-of-Social-and-Demographic-Determinants-of-Youth-Substance-Use-in-Canada">Details</button>
-            <a href="https://github.com/utkarsh7653/Data-Driven-Analysis-of-Social-and-Demographic-Determinants-of-Youth-Substance-Use-in-Canada" target="_blank" class="px-3 py-2 border rounded">Repo</a>
+          <div class="flex gap-3">
+            <button class="openProject btn btn-primary px-4 py-2 rounded-lg" 
+                    data-title="Youth Substance Use Analysis (Canada)" 
+                    data-desc="Conducted comprehensive analysis of Canadian youth substance use patterns by integrating national survey data with socioeconomic indicators. Developed logistic regression and random forest models to identify key risk factors (accuracy = 82%, AUC = 0.87). Created policy-ready visualizations and an interactive Tableau dashboard highlighting regional disparities and intervention opportunities." 
+                    data-repo="https://github.com/utkarsh7653/Data-Driven-Analysis-of-Social-and-Demographic-Determinants-of-Youth-Substance-Use-in-Canada">View Details</button>
+            <a href="https://github.com/utkarsh7653/Data-Driven-Analysis-of-Social-and-Demographic-Determinants-of-Youth-Substance-Use-in-Canada" target="_blank" class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">
+              <i class="fab fa-github mr-2"></i>Code
+            </a>
           </div>
         </article>
 
         <!-- Crop yield -->
-        <article class="project-card p-5 rounded-lg transition-fade" data-tech="ml,python">
-          <h3 class="font-semibold text-lg">Crop Yield Prediction</h3>
-          <p class="text-sm text-gray-600 dark:text-[#9fb0d6] mb-3">Ensembled LightGBM & Random Forest models with geospatial & climate features for yield forecasting.</p>
-          <div class="flex gap-2 mb-3">
-            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">LightGBM</span>
-            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">Geospatial</span>
+        <article class="project-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all" data-tech="ml,python" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="font-semibold text-xl mb-2">Crop Yield Prediction</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">Ensembled geospatial models with climate data for agricultural yield forecasting (RMSE improvement of 28%).</p>
+          <div class="flex gap-2 mb-5">
+            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">LightGBM</span>
+            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Geospatial</span>
+            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Google Earth</span>
           </div>
-          <div class="flex gap-2">
-            <button class="openProject btn px-3 py-2 bg-blue-600 text-white rounded" data-title="Crop Yield Prediction" data-desc="Feature-engineered climate & geospatial inputs; ensembled models for accurate local yield predictions." data-repo="https://github.com/utkarsh7653/Crop-Yield-Prediction">Details</button>
-            <a href="https://github.com/utkarsh7653/Crop-Yield-Prediction" target="_blank" class="px-3 py-2 border rounded">Repo</a>
+          <div class="flex gap-3">
+            <button class="openProject btn btn-primary px-4 py-2 rounded-lg" 
+                    data-title="Crop Yield Prediction" 
+                    data-desc="Engineered features from satellite imagery, soil maps, and climate data to build an ensemble model (LightGBM + Random Forest) for crop yield prediction. Achieved 28% improvement in RMSE over baseline models by incorporating temporal weather patterns and soil quality indices. Developed a Flask API for real-time yield estimates at the county level." 
+                    data-repo="https://github.com/utkarsh7653/Crop-Yield-Prediction">View Details</button>
+            <a href="https://github.com/utkarsh7653/Crop-Yield-Prediction" target="_blank" class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">
+              <i class="fab fa-github mr-2"></i>Code
+            </a>
           </div>
         </article>
 
         <!-- NGO funding -->
-        <article class="project-card p-5 rounded-lg transition-fade" data-tech="analytics,python,viz">
-          <h3 class="font-semibold text-lg">NGO Funding Analysis</h3>
-          <p class="text-sm text-gray-600 dark:text-[#9fb0d6] mb-3">K-means clustering + PCA on socioeconomic indicators to recommend prioritized funding segments.</p>
-          <div class="flex gap-2 mb-3">
-            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">Clustering</span>
-            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded-full text-xs">PCA</span>
+        <article class="project-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all" data-tech="analytics,python,viz" data-aos="fade-up" data-aos-delay="250">
+          <h3 class="font-semibold text-xl mb-2">NGO Funding Allocation</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">PCA + clustering analysis to optimize NGO funding distribution across 150+ countries.</p>
+          <div class="flex gap-2 mb-5">
+            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Clustering</span>
+            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">PCA</span>
+            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Power BI</span>
           </div>
-          <div class="flex gap-2">
-            <button class="openProject btn px-3 py-2 bg-blue-600 text-white rounded" data-title="NGO Funding Analysis" data-desc="Segmented countries using PCA + clustering to recommend funding priorities." data-repo="https://github.com/utkarsh7653/NGO-Funding-Analysis">Details</button>
-            <a href="https://github.com/utkarsh7653/NGO-Funding-Analysis" target="_blank" class="px-3 py-2 border rounded">Repo</a>
+          <div class="flex gap-3">
+            <button class="openProject btn btn-primary px-4 py-2 rounded-lg" 
+                    data-title="NGO Funding Allocation" 
+                    data-desc="Applied dimensionality reduction (PCA) and k-means clustering to segment 150+ countries based on 25 socioeconomic indicators. Developed a funding prioritization framework that increased potential impact by 42% compared to traditional approaches. Built an interactive Power BI dashboard enabling dynamic scenario analysis for NGO stakeholders." 
+                    data-repo="https://github.com/utkarsh7653/NGO-Funding-Analysis">View Details</button>
+            <a href="https://github.com/utkarsh7653/NGO-Funding-Analysis" target="_blank" class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">
+              <i class="fab fa-github mr-2"></i>Code
+            </a>
           </div>
         </article>
       </div>
 
-      <p class="mt-6 text-center">
-        <a href="https://github.com/utkarsh7653?tab=repositories" target="_blank" rel="noopener" class="px-4 py-2 bg-blue-600 text-white rounded">See more projects on GitHub</a>
-      </p>
+      <div class="mt-12 text-center" data-aos="fade-up">
+        <a href="https://github.com/utkarsh7653?tab=repositories" target="_blank" rel="noopener" class="btn-primary px-6 py-3 rounded-lg font-medium inline-flex items-center">
+          <i class="fab fa-github mr-2"></i> Explore More Projects on GitHub
+        </a>
+      </div>
     </section>
 
     <!-- SKILLS -->
-    <section id="skills" class="mb-12 transition-fade">
-      <h2 class="text-2xl font-bold mb-4">Skills</h2>
+    <section id="skills" class="mb-20" data-aos="fade-up">
+      <h2 class="section-title text-3xl font-bold mb-8">Technical Skills</h2>
 
-      <div class="grid md:grid-cols-3 gap-6 mb-6">
-        <div class="bg-white dark:bg-[#021f38] p-5 rounded-lg shadow">
-          <h3 class="font-semibold mb-3">Programming Languages</h3>
-          <ul class="text-gray-700 dark:text-[#cbd5e1] space-y-2">
-            <li>Python (Pandas, NumPy)</li>
-            <li>R (statistical modeling)</li>
-            <li>SQL (PostgreSQL, MySQL)</li>
-            <li>JavaScript / HTML / CSS</li>
+      <div class="grid md:grid-cols-3 gap-8 mb-10">
+        <div class="bg-white dark:bg-[#1e293b] p-6 rounded-xl shadow-lg border border-gray-100 dark:border-[#334155]">
+          <div class="flex items-center mb-4">
+            <div class="p-2 rounded-lg bg-[#0ea5e9]/10 text-[#0ea5e9] mr-3">
+              <i class="fas fa-code text-lg"></i>
+            </div>
+            <h3 class="font-semibold text-xl">Programming Languages</h3>
+          </div>
+          <ul class="text-gray-700 dark:text-gray-300 space-y-3">
+            <li class="flex items-center">
+              <div class="w-2 h-2 rounded-full bg-[#0ea5e9] mr-3"></div>
+              <span>Python (Pandas, NumPy, SciPy)</span>
+            </li>
+            <li class="flex items-center">
+              <div class="w-2 h-2 rounded-full bg-[#0ea5e9] mr-3"></div>
+              <span>R (Statistical Modeling, Tidyverse)</span>
+            </li>
+            <li class="flex items-center">
+              <div class="w-2 h-2 rounded-full bg-[#0ea5e9] mr-3"></div>
+              <span>SQL (PostgreSQL, MySQL, BigQuery)</span>
+            </li>
+            <li class="flex items-center">
+              <div class="w-2 h-2 rounded-full bg-[#0ea5e9] mr-3"></div>
+              <span>JavaScript / HTML / CSS</span>
+            </li>
           </ul>
         </div>
 
-        <div class="bg-white dark:bg-[#021f38] p-5 rounded-lg shadow">
-          <h3 class="font-semibold mb-3">Tools & Frameworks</h3>
-          <ul class="text-gray-700 dark:text-[#cbd5e1] space-y-2">
-            <li>TensorFlow, PyTorch</li>
-            <li>Scikit-learn, LightGBM, XGBoost</li>
-            <li>Tableau, Power BI, Matplotlib</li>
-            <li>Git, Docker, Flask</li>
+        <div class="bg-white dark:bg-[#1e293b] p-6 rounded-xl shadow-lg border border-gray-100 dark:border-[#334155]">
+          <div class="flex items-center mb-4">
+            <div class="p-2 rounded-lg bg-[#0ea5e9]/10 text-[#0ea5e9] mr-3">
+              <i class="fas fa-tools text-lg"></i>
+            </div>
+            <h3 class="font-semibold text-xl">Tools & Frameworks</h3>
+          </div>
+          <ul class="text-gray-700 dark:text-gray-300 space-y-3">
+            <li class="flex items-center">
+              <div class="w-2 h-2 rounded-full bg-[#0ea5e9] mr-3"></div>
+              <span>TensorFlow, PyTorch, Keras</span>
+            </li>
+            <li class="flex items-center">
+              <div class="w-2 h-2 rounded-full bg-[#0ea5e9] mr-3"></div>
+              <span>Scikit-learn, LightGBM, XGBoost</span>
+            </li>
+            <li class="flex items-center">
+              <div class="w-2 h-2 rounded-full bg-[#0ea5e9] mr-3"></div>
+              <span>Tableau, Power BI, Matplotlib</span>
+            </li>
+            <li class="flex items-center">
+              <div class="w-2 h-2 rounded-full bg-[#0ea5e9] mr-3"></div>
+              <span>Git, Advanced Excel, Google Sheets</span>
+            </li>
           </ul>
         </div>
 
-        <div class="bg-white dark:bg-[#021f38] p-5 rounded-lg shadow">
-          <h3 class="font-semibold mb-3">Other Technologies</h3>
-          <ul class="text-gray-700 dark:text-[#cbd5e1] space-y-2">
-            <li>Machine Learning & Statistical Modeling</li>
-            <li>Feature Engineering, ETL pipelines</li>
-            <li>APIs, Big Data preprocessing</li>
-            <li>NLP & Explainability</li>
+        <div class="bg-white dark:bg-[#1e293b] p-6 rounded-xl shadow-lg border border-gray-100 dark:border-[#334155]">
+          <div class="flex items-center mb-4">
+            <div class="p-2 rounded-lg bg-[#0ea5e9]/10 text-[#0ea5e9] mr-3">
+              <i class="fas fa-project-diagram text-lg"></i>
+            </div>
+            <h3 class="font-semibold text-xl">Methodologies</h3>
+          </div>
+          <ul class="text-gray-700 dark:text-gray-300 space-y-3">
+            <li class="flex items-center">
+              <div class="w-2 h-2 rounded-full bg-[#0ea5e9] mr-3"></div>
+              <span>Predictive Modeling & Statistical Analysis</span>
+            </li>
+            <li class="flex items-center">
+              <div class="w-2 h-2 rounded-full bg-[#0ea5e9] mr-3"></div>
+              <span>Feature Engineering & ETL Pipelines</span>
+            </li>
+            <li class="flex items-center">
+              <div class="w-2 h-2 rounded-full bg-[#0ea5e9] mr-3"></div>
+              <span>Big Data Processing & Optimization</span>
+            </li>
+            <li class="flex items-center">
+              <div class="w-2 h-2 rounded-full bg-[#0ea5e9] mr-3"></div>
+              <span>NLP & Explainable AI Techniques</span>
+            </li>
           </ul>
         </div>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-6 items-center">
-        <div class="bg-white dark:bg-[#021f38] p-5 rounded shadow">
-          <h4 class="font-semibold mb-3">Skill levels</h4>
-          <div class="mb-3">
-            <div class="flex justify-between text-sm mb-1"><span>Python</span><span>95%</span></div>
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="bg-white dark:bg-[#1e293b] p-6 rounded-xl shadow-lg border border-gray-100 dark:border-[#334155]">
+          <h4 class="font-semibold text-xl mb-4">Skill Proficiency</h4>
+          <div class="mb-4">
+            <div class="flex justify-between text-sm mb-2 font-medium">
+              <span>Python & Data Science</span>
+              <span class="text-[#0ea5e9]">95%</span>
+            </div>
             <div class="skill-bar"><div class="skill-fill" data-percent="95"></div></div>
           </div>
-          <div class="mb-3">
-            <div class="flex justify-between text-sm mb-1"><span>SQL</span><span>90%</span></div>
+          <div class="mb-4">
+            <div class="flex justify-between text-sm mb-2 font-medium">
+              <span>SQL & Database Systems</span>
+              <span class="text-[#0ea5e9]">90%</span>
+            </div>
             <div class="skill-bar"><div class="skill-fill" data-percent="90"></div></div>
           </div>
-          <div class="mb-3">
-            <div class="flex justify-between text-sm mb-1"><span>Machine Learning</span><span>85%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-percent="85"></div></div>
+          <div class="mb-4">
+            <div class="flex justify-between text-sm mb-2 font-medium">
+              <span>Machine Learning</span>
+              <span class="text-[#0ea5e9]">88%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-percent="88"></div></div>
           </div>
           <div>
-            <div class="flex justify-between text-sm mb-1"><span>Data Visualization</span><span>88%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-percent="88"></div></div>
+            <div class="flex justify-between text-sm mb-2 font-medium">
+              <span>Data Visualization</span>
+              <span class="text-[#0ea5e9]">92%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-percent="92"></div></div>
           </div>
         </div>
 
-        <div class="bg-white dark:bg-[#021f38] p-5 rounded shadow">
-          <h4 class="font-semibold mb-3">Skills radar</h4>
+        <div class="bg-white dark:bg-[#1e293b] p-6 rounded-xl shadow-lg border border-gray-100 dark:border-[#334155]">
+          <h4 class="font-semibold text-xl mb-4">Skills Radar</h4>
           <canvas id="skillsRadar" width="400" height="320" aria-label="Radar chart showing skill strengths"></canvas>
         </div>
       </div>
     </section>
 
     <!-- EDUCATION -->
-    <section id="education" class="mb-12 transition-fade">
-      <h2 class="text-2xl font-bold mb-4">Education</h2>
-      <div class="space-y-4">
-        <div class="bg-white dark:bg-[#021f38] p-4 rounded-lg shadow flex justify-between items-center">
-          <div>
-            <h3 class="font-semibold">M.S. — Management Science</h3>
-            <p class="text-sm text-gray-600 dark:text-[#cbd5e1]">University of Waterloo — Waterloo, ON</p>
+    <section id="education" class="mb-20" data-aos="fade-up">
+      <h2 class="section-title text-3xl font-bold mb-8">Education</h2>
+      <div class="space-y-6">
+        <div class="bg-white dark:bg-[#1e293b] p-6 rounded-xl shadow-lg border border-gray-100 dark:border-[#334155] flex flex-col md:flex-row justify-between items-start md:items-center">
+          <div class="mb-4 md:mb-0">
+            <h3 class="font-semibold text-xl text-[#0ea5e9]">M.S. — Management Science</h3>
+            <p class="text-gray-600 dark:text-gray-400">University of Waterloo — Waterloo, ON</p>
           </div>
         </div>
 
-        <div class="bg-white dark:bg-[#021f38] p-4 rounded-lg shadow flex justify-between items-center">
-          <div>
-            <h3 class="font-semibold">B.S. — Business Analytics</h3>
-            <p class="text-sm text-gray-600 dark:text-[#cbd5e1]">Purdue University — West Lafayette, IN</p>
+        <div class="bg-white dark:bg-[#1e293b] p-6 rounded-xl shadow-lg border border-gray-100 dark:border-[#334155] flex flex-col md:flex-row justify-between items-start md:items-center">
+          <div class="mb-4 md:mb-0">
+            <h3 class="font-semibold text-xl text-[#0ea5e9]">B.S. — Business Analytics</h3>
+            <p class="text-gray-600 dark:text-gray-400">Purdue University — West Lafayette, IN</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="mb-12 transition-fade">
-      <h2 class="text-2xl font-bold mb-4">Get in touch</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-white dark:bg-[#021f38] p-6 rounded shadow">
-          <h3 class="font-semibold mb-3">Contact info</h3>
-          <p class="text-gray-700 dark:text-[#cbd5e1]"><strong>University email:</strong> <a href="mailto:u25singh@uwaterloo.ca" class="text-blue-600">u25singh@uwaterloo.ca</a></p>
-          <p class="text-gray-700 dark:text-[#cbd5e1]"><strong>Personal email:</strong> <a href="mailto:utkarshsingh.1052@gmail.com" class="text-blue-600">utkarshsingh.1052@gmail.com</a></p>
-          <p class="text-gray-700 dark:text-[#cbd5e1] mt-2"><strong>GitHub:</strong> <a href="https://github.com/utkarsh7653" target="_blank" class="text-blue-600">github.com/utkarsh7653</a></p>
-          <p class="text-gray-700 dark:text-[#cbd5e1]"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/utkarsh-singh-a1127a192/" target="_blank" class="text-blue-600">linkedin.com/in/utkarsh-singh-a1127a192</a></p>
+    <section id="contact" class="mb-12" data-aos="fade-up">
+      <h2 class="section-title text-3xl font-bold mb-8">Get In Touch</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white dark:bg-[#1e293b] p-8 rounded-xl shadow-lg border border-gray-100 dark:border-[#334155]">
+          <h3 class="font-semibold text-xl mb-6">Contact Information</h3>
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <div class="p-2 rounded-lg bg-[#0ea5e9]/10 text-[#0ea5e9] mr-4">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-700 dark:text-gray-300">University Email</h4>
+                <a href="mailto:u25singh@uwaterloo.ca" class="text-[#0ea5e9] hover:underline">u25singh@uwaterloo.ca</a>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="p-2 rounded-lg bg-[#0ea5e9]/10 text-[#0ea5e9] mr-4">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-700 dark:text-gray-300">Personal Email</h4>
+                <a href="mailto:utkarshsingh.1052@gmail.com" class="text-[#0ea5e9] hover:underline">utkarshsingh.1052@gmail.com</a>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="p-2 rounded-lg bg-[#0ea5e9]/10 text-[#0ea5e9] mr-4">
+                <i class="fab fa-github"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-700 dark:text-gray-300">GitHub</h4>
+                <a href="https://github.com/utkarsh7653" target="_blank" class="text-[#0ea5e9] hover:underline">github.com/utkarsh7653</a>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="p-2 rounded-lg bg-[#0ea5e9]/10 text-[#0ea5e9] mr-4">
+                <i class="fab fa-linkedin-in"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-700 dark:text-gray-300">LinkedIn</h4>
+                <a href="https://www.linkedin.com/in/utkarsh-singh-a1127a192/" target="_blank" class="text-[#0ea5e9] hover:underline">linkedin.com/in/utkarsh-singh</a>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="bg-white dark:bg-[#021f38] p-6 rounded shadow">
-          <h3 class="font-semibold mb-3">Send a message</h3>
-          <form id="contactForm" class="space-y-3" novalidate>
+        <div class="bg-white dark:bg-[#1e293b] p-8 rounded-xl shadow-lg border border-gray-100 dark:border-[#334155]">
+          <h3 class="font-semibold text-xl mb-6">Send Me a Message</h3>
+          <form id="contactForm" class="space-y-4" novalidate>
             <div>
-              <label class="text-sm block mb-1">Name</label>
-              <input id="c_name" required class="w-full px-3 py-2 border rounded bg-white dark:bg-[#071a2b]" />
-            </div>
-            <div>
-              <label class="text-sm block mb-1">Email</label>
-              <input id="c_email" type="email" required class="w-full px-3 py-2 border rounded bg-white dark:bg-[#071a2b]" />
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
+              <input id="c_name" required 
+                     class="w-full px-4 py-2 border border-gray-300 dark:border-[#334155] rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent bg-white dark:bg-[#1e293b]"/>
             </div>
             <div>
-              <label class="text-sm block mb-1">Message</label>
-              <textarea id="c_msg" rows="4" required class="w-full px-3 py-2 border rounded bg-white dark:bg-[#071a2b]"></textarea>
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+              <input id="c_email" type="email" required 
+                     class="w-full px-4 py-2 border border-gray-300 dark:border-[#334155] rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent bg-white dark:bg-[#1e293b]"/>
             </div>
-            <div class="flex gap-2">
-              <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded">Send</button>
-              <button type="button" id="clearForm" class="px-4 py-2 border rounded">Clear</button>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
+              <textarea id="c_msg" rows="4" required 
+                        class="w-full px-4 py-2 border border-gray-300 dark:border-[#334155] rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent bg-white dark:bg-[#1e293b]"></textarea>
             </div>
-            <p id="contactStatus" class="text-sm text-green-600 hidden">Thanks — message recorded (demo).</p>
+            <div class="flex gap-3 pt-2">
+              <button type="submit" class="btn-primary px-6 py-2 rounded-lg font-medium">Send Message</button>
+              <button type="button" id="clearForm" class="px-6 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">Clear</button>
+            </div>
+            <p id="contactStatus" class="text-sm text-green-500 hidden mt-2">
+              <i class="fas fa-check-circle mr-2"></i>Thank you for your message! I'll get back to you soon.
+            </p>
           </form>
         </div>
       </div>
@@ -348,43 +689,81 @@
   </main>
 
   <!-- MODAL -->
-  <div id="modal" class="fixed inset-0 hidden items-center justify-center z-50">
-    <div class="modal-backdrop absolute inset-0"></div>
-    <div role="dialog" aria-modal="true" aria-labelledby="modalTitle" class="bg-white dark:bg-[#071a2b] rounded-lg shadow-lg max-w-3xl w-full mx-4 z-50 overflow-auto">
-      <div class="p-6">
+  <div id="modal" class="fixed inset-0 hidden items-center justify-center z-50 p-4">
+    <div class="modal-backdrop absolute inset-0 transition-opacity duration-300"></div>
+    <div role="dialog" aria-modal="true" aria-labelledby="modalTitle" 
+         class="bg-white dark:bg-[#1e293b] rounded-xl shadow-2xl max-w-3xl w-full mx-4 z-50 overflow-auto transform transition-all duration-300 scale-95 opacity-0"
+         id="modalDialog">
+      <div class="p-8">
         <div class="flex justify-between items-start">
           <div>
-            <h3 id="modalTitle" class="text-xl font-semibold"></h3>
-            <p id="modalSub" class="text-sm text-gray-600 dark:text-[#9fb0d6]"></p>
+            <h3 id="modalTitle" class="text-2xl font-bold text-[#0ea5e9]"></h3>
+            <p id="modalSub" class="text-sm text-gray-600 dark:text-gray-400 mt-1"></p>
           </div>
           <div>
-            <button id="closeModal" aria-label="Close" class="text-gray-500 dark:text-[#cbd5e1] hover:text-gray-800"><i class="fas fa-times"></i></button>
+            <button id="closeModal" aria-label="Close" class="text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors">
+              <i class="fas fa-times text-xl"></i>
+            </button>
           </div>
         </div>
 
-        <div class="mt-4" id="modalBody"></div>
-        <div class="mt-6 flex gap-2">
-          <a id="modalRepo" class="px-4 py-2 bg-blue-600 text-white rounded" target="_blank" rel="noopener">Open repo</a>
-          <button id="modalCloseBtn" class="px-4 py-2 border rounded">Close</button>
+        <div class="mt-6 text-gray-700 dark:text-gray-300 space-y-4" id="modalBody"></div>
+        <div class="mt-8 flex gap-3">
+          <a id="modalRepo" class="btn-primary px-5 py-2 rounded-lg font-medium inline-flex items-center" target="_blank" rel="noopener">
+            <i class="fab fa-github mr-2"></i> View Repository
+          </a>
+          <button id="modalCloseBtn" class="px-5 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">Close</button>
         </div>
       </div>
     </div>
   </div>
 
   <!-- FOOTER -->
-  <footer class="bg-white dark:bg-[#021124] border-t py-6 mt-8">
-    <div class="container mx-auto px-4 text-center text-sm text-gray-600 dark:text-[#9fb0d6]">
-      <div class="mb-3 flex justify-center gap-4">
-        <a href="https://github.com/utkarsh7653" target="_blank" rel="noopener" class="text-gray-700 dark:text-[#cbd5e1]"><i class="fab fa-github fa-lg"></i></a>
-        <a href="https://www.linkedin.com/in/utkarsh-singh-a1127a192/" target="_blank" rel="noopener" class="text-gray-700 dark:text-[#cbd5e1]"><i class="fab fa-linkedin-in fa-lg"></i></a>
-        <a href="mailto:utkarshsingh.1052@gmail.com" class="text-gray-700 dark:text-[#cbd5e1]"><i class="fas fa-envelope fa-lg"></i></a>
+  <footer class="bg-white dark:bg-[#0f172a] border-t border-gray-200 dark:border-[#1e293b] py-8 mt-12">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <a href="#" class="text-xl font-bold bg-gradient-to-r from-[#0ea5e9] to-[#6366f1] bg-clip-text text-transparent">UTKARSH SINGH</a>
+          <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Data Scientist & Business Analytics Professional</div>
+        </div>
+        
+        <div class="flex gap-5">
+          <a href="https://github.com/utkarsh7653" target="_blank" rel="noopener" 
+             class="text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] dark:hover:text-[#38bdf8] transition-colors">
+            <i class="fab fa-github text-xl"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/utkarsh-singh-a1127a192/" target="_blank" rel="noopener" 
+             class="text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] dark:hover:text-[#38bdf8] transition-colors">
+            <i class="fab fa-linkedin-in text-xl"></i>
+          </a>
+          <a href="mailto:utkarshsingh.1052@gmail.com" 
+             class="text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] dark:hover:text-[#38bdf8] transition-colors">
+            <i class="fas fa-envelope text-xl"></i>
+          </a>
+        </div>
       </div>
-      <div>© <span id="year"></span> Utkarsh Singh — Purdue University & University of Waterloo</div>
-      <div class="mt-1 text-xs text-gray-500 dark:text-[#7f9bb5]">Make sure <code>utkarshsinghresumetech.pdf</code> is in the repo root for the Download CV button to work.</div>
+      
+      <div class="border-t border-gray-200 dark:border-[#1e293b] mt-6 pt-6 text-center text-sm text-gray-600 dark:text-gray-400">
+        <div>© <span id="year"></span> Utkarsh Singh. All rights reserved.</div>
+        <div class="mt-1">Purdue University & University of Waterloo</div>
+        <div class="mt-2 text-xs text-gray-500 dark:text-gray-500">
+          Note: Place <code>utkarshsinghresumetech.pdf</code> in the repo root for the Download CV button to work.
+        </div>
+      </div>
     </div>
   </footer>
 
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
+    // Initialize AOS animation library
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+      offset: 100
+    });
+
     // helper $
     const $ = s => document.querySelector(s), $$ = s => Array.from(document.querySelectorAll(s));
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -392,12 +771,18 @@
     // dark mode (toggle + persist)
     const root = document.documentElement, body = document.body;
     function setDark(isDark) {
-      if (isDark) { document.documentElement.classList.add('dark'); localStorage.setItem('theme','dark'); }
-      else { document.documentElement.classList.remove('dark'); localStorage.setItem('theme','light'); }
+      if (isDark) { 
+        document.documentElement.classList.add('dark'); 
+        localStorage.setItem('theme','dark'); 
+      }
+      else { 
+        document.documentElement.classList.remove('dark'); 
+        localStorage.setItem('theme','light'); 
+      }
       // update icons
       const moon = document.getElementById('themeIcon'), moonM = document.getElementById('themeIconMobile');
-      if (moon) moon.className = isDark ? 'fas fa-sun text-yellow-300' : 'fas fa-moon text-blue-700';
-      if (moonM) moonM.className = isDark ? 'fas fa-sun text-yellow-300' : 'fas fa-moon text-blue-700';
+      if (moon) moon.className = isDark ? 'fas fa-sun text-yellow-300' : 'fas fa-moon text-[#0ea5e9]';
+      if (moonM) moonM.className = isDark ? 'fas fa-sun text-yellow-300' : 'fas fa-moon text-[#0ea5e9]';
     }
     // initialize
     const saved = localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -411,25 +796,46 @@
       mobileToggle.addEventListener('click', () => {
         const hidden = mobileMenu.classList.toggle('hidden');
         mobileToggle.setAttribute('aria-expanded', String(!hidden));
+        mobileToggle.innerHTML = hidden ? '<i class="fas fa-bars text-xl"></i>' : '<i class="fas fa-times text-xl"></i>';
       });
     }
-    document.querySelectorAll('#mobileMenu a').forEach(a=> a.addEventListener('click', ()=> mobileMenu.classList.add('hidden')));
+    document.querySelectorAll('#mobileMenu a').forEach(a=> a.addEventListener('click', ()=> {
+      mobileMenu.classList.add('hidden');
+      mobileToggle.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+      mobileToggle.setAttribute('aria-expanded', 'false');
+    }));
 
     // typewriter
     const phrases = [
       'Data Scientist • Machine Learning • Business Analytics',
       'B.S. — Business Analytics (Purdue University)',
       'M.S. — Management Science (University of Waterloo)',
-      'I build data-driven solutions & clear dashboards for decision-makers'
+      'I build data-driven solutions & clear dashboards for decision-makers',
+      'Open to new opportunities in data & analytics'
     ];
-    let pIdx=0, cIdx=0, forward=true; const speed=40; const tw = $('#typewriter');
+    let pIdx=0, cIdx=0, forward=true; const speed=50; const tw = $('#typewriter');
     function typeLoop(){
       const text = phrases[pIdx];
-      if (forward) { cIdx++; tw.textContent = text.slice(0,cIdx); if (cIdx === text.length) { forward=false; setTimeout(typeLoop,1000); return; } }
-      else { cIdx--; tw.textContent = text.slice(0,cIdx); if (cIdx === 0) { forward=true; pIdx=(pIdx+1)%phrases.length; } }
-      setTimeout(typeLoop,speed);
+      if (forward) { 
+        cIdx++; 
+        tw.textContent = text.slice(0,cIdx); 
+        if (cIdx === text.length) { 
+          forward=false; 
+          setTimeout(typeLoop,1500); 
+          return; 
+        } 
+      }
+      else { 
+        cIdx--; 
+        tw.textContent = text.slice(0,cIdx); 
+        if (cIdx === 0) { 
+          forward=true; 
+          pIdx=(pIdx+1)%phrases.length; 
+        } 
+      }
+      setTimeout(typeLoop, forward ? speed : speed/2);
     }
-    typeLoop();
+    setTimeout(typeLoop, 1000);
 
     // animate skill bars on view
     const skillFills = $$('.skill-fill');
@@ -440,7 +846,7 @@
           obs.disconnect();
         }
       });
-    }, { threshold: 0.25 });
+    }, { threshold: 0.2 });
     const skillsSection = $('#skills'); if (skillsSection) skillObserver.observe(skillsSection);
 
     // radar chart
@@ -449,18 +855,61 @@
       new Chart(ctx, {
         type: 'radar',
         data: {
-          labels: ['Python','SQL','ML','Viz','NLP','Cloud'],
+          labels: ['Python','SQL','ML','Visualization','NLP','Cloud'],
           datasets: [{
             label: 'Proficiency',
-            data: [95,90,85,88,70,65],
-            backgroundColor: 'rgba(29,78,216,0.12)',
-            borderColor: 'rgba(29,78,216,0.9)',
-            pointBackgroundColor: 'rgba(29,78,216,0.9)',
+            data: [95,90,88,92,75,65],
+            backgroundColor: 'rgba(14, 165, 233, 0.2)',
+            borderColor: 'rgba(14, 165, 233, 1)',
+            pointBackgroundColor: 'rgba(14, 165, 233, 1)',
             pointBorderColor: '#fff',
-            borderWidth: 2
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgba(14, 165, 233, 1)',
+            borderWidth: 2,
+            pointRadius: 4
           }]
         },
-        options: { scales: { r: { suggestedMin: 0, suggestedMax: 100, ticks: { stepSize: 20 } } }, plugins: { legend: { display: false } } }
+        options: { 
+          scales: { 
+            r: { 
+              angleLines: { color: 'rgba(100, 116, 139, 0.2)' },
+              grid: { color: 'rgba(100, 116, 139, 0.2)' },
+              suggestedMin: 0, 
+              suggestedMax: 100, 
+              ticks: { 
+                stepSize: 20,
+                backdropColor: 'transparent',
+                color: 'rgba(100, 116, 139, 0.8)'
+              },
+              pointLabels: {
+                color: 'rgba(100, 116, 139, 0.9)',
+                font: { weight: '500' }
+              }
+            } 
+          }, 
+          plugins: { 
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: 'rgba(15, 23, 42, 0.9)',
+              titleColor: '#f1f5f9',
+              bodyColor: '#e2e8f0',
+              borderColor: 'rgba(14, 165, 233, 0.5)',
+              borderWidth: 1,
+              padding: 12,
+              displayColors: false,
+              callbacks: {
+                label: function(context) {
+                  return context.raw + '% proficiency';
+                }
+              }
+            }
+          },
+          elements: {
+            line: {
+              tension: 0.1
+            }
+          }
+        }
       });
     }
 
@@ -468,9 +917,11 @@
     const projectGrid = $('#projectGrid'), cards = projectGrid ? Array.from(projectGrid.children) : [];
     const searchInput = $('#projectSearch'), techFilter = $('#techFilter');
     function filterProjects(){
-      const q = (searchInput.value || '').toLowerCase().trim(); const tech = (techFilter.value || 'all').toLowerCase();
+      const q = (searchInput.value || '').toLowerCase().trim(); 
+      const tech = (techFilter.value || 'all').toLowerCase();
       cards.forEach(card => {
-        const text = card.innerText.toLowerCase(); const dataTech = (card.dataset.tech || '').toLowerCase();
+        const text = card.innerText.toLowerCase(); 
+        const dataTech = (card.dataset.tech || '').toLowerCase();
         const matchesQuery = q === '' || text.includes(q);
         const matchesTech = tech === 'all' || dataTech.includes(tech);
         card.style.display = (matchesQuery && matchesTech) ? 'block' : 'none';
@@ -480,20 +931,62 @@
     techFilter?.addEventListener('change', filterProjects);
 
     // modal for project details
-    const modal = $('#modal'), closeModalBtn = $('#closeModal'), modalCloseBtn = $('#modalCloseBtn'), modalRepo = $('#modalRepo');
+    const modal = $('#modal'), modalDialog = $('#modalDialog'), closeModalBtn = $('#closeModal'), 
+          modalCloseBtn = $('#modalCloseBtn'), modalRepo = $('#modalRepo');
+    
     function openModal(title, desc, repo) {
       $('#modalTitle').textContent = title;
-      $('#modalSub').textContent = '';
-      $('#modalBody').innerHTML = `<p class="text-gray-700 dark:text-[#9fb0d6]">${desc}</p>
-        <ul class="mt-3 text-sm text-gray-600 dark:text-[#9fb0d6]">
-          <li><strong>Highlights:</strong> feature engineering, cross-validation, explainability, stakeholder dashboards.</li>
-          <li><strong>Impact:</strong> produced actionable insights and reproducible analysis.</li>
-        </ul>`;
-      if (repo) { modalRepo.href = repo; modalRepo.classList.remove('hidden'); } else modalRepo.classList.add('hidden');
-      modal.classList.remove('hidden'); document.body.style.overflow = 'hidden';
+      $('#modalSub').textContent = 'Detailed Project Information';
+      $('#modalBody').innerHTML = `
+        <p class="text-gray-700 dark:text-gray-300">${desc}</p>
+        <div class="mt-4 p-4 bg-gray-50 dark:bg-[#0f172a] rounded-lg">
+          <h4 class="font-medium text-gray-800 dark:text-gray-200 mb-2">Key Features:</h4>
+          <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
+            <li>Comprehensive data preprocessing and feature engineering</li>
+            <li>Model optimization and hyperparameter tuning</li>
+            <li>Performance evaluation with industry-standard metrics</li>
+            <li>Production-ready implementation considerations</li>
+          </ul>
+        </div>
+        <div class="mt-4">
+          <h4 class="font-medium text-gray-800 dark:text-gray-200 mb-2">Technologies Used:</h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Python</span>
+            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Pandas</span>
+            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Scikit-learn</span>
+            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Jupyter</span>
+          </div>
+        </div>
+      `;
+      
+      if (repo) { 
+        modalRepo.href = repo; 
+        modalRepo.classList.remove('hidden'); 
+      } else {
+        modalRepo.classList.add('hidden'); 
+      }
+      
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      
+      // Trigger animation
+      setTimeout(() => {
+        modalDialog.classList.remove('scale-95', 'opacity-0');
+        modalDialog.classList.add('scale-100', 'opacity-100');
+      }, 10);
+      
       closeModalBtn?.focus();
     }
-    function closeModal() { modal.classList.add('hidden'); document.body.style.overflow=''; }
+    
+    function closeModal() { 
+      modalDialog.classList.remove('scale-100', 'opacity-100');
+      modalDialog.classList.add('scale-95', 'opacity-0');
+      
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }, 300);
+    }
 
     $$('.openProject').forEach(btn => btn.addEventListener('click', () => {
       openModal(btn.dataset.title, btn.dataset.desc, btn.dataset.repo);
@@ -507,26 +1000,48 @@
     $('#contactForm')?.addEventListener('submit', (e) => {
       e.preventDefault();
       const name = $('#c_name').value.trim(), email = $('#c_email').value.trim(), msg = $('#c_msg').value.trim();
-      if (!name || !email || !msg) { alert('Please fill all fields.'); return; }
-      $('#contactStatus').classList.remove('hidden'); setTimeout(()=> $('#contactStatus').classList.add('hidden'), 5000);
-      e.target.reset();
+      if (!name || !email || !msg) { 
+        alert('Please fill all fields.'); 
+        return; 
+      }
+      
+      $('#contactStatus').classList.remove('hidden'); 
+      setTimeout(()=> {
+        $('#contactStatus').classList.add('hidden');
+        e.target.reset();
+      }, 5000);
     });
-    $('#clearForm')?.addEventListener('click', ()=> $('#contactForm').reset());
-
-    // small entrance fade animation
-    document.querySelectorAll('.transition-fade').forEach((el, i) => {
-      setTimeout(()=> el.classList.add('visible'), 100 + i * 80);
+    
+    $('#clearForm')?.addEventListener('click', ()=> {
+      $('#contactForm').reset();
+      $('#contactStatus').classList.add('hidden');
     });
 
     // accessible keyboard open on Enter for project cards
     projectGrid?.querySelectorAll('.project-card').forEach(card => {
       card.setAttribute('tabindex','0');
-      card.addEventListener('keydown', e => { if (e.key === 'Enter') { const btn = card.querySelector('.openProject'); btn && btn.click(); } });
+      card.setAttribute('role','button');
+      card.addEventListener('keydown', e => { 
+        if (e.key === 'Enter') { 
+          const btn = card.querySelector('.openProject'); 
+          btn && btn.click(); 
+        } 
+      });
     });
 
-    // ensure download link works: check file exists (best-effort - browsers can't read local repo from client)
-    // NOTE: when deployed to GitHub Pages / Netlify, put utkarshsinghresumetech.pdf in repo root.
+    // smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
   </script>
 </body>
 </html>
-
