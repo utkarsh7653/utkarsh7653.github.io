@@ -354,114 +354,124 @@
 
       <div id="projectGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Parkinson's -->
-        <article class="project-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all" data-tech="ml,python" data-aos="fade-up" data-aos-delay="50">
-          <h3 class="font-semibold text-xl mb-2">Parkinson's Disease Progression Prediction</h3>
-          <p class="text-gray-600 dark:text-gray-400 mb-4">Advanced regression and classification pipelines to predict UPDRS progression from biomedical & signal-derived features.</p>
-          <div class="flex gap-2 mb-5 flex-wrap">
-            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Python</span>
-            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Scikit-learn</span>
-            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">TensorFlow</span>
-            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">XGBoost</span>
-          </div>
-          <div class="flex gap-3">
-            <button class="openProject btn btn-primary px-4 py-2 rounded-lg" 
-                    data-title="Parkinson's Disease Progression Prediction" 
-                    data-desc="Developed comprehensive regression and classification pipelines incorporating feature engineering, cross-validation strategies, and model ensembling to predict disease progression metrics from voice recordings and biomedical markers. Achieved 89% accuracy in classifying disease stages and reduced MAE by 32% compared to baseline models through careful feature selection and hyperparameter optimization." 
-                    data-repo="https://github.com/utkarsh7653/Parkinson-s-Disease-Progression-Prediction">View Details</button>
-            <a href="https://github.com/utkarsh7653/Parkinson-s-Disease-Progression-Prediction" target="_blank" class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">
-              <i class="fab fa-github mr-2"></i>Code
-            </a>
-          </div>
-        </article>
-
-        <!-- Seqt2SQL -->
-        <article class="project-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all" data-tech="nlp,python" data-aos="fade-up" data-aos-delay="100">
-          <h3 class="font-semibold text-xl mb-2">Seqt2SQL (Collaborative Project)</h3>
-          <p class="text-gray-600 dark:text-gray-400 mb-4">Transformer-based sequence-to-SQL system converting natural language queries to structured database commands.</p>
-          <div class="flex gap-2 mb-5">
-            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">NLP</span>
-            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Transformers</span>
-            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">PyTorch</span>
-          </div>
-          <div class="flex gap-3">
-            <button class="openProject btn btn-primary px-4 py-2 rounded-lg" 
-                    data-title="Seqt2SQL (Collaborative Project)" 
-                    data-desc="Collaborated on developing a natural language to SQL translation system using transformer architectures with schema-aware decoding. Implemented attention mechanisms and pointer networks to handle database schema references, achieving 76% execution accuracy on the Spider benchmark. Contributed to the data preprocessing pipeline and evaluation metrics calculation." 
-                    data-repo="https://github.com/chirag300/Seqt2SQL">View Details</button>
-            <a href="https://github.com/chirag300/Seqt2SQL" target="_blank" class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">
-              <i class="fab fa-github mr-2"></i>Code
-            </a>
-          </div>
-        </article>
+<article class="project-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all" data-tech="ml,python" data-aos="fade-up" data-aos-delay="50">
+  <h3 class="font-semibold text-xl mb-2">Parkinson's Disease Progression Prediction</h3>
+  <p class="text-gray-600 dark:text-gray-400 mb-4">Developed neural network and ensemble models to predict UPDRS scores from protein/peptide biomarkers with 16.6% R² improvement over baseline.</p>
+  <div class="flex gap-2 mb-5 flex-wrap">
+    <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Python</span>
+    <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">TensorFlow</span>
+    <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Scikit-learn</span>
+    <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">XGBoost</span>
+  </div>
+  <div class="flex gap-3">
+    <button class="openProject btn btn-primary px-4 py-2 rounded-lg" 
+            data-title="Parkinson's Disease Progression Prediction" 
+            data-desc="Implemented a multi-output neural network (128-64-32 architecture with batch normalization and dropout) that achieved 16.6% R² score (3x improvement over baseline) in predicting all 4 UPDRS progression metrics from protein/peptide biomarkers. The model featured:
+            - Batch normalization layers for stable training
+            - 20% dropout for regularization
+            - Adam optimizer with MSE loss
+            - 50 epochs training with early stopping
+            
+            Complemented with Random Forest classifiers (F1=0.89 for UPDRS-1) for severity categorization. Key findings:
+            - Medication status was the most important feature (35.2% importance)
+            - Reduced MAE from 5.16 (baseline) to 4.64
+            - Addressed class imbalance through strategic binning
+            
+            The solution provides both continuous progression scores and severity categories for clinical decision support." 
+            data-repo="https://github.com/utkarsh7653/Parkinson-s-Disease-Progression-Prediction">View Details</button>
+    <a href="https://github.com/utkarsh7653/Parkinson-s-Disease-Progression-Prediction" target="_blank" class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">
+      <i class="fab fa-github mr-2"></i>Code
+    </a>
+  </div>
+</article>
+       <!-- Seqt2SQL -->
+<article class="project-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all" data-tech="nlp,python" data-aos="fade-up" data-aos-delay="100">
+  <h3 class="font-semibold text-xl mb-2">Lightweight Text-to-SQL with Transformers</h3>
+  <p class="text-gray-600 dark:text-gray-400 mb-4">Evaluated T5-Small, BART-Small, and GPT-2 models on the Spider dataset for schema-aware SQL generation in low-resource settings.</p>
+  <div class="flex gap-2 mb-5">
+    <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">NLP</span>
+    <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Transformers</span>
+    <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">PyTorch</span>
+    <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">HuggingFace</span>
+  </div>
+  <div class="flex gap-3">
+    <button class="openProject btn btn-primary px-4 py-2 rounded-lg" 
+            data-title="Lightweight Text-to-SQL with Transformers" 
+            data-desc="Developed a model-agnostic pipeline for text-to-SQL generation using compact transformers (60M-139M parameters) on the Spider benchmark. Fine-tuned T5-Small achieved 27.8% Logical Form Accuracy (LFAcc), outperforming BART-Small (23.98%) and GPT-2 (20.1%) through schema-aware formatting and constrained decoding. Implemented evaluation metrics (LFAcc, BLEU, EM) demonstrating encoder-decoder models' superiority in structured query generation under resource constraints. The modular pipeline supports future enhancements like advanced schema linking and alternative base models." 
+            data-repo="https://github.com/chirag300/Seqt2SQL">View Details</button>
+    <a href="https://github.com/chirag300/Seqt2SQL" target="_blank" class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">
+      <i class="fab fa-github mr-2"></i>Code
+    </a>
+  </div>
+</article>
 
         <!-- Youth substance -->
-        <article class="project-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all" data-tech="analytics,python,viz" data-aos="fade-up" data-aos-delay="150">
-          <h3 class="font-semibold text-xl mb-2">Youth Substance Use Analysis (Canada)</h3>
-          <p class="text-gray-600 dark:text-gray-400 mb-4">Identified key social determinants of youth substance use through advanced statistical modeling.</p>
-          <div class="flex gap-2 mb-5">
-            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Python</span>
-            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Pandas</span>
-            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Seaborn</span>
-            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Tableau</span>
-          </div>
-          <div class="flex gap-3">
-            <button class="openProject btn btn-primary px-4 py-2 rounded-lg" 
-                    data-title="Youth Substance Use Analysis (Canada)" 
-                    data-desc="Conducted comprehensive analysis of Canadian youth substance use patterns by integrating national survey data with socioeconomic indicators. Developed logistic regression and random forest models to identify key risk factors (accuracy = 82%, AUC = 0.87). Created policy-ready visualizations and an interactive Tableau dashboard highlighting regional disparities and intervention opportunities." 
-                    data-repo="https://github.com/utkarsh7653/Data-Driven-Analysis-of-Social-and-Demographic-Determinants-of-Youth-Substance-Use-in-Canada">View Details</button>
-            <a href="https://github.com/utkarsh7653/Data-Driven-Analysis-of-Social-and-Demographic-Determinants-of-Youth-Substance-Use-in-Canada" target="_blank" class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">
-              <i class="fab fa-github mr-2"></i>Code
-            </a>
-          </div>
-        </article>
+<article class="project-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all" data-tech="python,stats,analytics" data-aos="fade-up" data-aos-delay="150">
+  <h3 class="font-semibold text-xl mb-2">Youth Substance Use Determinants (Canada)</h3>
+  <p class="text-gray-600 dark:text-gray-400 mb-4">Advanced statistical modeling of 60K+ student records identifying peer influence as strongest predictor (OR=951.35).</p>
+  <div class="flex gap-2 mb-5 flex-wrap">
+    <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Bayesian Stats</span>
+    <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">PyMC3</span>
+    <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Lasso</span>
+    <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Multilevel Models</span>
+    <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">PSM</span>
+  </div>
+  <div class="flex gap-3">
+    <button class="openProject btn btn-primary px-4 py-2 rounded-lg" 
+            data-title="Youth Substance Use Determinants (Canada)" 
+            data-desc="Led statistical analysis of 2018/2019 CSTADS data (60K+ students) using 5 modeling approaches:<br><br>
+            • <strong>Bayesian Logistic Regression</strong> (WAIC: -13901.97) identified grade level (β=0.759) and income (β=-0.179) as key predictors<br>
+            • <strong>Lasso Regression</strong> achieved 0.7779 AUC for alcohol use prediction<br>
+            • <strong>Multilevel Modeling</strong> revealed peer influence as dominant factor (OR=951.35, p<0.001)<br>
+            • <strong>Propensity Score Matching</strong> quantified +0.52 smoking risk from social exposure<br>
+            • <strong>Random Forest</strong> ranked grade level (importance=0.41) as top predictor<br><br>
+            Key finding: 99.98% of smokers reported peer influence vs 54.92% non-smokers (χ²=187.29, p<0.001)." 
+            data-repo="https://github.com/utkarsh7653/Data-Driven-Analysis-of-Social-and-Demographic-Determinants-of-Youth-Substance-Use-in-Canada">View Details</button>
+    <a href="https://github.com/utkarsh7653/Data-Driven-Analysis-of-Social-and-Demographic-Determinants-of-Youth-Substance-Use-in-Canada" target="_blank" class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">
+      <i class="fab fa-github mr-2"></i>Code
+    </a>
+  </div>
+</article>
 
-        <!-- Crop yield -->
-        <article class="project-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all" data-tech="ml,python" data-aos="fade-up" data-aos-delay="200">
-          <h3 class="font-semibold text-xl mb-2">Crop Yield Prediction</h3>
-          <p class="text-gray-600 dark:text-gray-400 mb-4">Ensembled geospatial models with climate data for agricultural yield forecasting (RMSE improvement of 28%).</p>
-          <div class="flex gap-2 mb-5">
-            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">LightGBM</span>
-            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Geospatial</span>
-            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Google Earth</span>
-          </div>
-          <div class="flex gap-3">
-            <button class="openProject btn btn-primary px-4 py-2 rounded-lg" 
-                    data-title="Crop Yield Prediction" 
-                    data-desc="Engineered features from satellite imagery, soil maps, and climate data to build an ensemble model (LightGBM + Random Forest) for crop yield prediction. Achieved 28% improvement in RMSE over baseline models by incorporating temporal weather patterns and soil quality indices. Developed a Flask API for real-time yield estimates at the county level." 
-                    data-repo="https://github.com/utkarsh7653/Crop-Yield-Prediction">View Details</button>
-            <a href="https://github.com/utkarsh7653/Crop-Yield-Prediction" target="_blank" class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">
-              <i class="fab fa-github mr-2"></i>Code
-            </a>
-          </div>
-        </article>
+       <!-- Crop yield -->
+<article class="project-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all" data-tech="ml,python" data-aos="fade-up" data-aos-delay="200">
+  <h3 class="font-semibold text-xl mb-2">Crop Yield Prediction</h3>
+  <p class="text-gray-600 dark:text-gray-400 mb-4">Implemented machine learning models (LightGBM & Random Forest) to predict crop yields using climate and agricultural data.</p>
+  <div class="flex gap-2 mb-5">
+    <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">LightGBM</span>
+    <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Random Forest</span>
+    <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">EDA</span>
+    <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Feature Engineering</span>
+  </div>
+  <div class="flex gap-3">
+    <button class="openProject btn btn-primary px-4 py-2 rounded-lg" 
+            data-title="Crop Yield Prediction" 
+            data-desc="Performed exploratory data analysis on World Bank agricultural dataset to identify key yield factors. Implemented and compared Random Forest and LightGBM models for crop yield prediction, with comprehensive feature engineering and evaluation metrics (MAE, RMSE, R2). Analyzed relationships between climate variables (rainfall, temperature) and pesticide use with crop yields across different regions." 
+            data-repo="https://github.com/utkarsh7653/Crop-Yield-Prediction">View Details</button>
+    <a href="https://github.com/utkarsh7653/Crop-Yield-Prediction" target="_blank" class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">
+      <i class="fab fa-github mr-2"></i>Code
+    </a>
+  </div>
+</article>
 
-        <!-- NGO funding -->
         <article class="project-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all" data-tech="analytics,python,viz" data-aos="fade-up" data-aos-delay="250">
-          <h3 class="font-semibold text-xl mb-2">NGO Funding Allocation</h3>
-          <p class="text-gray-600 dark:text-gray-400 mb-4">PCA + clustering analysis to optimize NGO funding distribution across 150+ countries.</p>
-          <div class="flex gap-2 mb-5">
-            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Clustering</span>
-            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">PCA</span>
-            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Power BI</span>
-          </div>
-          <div class="flex gap-3">
-            <button class="openProject btn btn-primary px-4 py-2 rounded-lg" 
-                    data-title="NGO Funding Allocation" 
-                    data-desc="Applied dimensionality reduction (PCA) and k-means clustering to segment 150+ countries based on 25 socioeconomic indicators. Developed a funding prioritization framework that increased potential impact by 42% compared to traditional approaches. Built an interactive Power BI dashboard enabling dynamic scenario analysis for NGO stakeholders." 
-                    data-repo="https://github.com/utkarsh7653/NGO-Funding-Analysis">View Details</button>
-            <a href="https://github.com/utkarsh7653/NGO-Funding-Analysis" target="_blank" class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">
-              <i class="fab fa-github mr-2"></i>Code
-            </a>
-          </div>
-        </article>
-      </div>
-
-      <div class="mt-12 text-center" data-aos="fade-up">
-        <a href="https://github.com/utkarsh7653?tab=repositories" target="_blank" rel="noopener" class="btn-primary px-6 py-3 rounded-lg font-medium inline-flex items-center">
-          <i class="fab fa-github mr-2"></i> Explore More Projects on GitHub
-        </a>
-      </div>
-    </section>
+  <h3 class="font-semibold text-xl mb-2">NGO Funding Allocation</h3>
+  <p class="text-gray-600 dark:text-gray-400 mb-4">Data-driven approach to identify developing countries most in need of aid by analyzing socioeconomic indicators like child mortality, GDP, and life expectancy across 167 nations.</p>
+  <div class="flex gap-2 mb-5">
+    <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Clustering</span>
+    <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">PCA</span>
+    <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Python</span>
+  </div>
+  <div class="flex gap-3">
+    <button class="openProject btn btn-primary px-4 py-2 rounded-lg" 
+            data-title="NGO Funding Allocation" 
+            data-desc="This project analyzes socioeconomic data from 167 countries to optimize NGO funding distribution. Using Python, I performed exploratory data analysis, applied PCA for dimensionality reduction, and implemented k-means clustering to group countries by development needs. The analysis revealed key indicators like child mortality, income levels, and health expenditures that most strongly differentiate countries. The final Power BI dashboard enables NGOs to visualize country clusters and make data-driven funding decisions, with potential to increase impact by 42% compared to traditional allocation methods." 
+            data-repo="https://github.com/utkarsh7653/NGO-Funding-Analysis">View Details</button>
+    <a href="https://github.com/utkarsh7653/NGO-Funding-Analysis" target="_blank" class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">
+      <i class="fab fa-github mr-2"></i>Code
+    </a>
+  </div>
+</article>
 
     <!-- SKILLS -->
     <section id="skills" class="mb-20" data-aos="fade-up">
@@ -811,7 +821,7 @@
       'B.S. — Business Analytics (Purdue University)',
       'M.S. — Management Science (University of Waterloo)',
       'I build data-driven solutions & clear dashboards for decision-makers',
-      'Open to new opportunities in data & analytics'
+      'Open to new opportunities in analytics, machine learning, supply chain '
     ];
     let pIdx=0, cIdx=0, forward=true; const speed=50; const tw = $('#typewriter');
     function typeLoop(){
