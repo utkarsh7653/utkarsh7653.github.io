@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Utkarsh Singh | Data Scientist & Analytics Professional</title>
-  <meta name="description" content="Data Scientist & Business Analytics Professional with expertise in Machine Learning, Data Visualization, and Business Intelligence">
+  <title>Utkarsh Singh | Data Science & Analytics Expert</title>
+  <meta name="description" content="Data Science & Analytics Professional specializing in Machine Learning, Business Intelligence, and Data Visualization">
   
   <!-- Preload critical resources -->
   <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
@@ -40,6 +40,7 @@
           },
           fontFamily: {
             sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+            display: ['Inter', 'sans-serif'],
           },
           animation: {
             'float': 'float 6s ease-in-out infinite',
@@ -95,239 +96,106 @@
       background-color: var(--bg);
       color: var(--text);
       transition: background-color 0.3s ease, color 0.3s ease;
+      margin: 0;
+      padding: 0;
     }
-    
-/* Hero Section - Optimized Contrast */
-.hero {
-  background: linear-gradient(135deg, #0c4a6e 0%, #4338ca 100%);
-  clip-path: ellipse(120% 80% at 50% 0%);
-  position: relative;
-  overflow: hidden;
-}
 
-/* Subtle particle effect background */
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.1) 0%, transparent 50%);
-  z-index: 0;
-}
-
-/* Social Links - Enhanced Visibility */
-.social-links-container {
-  display: flex;
-  justify-content: center;
-  gap: 1.25rem;
-  margin-top: 2.5rem;
-  flex-wrap: wrap;
-}
-
-.social-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.9rem 1.8rem;
-  border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(8px);
-  border: 1.5px solid rgba(255, 255, 255, 0.4);
-  color: white;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  min-width: 120px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-}
-
-.social-link:hover {
-  background: rgba(255, 255, 255, 0.35);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Buttons - Optimal Contrast */
-.btn-primary {
-  background: white;
-  color: #0c4a6e;
-  font-weight: 700;
-  padding: 1.1rem 2.5rem;
-  border-radius: 12px;
-  border: none;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.btn-primary:hover {
-  background: #f8fafc;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-}
-
-.btn-secondary {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(8px);
-  border: 1.5px solid rgba(255, 255, 255, 0.4);
-  color: white;
-  font-weight: 600;
-  padding: 1.1rem 2.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* Typography - Clear Hierarchy */
-.hero h1 {
-  color: white;
-  font-size: 3.25rem;
-  line-height: 1.2;
-  font-weight: 800;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1.5rem;
-  line-height: 1.5;
-  font-weight: 500;
-  max-width: 36rem;
-  margin-left: auto;
-  margin-right: auto;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .hero {
-    clip-path: ellipse(150% 80% at 50% 0%);
-    padding-top: 7rem;
-    padding-bottom: 7rem;
-  }
-  
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-  
-  .hero p {
-    font-size: 1.25rem;
-  }
-  
-  .hero-buttons {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .hero-buttons a, 
-  .social-link {
-    width: 100%;
-    text-align: center;
-    padding: 1rem;
-  }
-}
-/* Navigation Contrast */
-nav {
-  background: rgba(10, 61, 98, 0.95) !important; /* Matching dark blue */
-  border-bottom: 1px solid rgba(255,255,255,0.2) !important;
-}
-
-nav a {
-  color: white !important;
-}
-    
-    /* Project Cards - Enhanced */
-    .project-card {
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-      border-left: 4px solid var(--primary);
-      background: var(--card);
+    /* ===================== */
+    /* HERO SECTION DESIGN */
+    /* ===================== */
+    .hero-container {
       position: relative;
+      isolation: isolate;
+      background: linear-gradient(135deg, #0c4a6e 0%, #4338ca 100%);
       overflow: hidden;
+      min-height: 100vh;
       display: flex;
-      flex-direction: column;
-      height: 100%;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    }
-    
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-      transition: 0.5s;
-    }
-    
-    .project-card:hover::before {
-      left: 100%;
-    }
-    
-    .project-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    }
-    
-    /* Badges - Enhanced */
-    .badge {
-      display: inline-flex;
       align-items: center;
-      padding: 0.35rem 0.85rem;
-      border-radius: 9999px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      background-color: rgba(14, 165, 233, 0.1);
-      color: var(--primary);
-      transition: all 0.2s ease;
+      justify-content: center;
     }
-    
-    .badge:hover {
-      transform: scale(1.05);
-    }
-    
-    /* Section Titles - Enhanced */
-    .section-title {
+
+    .hero-content {
       position: relative;
-      display: inline-block;
-      margin-bottom: 2.5rem;
+      z-index: 2;
+      padding: 6rem 0;
     }
-    
-    .section-title::after {
-      content: '';
+
+    .hero-wave {
       position: absolute;
-      bottom: -12px;
+      bottom: 0;
       left: 0;
-      width: 60px;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary), #6366f1);
-      border-radius: 4px;
+      width: 100%;
+      height: 120px;
+      background: var(--bg);
+      clip-path: path('M0,96 C150,192 350,0 500,96 C650,192 850,0 1000,96 L1000,0 L0,0 Z');
+      z-index: 1;
     }
-    
-    /* Modal - Enhanced */
-    .modal-backdrop {
-      background: rgba(2,6,23,0.8);
+
+    .hero-bg-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255,255,255,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(255,255,255,0.05) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .hero-bg-grid {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      z-index: 1;
+    }
+
+    /* Profile image styling */
+    .profile-image {
+      width: 180px;
+      height: 180px;
+      border: 4px solid rgba(255,255,255,0.9);
+      box-shadow: 0 0 30px rgba(14, 165, 233, 0.7);
+    }
+
+    @media (min-width: 768px) {
+      .profile-image {
+        width: 220px;
+        height: 220px;
+      }
+    }
+
+    /* Social links */
+    .social-link {
       backdrop-filter: blur(8px);
+      transition: all 0.3s ease;
     }
-    
-    /* Skill Bars - Enhanced */
+
+    .social-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    /* ===================== */
+    /* REST OF THE STYLES */
+    /* ===================== */
+    .project-card {
+      transition: all 0.3s ease;
+      border-left: 4px solid var(--primary);
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
     .skill-bar {
       height: 8px;
       background: rgba(100, 116, 139, 0.1);
       border-radius: 4px;
       overflow: hidden;
     }
-    
+
     .skill-fill {
       height: 100%;
       background: linear-gradient(90deg, var(--primary), #6366f1);
@@ -335,34 +203,8 @@ nav a {
       width: 0;
       transition: width 1s ease-out;
     }
-    
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-      .hero {
-        clip-path: ellipse(150% 80% at 50% 0%);
-      }
-      
-      .hero-buttons {
-        flex-direction: column;
-        gap: 0.75rem;
-      }
-      
-      .hero-buttons a {
-        width: 100%;
-        text-align: center;
-      }
-      
-      .social-links-container {
-        gap: 1rem;
-      }
-      
-      .social-link {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
-      }
-    }
-    
-    /* Dark mode toggle - Enhanced */
+
+    /* Dark mode toggle */
     .toggle-checkbox:checked {
       right: 0;
       border-color: #68D391;
@@ -370,88 +212,163 @@ nav a {
     .toggle-checkbox:checked + .toggle-label {
       background-color: #68D391;
     }
-    
-    /* Floating animation for profile picture */
-    .floating {
-      animation: float 6s ease-in-out infinite;
+
+    /* Project Modal */
+    .project-modal {
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
     }
     
-    /* Pulse animation for call-to-action */
-    .pulse-animate {
-      animation: pulse-slow 3s infinite;
+    .project-modal.active {
+      opacity: 1;
+      visibility: visible;
     }
     
-    /* Enhanced hover effects */
+    .modal-overlay {
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(5px);
+    }
+    
+    .modal-content {
+      transform: translateY(20px);
+      transition: transform 0.3s ease;
+    }
+    
+    .project-modal.active .modal-content {
+      transform: translateY(0);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .hero-content {
+        padding-top: 4rem;
+        padding-bottom: 6rem;
+      }
+      
+      .hero-buttons {
+        flex-direction: column;
+      }
+      
+      .social-links {
+        flex-direction: column;
+      }
+    }
+
+    /* Fix for white gap */
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden;
+    }
+    
+    /* Badge styling */
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      background-color: rgba(14, 165, 233, 0.1);
+      color: #0ea5e9;
+    }
+    
+    /* Hover grow effect */
     .hover-grow {
       transition: transform 0.3s ease;
     }
     
     .hover-grow:hover {
-      transform: scale(1.03);
+      transform: scale(1.05);
+    }
+    
+    /* Gradient text */
+    .gradient-text {
+      background: linear-gradient(90deg, #0ea5e9, #6366f1);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary);
+      border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--primary-dark);
     }
   </style>
 </head>
 <body class="antialiased">
 
-  <!-- Hero Section - Redesigned -->
-<div class="hero bg-gradient-to-br from-primary-900 to-primary-700 relative overflow-hidden">
-  <!-- Background pattern -->
-  <div class="absolute inset-0 opacity-10">
-    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgeD0iMCIgeT0iMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')]"></div>
-  </div>
-
-  <div class="container mx-auto px-4 py-24 md:py-32 relative z-10">
-    <div class="max-w-4xl mx-auto text-center">
-      <!-- Profile Image -->
-      <div class="floating inline-block mb-8">
-        <img src="https://github.com/utkarsh7653.png" alt="Utkarsh Singh" loading="lazy" 
-             class="w-40 h-40 md:w-48 md:h-48 rounded-full mx-auto border-4 border-white/90 shadow-2xl object-cover hover-grow transition-transform duration-300" 
-             style="box-shadow: 0 0 30px rgba(14, 165, 233, 0.7);"/>
-      </div>
-      
-      <!-- Name and Title -->
-      <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight" data-aos="fade-up">
-        Utkarsh Singh
-      </h1>
-      
-      <p class="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto font-medium" data-aos="fade-up" data-aos-delay="100">
-        <span id="typewriter" class="typewriter"></span>
-      </p>
-      
-      <!-- Action Buttons -->
-      <div class="flex flex-wrap justify-center gap-4 mb-10" data-aos="fade-up" data-aos-delay="200">
-        <a href="#contact" class="btn-primary bg-white text-primary-900 hover:bg-primary-50 px-8 py-3 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
-          <i class="fas fa-paper-plane"></i> Contact Me
-        </a>
-        <a href="./utkarshsinghresumetech.pdf" download class="btn-secondary bg-primary-600 hover:bg-primary-500 text-white px-8 py-3 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 border-2 border-primary-400">
-          <i class="fas fa-file-download"></i> Download CV
-        </a>
-      </div>
-      
-      <!-- Social Links -->
-      <div class="social-links-container" data-aos="fade-up" data-aos-delay="300">
-        <a href="https://github.com/utkarsh7653" target="_blank" rel="noopener" class="social-link bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 flex items-center gap-2">
-          <i class="fab fa-github text-lg"></i> GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/utkarsh-singh-a1127a192/" target="_blank" rel="noopener" class="social-link bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 flex items-center gap-2">
-          <i class="fab fa-linkedin-in text-lg"></i> LinkedIn
-        </a>
-        <a href="mailto:u25singh@uwaterloo.ca" class="social-link bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 flex items-center gap-2">
-          <i class="fas fa-envelope text-lg"></i> Email
-        </a>
+  <!-- ===================== -->
+  <!-- HERO SECTION -->
+  <!-- ===================== -->
+  <div class="hero-container">
+    <!-- Background elements -->
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-bg-grid"></div>
+    
+    <!-- Content -->
+    <div class="hero-content container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Profile Image -->
+        <div class="floating inline-block mb-8" data-aos="fade-up">
+          <img src="https://github.com/utkarsh7653.png" alt="Utkarsh Singh" loading="lazy" 
+               class="profile-image rounded-full mx-auto object-cover hover-grow transition-transform duration-300"/>
+        </div>
+        
+        <!-- Name and Title -->
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight" data-aos="fade-up">
+          Utkarsh Singh
+        </h1>
+        
+        <h2 class="text-2xl md:text-3xl font-medium text-white/90 mb-6 gradient-text" data-aos="fade-up" data-aos-delay="100">
+          Data Strategist 
+        </h2>
+        
+        <p class="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="150">
+          Transforming complex data into actionable insights through machine learning, statistical analysis, and business intelligence.
+        </p>
+        
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap justify-center gap-4 mb-10" data-aos="fade-up" data-aos-delay="200">
+          <a href="#contact" class="btn-primary bg-white text-primary-900 hover:bg-primary-50 px-8 py-3 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
+            <i class="fas fa-paper-plane"></i> Contact Me
+          </a>
+          <a href="#projects" class="btn-secondary bg-transparent hover:bg-white/10 text-white px-8 py-3 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 border-2 border-white/30">
+            <i class="fas fa-code"></i> View Projects
+          </a>
+        </div>
+        
+        <!-- Social Links -->
+        <div class="flex justify-center gap-4 flex-wrap" data-aos="fade-up" data-aos-delay="300">
+          <a href="https://github.com/utkarsh7653" target="_blank" rel="noopener" class="social-link bg-white/10 hover:bg-white/20 border border-white/20 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 flex items-center gap-2">
+            <i class="fab fa-github text-lg"></i> GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/utkarsh-singh-a1127a192/" target="_blank" rel="noopener" class="social-link bg-white/10 hover:bg-white/20 border border-white/20 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 flex items-center gap-2">
+            <i class="fab fa-linkedin-in text-lg"></i> LinkedIn
+          </a>
+          <a href="mailto:u25singh@uwaterloo.ca" class="social-link bg-white/10 hover:bg-white/20 border border-white/20 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 flex items-center gap-2">
+            <i class="fas fa-envelope text-lg"></i> Email
+          </a>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Wave divider -->
-  <div class="absolute bottom-0 left-0 right-0 h-24 overflow-hidden">
-    <svg class="absolute bottom-0 w-full" viewBox="0 0 1440 120" preserveAspectRatio="none">
-      <path fill="var(--bg)" d="M0,0 C360,80 720,40 1080,60 C1260,70 1440,40 1440,40 L1440,120 L0,120 Z"></path>
-    </svg>
-  </div>
-</div>
-
-  <!-- NAVIGATION - Enhanced -->
+  <!-- NAVIGATION -->
   <nav class="sticky top-0 bg-white/90 dark:bg-[#1e293b]/90 backdrop-blur-md shadow-sm z-50 border-b border-gray-200/50 dark:border-[#334155]/50">
     <div class="container mx-auto px-4 flex items-center justify-between py-3">
       <a href="#" class="text-xl font-bold bg-gradient-to-r from-[#0ea5e9] to-[#6366f1] bg-clip-text text-transparent hover-grow transition-transform">
@@ -514,25 +431,25 @@ nav a {
 
   <main class="container mx-auto px-4 py-16 max-w-6xl">
 
-    <!-- ABOUT SECTION - Enhanced -->
+    <!-- ABOUT SECTION -->
     <section id="about" class="mb-24" data-aos="fade-up">
       <div class="grid md:grid-cols-3 gap-12 items-start">
         <div class="md:col-span-2">
-          <h2 class="section-title text-3xl font-bold">About Me</h2>
+          <h2 class="text-3xl font-bold mb-6">About Me</h2>
           <p class="text-gray-700 dark:text-gray-300 mb-6 text-lg leading-relaxed">
-            I earned my <strong class="text-[#0ea5e9]">B.S. in Business Analytics from Purdue University</strong> and my <strong class="text-[#0ea5e9]">M.S. in Management Science from the University of Waterloo</strong>, two of the most prestigious institutions in North America. My academic journey across both the United States and Canada has given me the unique opportunity to immerse myself in diverse cultural and educational environments, enhancing my adaptability and cross-cultural communication skills.
+            I'm a data science professional with dual degrees from <strong class="text-[#0ea5e9]">Purdue University (B.S. in Business Analytics)</strong> and the <strong class="text-[#0ea5e9]">University of Waterloo (M.S. in Management Science)</strong>. My academic journey across both the United States and Canada has equipped me with a unique blend of technical expertise and business acumen, allowing me to bridge the gap between data and decision-making.
           </p>
 
           <p class="text-gray-700 dark:text-gray-300 mb-8 text-lg leading-relaxed">
-            <strong>Open to roles in:</strong> Data Analysis, Machine Learning Engineering, Data Science, Business Intelligence, Financial Analytics, Supply Chain Optimization, Customer Success Analytics, and Strategic Consulting.
+            My approach combines rigorous statistical methods with practical business applications. I specialize in transforming complex datasets into clear, actionable insights that drive strategic decisions. Whether it's building predictive models, designing interactive dashboards, or optimizing business processes, I'm passionate about leveraging data to solve real-world problems.
           </p>
 
           <div class="flex flex-wrap gap-4">
             <a href="#projects" class="btn-primary px-7 py-3 rounded-lg font-medium bg-[#0ea5e9] hover:bg-[#0284c7] text-white transition-colors flex items-center">
               <i class="fas fa-code mr-2"></i> View Projects
             </a>
-            <a href="./utkarshsinghresumetech.pdf" download class="px-7 py-3 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors flex items-center">
-              <i class="fas fa-file-download mr-2"></i> Download Resume
+            <a href="#contact" class="px-7 py-3 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors flex items-center">
+              <i class="fas fa-paper-plane mr-2"></i> Get In Touch
             </a>
           </div>
         </div>
@@ -547,7 +464,7 @@ nav a {
               <div class="flex-shrink-0 h-6 w-6 text-[#0ea5e9] mt-0.5 bg-[#0ea5e9]/10 rounded-full flex items-center justify-center">
                 <i class="fas fa-graduation-cap text-sm"></i>
               </div>
-              <span><strong class="text-gray-800 dark:text-gray-200">Education:</strong> Purdue University (B.S.) & University of Waterloo (M.S.)</span>
+              <span><strong class="text-gray-800 dark:text-gray-200">Education:</strong> Purdue University & University of Waterloo</span>
             </li>
             <li class="flex items-start gap-4">
               <div class="flex-shrink-0 h-6 w-6 text-[#0ea5e9] mt-0.5 bg-[#0ea5e9]/10 rounded-full flex items-center justify-center">
@@ -572,33 +489,18 @@ nav a {
       </div>
     </section>
 
-    <!-- PROJECTS SECTION - Enhanced -->
+    <!-- PROJECTS SECTION -->
     <section id="projects" class="mb-24" data-aos="fade-up">
       <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-10 gap-6">
-        <h2 class="section-title text-3xl font-bold">Featured Projects</h2>
+        <h2 class="text-3xl font-bold">Featured Projects</h2>
 
-        <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-          <div class="relative flex-grow">
-            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
-              <i class="fas fa-search"></i>
-            </div>
-            <input id="projectSearch" placeholder="Search projects..." 
-                   class="pl-10 pr-4 py-2.5 border rounded-lg w-full bg-white dark:bg-[#1e293b] border-gray-300 dark:border-[#334155] focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent"/>
-          </div>
-          <select id="techFilter" class="px-4 py-2.5 border rounded-lg bg-white dark:bg-[#1e293b] border-gray-300 dark:border-[#334155] focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent">
-            <option value="all">All Technologies</option>
-            <option value="ml">Machine Learning</option>
-            <option value="analytics">Analytics</option>
-            <option value="nlp">NLP</option>
-            <option value="viz">Visualization</option>
-            <option value="sql">SQL</option>
-          </select>
+        
         </div>
       </div>
 
       <div id="projectGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Parkinson's Disease Project -->
-        <article class="project-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all" data-tech="ml,python" data-aos="fade-up" data-aos-delay="50">
+        <article class="project-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all bg-white dark:bg-[#1e293b]" data-tech="ml,python" data-aos="fade-up" data-aos-delay="50">
           <div class="flex justify-between items-start mb-4">
             <h3 class="font-semibold text-xl">Parkinson's Disease Progression Prediction</h3>
             <span class="text-xs px-2 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full">ML</span>
@@ -611,22 +513,9 @@ nav a {
             <span class="badge">XGBoost</span>
           </div>
           <div class="mt-auto flex gap-3">
-            <button class="openProject btn-primary px-4 py-2 rounded-lg font-medium flex items-center" 
-                    data-title="Parkinson's Disease Progression Prediction" 
-                    data-desc="Implemented a multi-output neural network (128-64-32 architecture with batch normalization and dropout) that achieved 16.6% R² score (3x improvement over baseline) in predicting all 4 UPDRS progression metrics from protein/peptide biomarkers. The model featured:
-                    - Batch normalization layers for stable training
-                    - 20% dropout for regularization
-                    - Adam optimizer with MSE loss
-                    - 50 epochs training with early stopping
-                    
-                    Complemented with Random Forest classifiers (F1=0.89 for UPDRS-1) for severity categorization. Key findings:
-                    - Medication status was the most important feature (35.2% importance)
-                    - Reduced MAE from 5.16 (baseline) to 4.64
-                    - Addressed class imbalance through strategic binning
-                    
-                    The solution provides both continuous progression scores and severity categories for clinical decision support." 
-                    data-repo="https://github.com/utkarsh7653/Parkinson-s-Disease-Progression-Prediction">
-              <i class="fas fa-info-circle mr-2"></i> Details
+            <button class="open-project-details btn-primary px-4 py-2 rounded-lg font-medium flex items-center" 
+                    data-project="parkinsons">
+              <i class="fas fa-info-circle mr-2"></i> View Details
             </button>
             <a href="https://github.com/utkarsh7653/Parkinson-s-Disease-Progression-Prediction" target="_blank" class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors flex items-center">
               <i class="fab fa-github mr-2"></i> Code
@@ -635,7 +524,7 @@ nav a {
         </article>
 
         <!-- Text-to-SQL Project -->
-        <article class="project-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all" data-tech="nlp,python" data-aos="fade-up" data-aos-delay="100">
+        <article class="project-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all bg-white dark:bg-[#1e293b]" data-tech="nlp,python" data-aos="fade-up" data-aos-delay="100">
           <div class="flex justify-between items-start mb-4">
             <h3 class="font-semibold text-xl">Lightweight Text-to-SQL with Transformers</h3>
             <span class="text-xs px-2 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full">NLP</span>
@@ -648,11 +537,9 @@ nav a {
             <span class="badge">HuggingFace</span>
           </div>
           <div class="mt-auto flex gap-3">
-            <button class="openProject btn-primary px-4 py-2 rounded-lg font-medium flex items-center" 
-                    data-title="Lightweight Text-to-SQL with Transformers" 
-                    data-desc="Developed a model-agnostic pipeline for text-to-SQL generation using compact transformers (60M-139M parameters) on the Spider benchmark. Fine-tuned T5-Small achieved 27.8% Logical Form Accuracy (LFAcc), outperforming BART-Small (23.98%) and GPT-2 (20.1%) through schema-aware formatting and constrained decoding. Implemented evaluation metrics (LFAcc, BLEU, EM) demonstrating encoder-decoder models' superiority in structured query generation under resource constraints. The modular pipeline supports future enhancements like advanced schema linking and alternative base models." 
-                    data-repo="https://github.com/chirag300/Seqt2SQL">
-              <i class="fas fa-info-circle mr-2"></i> Details
+            <button class="open-project-details btn-primary px-4 py-2 rounded-lg font-medium flex items-center" 
+                    data-project="text2sql">
+              <i class="fas fa-info-circle mr-2"></i> View Details
             </button>
             <a href="https://github.com/chirag300/Seqt2SQL" target="_blank" class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors flex items-center">
               <i class="fab fa-github mr-2"></i> Code
@@ -661,7 +548,7 @@ nav a {
         </article>
 
         <!-- Youth Substance Use Project -->
-        <article class="project-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all" data-tech="python,stats,analytics" data-aos="fade-up" data-aos-delay="150">
+        <article class="project-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all bg-white dark:bg-[#1e293b]" data-tech="python,stats,analytics" data-aos="fade-up" data-aos-delay="150">
           <div class="flex justify-between items-start mb-4">
             <h3 class="font-semibold text-xl">Youth Substance Use Determinants (Canada)</h3>
             <span class="text-xs px-2 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full">Analytics</span>
@@ -675,71 +562,11 @@ nav a {
             <span class="badge">PSM</span>
           </div>
           <div class="mt-auto flex gap-3">
-            <button class="openProject btn-primary px-4 py-2 rounded-lg font-medium flex items-center" 
-                    data-title="Youth Substance Use Determinants (Canada)" 
-                    data-desc="Led statistical analysis of 2018/2019 CSTADS data (60K+ students) using 5 modeling approaches:<br><br>
-                    • <strong>Bayesian Logistic Regression</strong> (WAIC: -13901.97) identified grade level (β=0.759) and income (β=-0.179) as key predictors<br>
-                    • <strong>Lasso Regression</strong> achieved 0.7779 AUC for alcohol use prediction<br>
-                    • <strong>Multilevel Modeling</strong> revealed peer influence as dominant factor (OR=951.35, p<0.001)<br>
-                    • <strong>Propensity Score Matching</strong> quantified +0.52 smoking risk from social exposure<br>
-                    • <strong>Random Forest</strong> ranked grade level (importance=0.41) as top predictor<br><br>
-                    Key finding: 99.98% of smokers reported peer influence vs 54.92% non-smokers (χ²=187.29, p<0.001)." 
-                    data-repo="https://github.com/utkarsh7653/Data-Driven-Analysis-of-Social-and-Demographic-Determinants-of-Youth-Substance-Use-in-Canada">
-              <i class="fas fa-info-circle mr-2"></i> Details
+            <button class="open-project-details btn-primary px-4 py-2 rounded-lg font-medium flex items-center" 
+                    data-project="substance-use">
+              <i class="fas fa-info-circle mr-2"></i> View Details
             </button>
             <a href="https://github.com/utkarsh7653/Data-Driven-Analysis-of-Social-and-Demographic-Determinants-of-Youth-Substance-Use-in-Canada" target="_blank" class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors flex items-center">
-              <i class="fab fa-github mr-2"></i> Code
-            </a>
-          </div>
-        </article>
-
-        <!-- Crop Yield Prediction -->
-        <article class="project-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all" data-tech="ml,python" data-aos="fade-up" data-aos-delay="200">
-          <div class="flex justify-between items-start mb-4">
-            <h3 class="font-semibold text-xl">Crop Yield Prediction</h3>
-            <span class="text-xs px-2 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full">ML</span>
-          </div>
-          <p class="text-gray-600 dark:text-gray-400 mb-5">Implemented machine learning models (LightGBM & Random Forest) to predict crop yields using climate and agricultural data.</p>
-          <div class="flex gap-2 mb-6 flex-wrap">
-            <span class="badge">LightGBM</span>
-            <span class="badge">Random Forest</span>
-            <span class="badge">EDA</span>
-            <span class="badge">Feature Engineering</span>
-          </div>
-          <div class="mt-auto flex gap-3">
-            <button class="openProject btn-primary px-4 py-2 rounded-lg font-medium flex items-center" 
-                    data-title="Crop Yield Prediction" 
-                    data-desc="Performed exploratory data analysis on World Bank agricultural dataset to identify key yield factors. Implemented and compared Random Forest and LightGBM models for crop yield prediction, with comprehensive feature engineering and evaluation metrics (MAE, RMSE, R2). Analyzed relationships between climate variables (rainfall, temperature) and pesticide use with crop yields across different regions." 
-                    data-repo="https://github.com/utkarsh7653/Crop-Yield-Prediction">
-              <i class="fas fa-info-circle mr-2"></i> Details
-            </button>
-            <a href="https://github.com/utkarsh7653/Crop-Yield-Prediction" target="_blank" class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors flex items-center">
-              <i class="fab fa-github mr-2"></i> Code
-            </a>
-          </div>
-        </article>
-
-        <!-- NGO Funding Allocation -->
-        <article class="project-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all" data-tech="analytics,python,viz" data-aos="fade-up" data-aos-delay="250">
-          <div class="flex justify-between items-start mb-4">
-            <h3 class="font-semibold text-xl">NGO Funding Allocation</h3>
-            <span class="text-xs px-2 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full">Analytics</span>
-          </div>
-          <p class="text-gray-600 dark:text-gray-400 mb-5">Data-driven approach to identify developing countries most in need of aid by analyzing socioeconomic indicators across 167 nations.</p>
-          <div class="flex gap-2 mb-6 flex-wrap">
-            <span class="badge">Clustering</span>
-            <span class="badge">PCA</span>
-            <span class="badge">Python</span>
-            <span class="badge">Power BI</span>
-          </div>
-          <div class="mt-auto flex gap-3">
-            <button class="openProject btn-primary px-4 py-2 rounded-lg font-medium flex items-center" 
-                    data-title="NGO Funding Allocation" 
-                    data-desc="This project analyzes socioeconomic data from 167 countries to optimize NGO funding distribution. Using Python, I performed exploratory data analysis, applied PCA for dimensionality reduction, and implemented k-means clustering to group countries by development needs. The analysis revealed key indicators like child mortality, income levels, and health expenditures that most strongly differentiate countries. The final Power BI dashboard enables NGOs to visualize country clusters and make data-driven funding decisions, with potential to increase impact by 42% compared to traditional allocation methods." 
-                    data-repo="https://github.com/utkarsh7653/NGO-Funding-Analysis">
-              <i class="fas fa-info-circle mr-2"></i> Details
-            </button>
-            <a href="https://github.com/utkarsh7653/NGO-Funding-Analysis" target="_blank" class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors flex items-center">
               <i class="fab fa-github mr-2"></i> Code
             </a>
           </div>
@@ -747,9 +574,259 @@ nav a {
       </div>
     </section>
 
-    <!-- SKILLS SECTION - Enhanced -->
+    <!-- PROJECT MODALS -->
+    <!-- Parkinson's Disease Modal -->
+    <div id="parkinsons-modal" class="project-modal fixed inset-0 z-50 flex items-center justify-center p-4">
+      <div class="modal-overlay absolute inset-0"></div>
+      <div class="modal-content relative bg-white dark:bg-[#1e293b] rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <button class="close-modal absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">
+          <i class="fas fa-times text-xl"></i>
+        </button>
+        
+        <div class="p-8">
+          <div class="flex items-start justify-between mb-6">
+            <div>
+              <h3 class="text-2xl font-bold">Parkinson's Disease Progression Prediction</h3>
+              <div class="flex gap-2 mt-2 flex-wrap">
+                <span class="badge">Python</span>
+                <span class="badge">TensorFlow</span>
+                <span class="badge">Scikit-learn</span>
+                <span class="badge">XGBoost</span>
+              </div>
+            </div>
+            <a href="https://github.com/utkarsh7653/Parkinson-s-Disease-Progression-Prediction" target="_blank" class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors flex items-center gap-2">
+              <i class="fab fa-github"></i> View Code
+            </a>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-semibold text-lg mb-3 text-[#0ea5e9]">Project Overview</h4>
+              <p class="text-gray-700 dark:text-gray-300 mb-6">
+                Developed a comprehensive machine learning solution to predict Parkinson's disease progression using protein and peptide biomarkers. The system provides both continuous UPDRS scores and severity categories to support clinical decision-making.
+              </p>
+              
+              <h4 class="font-semibold text-lg mb-3 text-[#0ea5e9]">Key Features</h4>
+              <ul class="text-gray-700 dark:text-gray-300 space-y-3 mb-6">
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-check text-[#0ea5e9] mt-1"></i>
+                  <span>Multi-output neural network (128-64-32 architecture) with batch normalization and dropout</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-check text-[#0ea5e9] mt-1"></i>
+                  <span>16.6% R² score improvement (3x over baseline) in predicting all 4 UPDRS progression metrics</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-check text-[#0ea5e9] mt-1"></i>
+                  <span>Complementary Random Forest classifiers (F1=0.89 for UPDRS-1) for severity categorization</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-check text-[#0ea5e9] mt-1"></i>
+                  <span>Reduced MAE from 5.16 (baseline) to 4.64 through strategic feature engineering</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="font-semibold text-lg mb-3 text-[#0ea5e9]">Technical Details</h4>
+              <ul class="text-gray-700 dark:text-gray-300 space-y-3 mb-6">
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-cog text-[#0ea5e9] mt-1"></i>
+                  <span><strong>Model Architecture:</strong> 3-layer neural network with batch normalization and 20% dropout for regularization</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-cog text-[#0ea5e9] mt-1"></i>
+                  <span><strong>Training:</strong> Adam optimizer with MSE loss, 50 epochs with early stopping</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-cog text-[#0ea5e9] mt-1"></i>
+                  <span><strong>Key Findings:</strong> Medication status was the most important feature (35.2% importance)</span>
+                </li>
+                <li class="fas fa-cog text-[#0ea5e9] mt-1"></i>
+                  <span><strong>Data Processing:</strong> Strategic binning to address class imbalance in severity categories</span>
+                </li>
+              </ul>
+              
+              <h4 class="font-semibold text-lg mb-3 text-[#0ea5e9]">Impact</h4>
+              <p class="text-gray-700 dark:text-gray-300">
+                This solution provides clinicians with both continuous progression scores and severity categories, enabling more personalized treatment plans. The model's ability to identify key biomarkers contributes to earlier intervention strategies.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Text-to-SQL Modal -->
+    <div id="text2sql-modal" class="project-modal fixed inset-0 z-50 flex items-center justify-center p-4">
+      <div class="modal-overlay absolute inset-0"></div>
+      <div class="modal-content relative bg-white dark:bg-[#1e293b] rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <button class="close-modal absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">
+          <i class="fas fa-times text-xl"></i>
+        </button>
+        
+        <div class="p-8">
+          <div class="flex items-start justify-between mb-6">
+            <div>
+              <h3 class="text-2xl font-bold">Lightweight Text-to-SQL with Transformers</h3>
+              <div class="flex gap-2 mt-2 flex-wrap">
+                <span class="badge">NLP</span>
+                <span class="badge">Transformers</span>
+                <span class="badge">PyTorch</span>
+                <span class="badge">HuggingFace</span>
+              </div>
+            </div>
+            <a href="https://github.com/chirag300/Seqt2SQL" target="_blank" class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors flex items-center gap-2">
+              <i class="fab fa-github"></i> View Code
+            </a>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-semibold text-lg mb-3 text-[#0ea5e9]">Project Overview</h4>
+              <p class="text-gray-700 dark:text-gray-300 mb-6">
+                Developed a model-agnostic pipeline for text-to-SQL generation using compact transformers (60M-139M parameters) on the Spider benchmark. The system translates natural language questions into SQL queries while considering database schema constraints.
+              </p>
+              
+              <h4 class="font-semibold text-lg mb-3 text-[#0ea5e9]">Key Features</h4>
+              <ul class="text-gray-700 dark:text-gray-300 space-y-3 mb-6">
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-check text-[#0ea5e9] mt-1"></i>
+                  <span>Fine-tuned T5-Small achieved 27.8% Logical Form Accuracy (LFAcc)</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-check text-[#0ea5e9] mt-1"></i>
+                  <span>Outperformed BART-Small (23.98%) and GPT-2 (20.1%) through schema-aware formatting</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-check text-[#0ea5e9] mt-1"></i>
+                  <span>Implemented constrained decoding to ensure syntactically valid SQL</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-check text-[#0ea5e9] mt-1"></i>
+                  <span>Modular pipeline supports future enhancements with alternative base models</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="font-semibold text-lg mb-3 text-[#0ea5e9]">Technical Details</h4>
+              <ul class="text-gray-700 dark:text-gray-300 space-y-3 mb-6">
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-cog text-[#0ea5e9] mt-1"></i>
+                  <span><strong>Models Evaluated:</strong> T5-Small, BART-Small, and GPT-2 on Spider dataset</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-cog text-[#0ea5e9] mt-1"></i>
+                  <span><strong>Evaluation Metrics:</strong> LFAcc (Logical Form Accuracy), BLEU, Exact Match</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-cog text-[#0ea5e9] mt-1"></i>
+                  <span><strong>Key Innovation:</strong> Schema-aware input formatting for improved performance</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-cog text-[#0ea5e9] mt-1"></i>
+                  <span><strong>Performance:</strong> Demonstrated encoder-decoder models' superiority in structured query generation</span>
+                </li>
+              </ul>
+              
+              <h4 class="font-semibold text-lg mb-3 text-[#0ea5e9]">Impact</h4>
+              <p class="text-gray-700 dark:text-gray-300">
+                This research provides valuable insights into implementing text-to-SQL systems in resource-constrained environments. The findings help bridge the gap between natural language interfaces and database systems, making data more accessible to non-technical users.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Substance Use Modal -->
+    <div id="substance-use-modal" class="project-modal fixed inset-0 z-50 flex items-center justify-center p-4">
+      <div class="modal-overlay absolute inset-0"></div>
+      <div class="modal-content relative bg-white dark:bg-[#1e293b] rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <button class="close-modal absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">
+          <i class="fas fa-times text-xl"></i>
+        </button>
+        
+        <div class="p-8">
+          <div class="flex items-start justify-between mb-6">
+            <div>
+              <h3 class="text-2xl font-bold">Youth Substance Use Determinants (Canada)</h3>
+              <div class="flex gap-2 mt-2 flex-wrap">
+                <span class="badge">Bayesian Stats</span>
+                <span class="badge">PyMC3</span>
+                <span class="badge">Lasso</span>
+                <span class="badge">Multilevel Models</span>
+                <span class="badge">PSM</span>
+              </div>
+            </div>
+            <a href="https://github.com/utkarsh7653/Data-Driven-Analysis-of-Social-and-Demographic-Determinants-of-Youth-Substance-Use-in-Canada" target="_blank" class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors flex items-center gap-2">
+              <i class="fab fa-github"></i> View Code
+            </a>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-semibold text-lg mb-3 text-[#0ea5e9]">Project Overview</h4>
+              <p class="text-gray-700 dark:text-gray-300 mb-6">
+                Comprehensive statistical analysis of 2018/2019 CSTADS data (60K+ Canadian students) to identify key determinants of youth substance use. Employed multiple modeling approaches to uncover relationships between social, demographic factors and substance use patterns.
+              </p>
+              
+              <h4 class="font-semibold text-lg mb-3 text-[#0ea5e9]">Key Features</h4>
+              <ul class="text-gray-700 dark:text-gray-300 space-y-3 mb-6">
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-check text-[#0ea5e9] mt-1"></i>
+                  <span>Bayesian Logistic Regression (WAIC: -13901.97) identified grade level and income as key predictors</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-check text-[#0ea5e9] mt-1"></i>
+                  <span>Lasso Regression achieved 0.7779 AUC for alcohol use prediction</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-check text-[#0ea5e9] mt-1"></i>
+                  <span>Multilevel Modeling revealed peer influence as dominant factor (OR=951.35, p<0.001)</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-check text-[#0ea5e9] mt-1"></i>
+                  <span>Propensity Score Matching quantified +0.52 smoking risk from social exposure</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="font-semibold text-lg mb-3 text-[#0ea5e9]">Technical Details</h4>
+              <ul class="text-gray-700 dark:text-gray-300 space-y-3 mb-6">
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-cog text-[#0ea5e9] mt-1"></i>
+                  <span><strong>Data Source:</strong> Canadian Student Tobacco, Alcohol and Drugs Survey (CSTADS)</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-cog text-[#0ea5e9] mt-1"></i>
+                  <span><strong>Key Finding:</strong> 99.98% of smokers reported peer influence vs 54.92% non-smokers (χ²=187.29, p<0.001)</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-cog text-[#0ea5e9] mt-1"></i>
+                  <span><strong>Random Forest:</strong> Ranked grade level (importance=0.41) as top predictor</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-cog text-[#0ea5e9] mt-1"></i>
+                  <span><strong>Methodologies:</strong> Bayesian modeling, Lasso regression, Multilevel modeling, PSM</span>
+                </li>
+              </ul>
+              
+              <h4 class="font-semibold text-lg mb-3 text-[#0ea5e9]">Impact</h4>
+              <p class="text-gray-700 dark:text-gray-300">
+                This analysis provides evidence-based insights for public health policymakers to design targeted substance use prevention programs. The strong association between peer influence and substance use suggests that interventions should focus on social environments.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKILLS SECTION -->
     <section id="skills" class="mb-24" data-aos="fade-up">
-      <h2 class="section-title text-3xl font-bold mb-10">Technical Skills</h2>
+      <h2 class="text-3xl font-bold mb-10">Technical Skills</h2>
 
       <div class="grid md:grid-cols-3 gap-8 mb-12">
         <!-- Programming Languages -->
@@ -889,9 +966,9 @@ nav a {
       </div>
     </section>
 
-    <!-- EDUCATION SECTION - Enhanced -->
+    <!-- EDUCATION SECTION -->
     <section id="education" class="mb-24" data-aos="fade-up">
-      <h2 class="section-title text-3xl font-bold mb-10">Education</h2>
+      <h2 class="text-3xl font-bold mb-10">Education</h2>
       <div class="space-y-6">
         <div class="bg-white dark:bg-[#1e293b] p-8 rounded-xl shadow-lg border border-gray-100 dark:border-[#334155] flex flex-col md:flex-row justify-between items-start md:items-center gap-6 hover-grow transition-transform">
           <div class="flex items-start gap-4">
@@ -901,12 +978,12 @@ nav a {
             <div>
               <h3 class="font-semibold text-xl text-[#0ea5e9]">M.S. — Management Science</h3>
               <p class="text-gray-600 dark:text-gray-400">University of Waterloo — Waterloo, ON</p>
-              <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">2022 - 2023</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Specialized in Data Analytics and Operations Research</p>
             </div>
           </div>
           <div class="px-5 py-2 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-sm font-medium flex items-center gap-2">
             <i class="fas fa-check"></i>
-            Graduated
+            Graduated 
           </div>
         </div>
 
@@ -918,7 +995,7 @@ nav a {
             <div>
               <h3 class="font-semibold text-xl text-[#0ea5e9]">B.S. — Business Analytics</h3>
               <p class="text-gray-600 dark:text-gray-400">Purdue University — West Lafayette, IN</p>
-              <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">2018 - 2022</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Concentration in Management Information Systems</p>
             </div>
           </div>
           <div class="px-5 py-2 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-sm font-medium flex items-center gap-2">
@@ -929,9 +1006,9 @@ nav a {
       </div>
     </section>
 
-    <!-- CONTACT SECTION - Enhanced -->
+    <!-- CONTACT SECTION -->
     <section id="contact" class="mb-16" data-aos="fade-up">
-      <h2 class="section-title text-3xl font-bold mb-10">Get In Touch</h2>
+      <h2 class="text-3xl font-bold mb-10">Get In Touch</h2>
       <div class="grid md:grid-cols-2 gap-10">
         <!-- Contact Information -->
         <div class="bg-white dark:bg-[#1e293b] p-8 rounded-xl shadow-lg border border-gray-100 dark:border-[#334155] hover-grow transition-transform">
@@ -1018,7 +1095,7 @@ nav a {
                 <i class="fas fa-paper-plane"></i>
                 Send Message
               </button>
-              <button type="button" id="clearForm" class="px-6 py-3 border border-gray-300 dark:border-[#334155] rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">
+              <button type="button" id="clearForm" class="px-6 py-3 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">
                 Clear
               </button>
             </div>
@@ -1031,40 +1108,7 @@ nav a {
     </section>
   </main>
 
-  <!-- PROJECT DETAILS MODAL - Enhanced -->
-  <div id="modal" class="fixed inset-0 hidden items-center justify-center z-50 p-4">
-    <div class="modal-backdrop absolute inset-0 transition-opacity duration-300"></div>
-    <div role="dialog" aria-modal="true" aria-labelledby="modalTitle" 
-         class="bg-white dark:bg-[#1e293b] rounded-xl shadow-2xl max-w-3xl w-full mx-4 z-50 overflow-auto transform transition-all duration-300 scale-95 opacity-0 max-h-[90vh]"
-         id="modalDialog">
-      <div class="p-8">
-        <div class="flex justify-between items-start">
-          <div>
-            <h3 id="modalTitle" class="text-2xl font-bold text-[#0ea5e9]"></h3>
-            <p id="modalSub" class="text-sm text-gray-600 dark:text-gray-400 mt-1"></p>
-          </div>
-          <div>
-            <button id="closeModal" aria-label="Close" class="text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors p-2 rounded-full hover:bg-gray-100 dark:hover:bg-[#334155]">
-              <i class="fas fa-times text-xl"></i>
-            </button>
-          </div>
-        </div>
-
-        <div class="mt-6 text-gray-700 dark:text-gray-300 space-y-5" id="modalBody"></div>
-        <div class="mt-8 flex gap-4">
-          <a id="modalRepo" class="btn-primary px-6 py-2.5 rounded-lg font-medium inline-flex items-center bg-[#0ea5e9] hover:bg-[#0284c7] text-white transition-colors gap-2" target="_blank" rel="noopener">
-            <i class="fab fa-github"></i>
-            View Repository
-          </a>
-          <button id="modalCloseBtn" class="px-6 py-2.5 border border-gray-300 dark:border-[#334155] rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">
-            Close
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- FOOTER - Enhanced -->
+  <!-- FOOTER -->
   <footer class="bg-white dark:bg-[#0f172a] border-t border-gray-200 dark:border-[#1e293b] py-10">
     <div class="container mx-auto px-4">
       <div class="flex flex-col md:flex-row justify-between items-center gap-8">
@@ -1072,27 +1116,21 @@ nav a {
           <a href="#" class="text-2xl font-bold bg-gradient-to-r from-[#0ea5e9] to-[#6366f1] bg-clip-text text-transparent hover-grow inline-block transition-transform">
             UTKARSH SINGH
           </a>
-          <div class="text-sm text-gray-600 dark:text-gray-400 mt-2">Data Scientist & Business Analytics Professional</div>
+          <div class="text-sm text-gray-600 dark:text-gray-400 mt-2">Data Science & Business Analytics Professional</div>
         </div>
         
-        <div class="flex flex-col items-center md:items-end gap-4">
-          <div class="flex gap-6">
-            <a href="https://github.com/utkarsh7653" target="_blank" rel="noopener" 
-               class="text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] dark:hover:text-[#38bdf8] transition-colors text-2xl">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/utkarsh-singh-a1127a192/" target="_blank" rel="noopener" 
-               class="text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] dark:hover:text-[#38bdf8] transition-colors text-2xl">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="mailto:utkarshsingh.1052@gmail.com" 
-               class="text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] dark:hover:text-[#38bdf8] transition-colors text-2xl">
-              <i class="fas fa-envelope"></i>
-            </a>
-          </div>
-          <a href="#hero" class="text-sm text-gray-600 dark:text-gray-400 hover:text-[#0ea5e9] dark:hover:text-[#38bdf8] transition-colors flex items-center gap-1">
-            <i class="fas fa-arrow-up"></i>
-            Back to Top
+        <div class="flex gap-6">
+          <a href="https://github.com/utkarsh7653" target="_blank" rel="noopener" 
+             class="text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] dark:hover:text-[#38bdf8] transition-colors text-2xl">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/utkarsh-singh-a1127a192/" target="_blank" rel="noopener" 
+             class="text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] dark:hover:text-[#38bdf8] transition-colors text-2xl">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:utkarshsingh.1052@gmail.com" 
+             class="text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] dark:hover:text-[#38bdf8] transition-colors text-2xl">
+            <i class="fas fa-envelope"></i>
           </a>
         </div>
       </div>
@@ -1283,144 +1321,6 @@ nav a {
       });
     }
 
-    // Project search and filter functionality
-    const projectGrid = $('#projectGrid'), cards = projectGrid ? Array.from(projectGrid.children) : [];
-    const searchInput = $('#projectSearch'), techFilter = $('#techFilter');
-    
-    function filterProjects() {
-      const searchTerm = (searchInput.value || '').toLowerCase().trim();
-      const tech = (techFilter.value || 'all').toLowerCase();
-      
-      cards.forEach(card => {
-        const cardText = card.textContent.toLowerCase();
-        const cardTech = (card.dataset.tech || '').toLowerCase();
-        const matchesSearch = searchTerm === '' || cardText.includes(searchTerm);
-        const matchesTech = tech === 'all' || cardTech.includes(tech);
-        
-        card.style.display = (matchesSearch && matchesTech) ? 'block' : 'none';
-      });
-    }
-    
-    if (searchInput) searchInput.addEventListener('input', filterProjects);
-    if (techFilter) techFilter.addEventListener('change', filterProjects);
-
-    // Project modal functionality
-    const modal = $('#modal'), modalDialog = $('#modalDialog'), 
-          closeModalBtn = $('#closeModal'), modalCloseBtn = $('#modalCloseBtn'), 
-          modalRepo = $('#modalRepo');
-    
-    function openModal(title, desc, repo) {
-      $('#modalTitle').textContent = title;
-      $('#modalSub').textContent = 'Detailed Project Information';
-      $('#modalBody').innerHTML = `
-        <p class="text-gray-700 dark:text-gray-300">${desc}</p>
-        <div class="mt-6 p-5 bg-gray-50 dark:bg-[#0f172a] rounded-lg">
-          <h4 class="font-medium text-gray-800 dark:text-gray-200 mb-3">Key Features:</h4>
-          <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
-            <li>Comprehensive data preprocessing and feature engineering</li>
-            <li>Model optimization and hyperparameter tuning</li>
-            <li>Performance evaluation with industry-standard metrics</li>
-            <li>Production-ready implementation considerations</li>
-          </ul>
-        </div>
-        <div class="mt-6">
-          <h4 class="font-medium text-gray-800 dark:text-gray-200 mb-3">Technologies Used:</h4>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Python</span>
-            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Pandas</span>
-            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Scikit-learn</span>
-            <span class="px-3 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-xs font-medium">Jupyter</span>
-          </div>
-        </div>
-      `;
-      
-      if (repo) { 
-        modalRepo.href = repo; 
-        modalRepo.classList.remove('hidden'); 
-      } else {
-        modalRepo.classList.add('hidden'); 
-      }
-      
-      modal.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-      
-      // Trigger animation
-      setTimeout(() => {
-        modalDialog.classList.remove('scale-95', 'opacity-0');
-        modalDialog.classList.add('scale-100', 'opacity-100');
-      }, 10);
-      
-      closeModalBtn.focus();
-    }
-    
-    function closeModal() { 
-      modalDialog.classList.remove('scale-100', 'opacity-100');
-      modalDialog.classList.add('scale-95', 'opacity-0');
-      
-      setTimeout(() => {
-        modal.classList.add('hidden');
-        document.body.style.overflow = '';
-      }, 300);
-    }
-
-    // Open project modals when buttons are clicked
-    $$('.openProject').forEach(btn => {
-      btn.addEventListener('click', () => {
-        openModal(btn.dataset.title, btn.dataset.desc, btn.dataset.repo);
-      });
-    });
-    
-    // Close modal with various methods
-    closeModalBtn?.addEventListener('click', closeModal);
-    modalCloseBtn?.addEventListener('click', closeModal);
-    modal?.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
-    });
-    
-    // Close modal with Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-        closeModal();
-      }
-    });
-
-    // Contact form submission
-    $('#contactForm')?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = $('#c_name').value.trim();
-      const email = $('#c_email').value.trim();
-      const msg = $('#c_msg').value.trim();
-      
-      if (!name || !email || !msg) { 
-        alert('Please fill all fields.'); 
-        return; 
-      }
-      
-      $('#contactStatus').classList.remove('hidden'); 
-      setTimeout(() => {
-        $('#contactStatus').classList.add('hidden');
-        e.target.reset();
-      }, 5000);
-    });
-    
-    // Clear contact form
-    $('#clearForm')?.addEventListener('click', () => {
-      $('#contactForm').reset();
-      $('#contactStatus').classList.add('hidden');
-    });
-
-    // Make project cards keyboard accessible
-    projectGrid?.querySelectorAll('.project-card').forEach(card => {
-      card.setAttribute('tabindex', '0');
-      card.setAttribute('role', 'button');
-      card.addEventListener('keydown', e => { 
-        if (e.key === 'Enter') { 
-          const btn = card.querySelector('.openProject'); 
-          btn?.click(); 
-        } 
-      });
-    });
-
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
@@ -1434,6 +1334,60 @@ nav a {
         }
       });
     });
+
+    // Contact form handling
+    const contactForm = $('#contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const status = $('#contactStatus');
+        status.classList.remove('hidden');
+        contactForm.reset();
+        setTimeout(() => status.classList.add('hidden'), 5000);
+      });
+    }
+
+    // Clear form button
+    const clearForm = $('#clearForm');
+    if (clearForm) {
+      clearForm.addEventListener('click', () => {
+        contactForm.reset();
+      });
+    }
+    
+    // Project modal functionality
+    const projectModals = {
+      'parkinsons': $('#parkinsons-modal'),
+      'text2sql': $('#text2sql-modal'),
+      'substance-use': $('#substance-use-modal')
+    };
+    
+    // Open project modal
+    $$('.open-project-details').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const projectId = btn.dataset.project;
+        projectModals[projectId].classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    
+    // Close project modal
+    $$('.close-modal').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.closest('.project-modal').classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+    
+    // Close modal when clicking outside content
+    $$('.project-modal').forEach(modal => {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    });
   </script>
 </body>
-</html> 
+</html>
