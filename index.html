@@ -1,1400 +1,800 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Utkarsh Singh | Data Strategist </title>
-  <meta name="description" content="Data Science & Analytics Professional specializing in Machine Learning, Business Intelligence, and Data Visualization">
-  
-  <!-- Preload critical resources -->
-  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
-  
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            primary: {
-              50: '#f0f9ff',
-              100: '#e0f2fe',
-              200: '#bae6fd',
-              300: '#7dd3fc',
-              400: '#38bdf8',
-              500: '#0ea5e9',
-              600: '#0284c7',
-              700: '#0369a1',
-              800: '#075985',
-              900: '#0c4a6e',
-            },
-            dark: {
-              900: '#0f172a',
-              800: '#1e293b',
-              700: '#334155',
-              600: '#475569',
-              500: '#64748b',
-            }
-          },
-          fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
-            display: ['Inter', 'sans-serif'],
-          },
-          animation: {
-            'float': 'float 6s ease-in-out infinite',
-            'fade-in': 'fadeIn 0.5s ease-out',
-            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-          },
-          keyframes: {
-            float: {
-              '0%, 100%': { transform: 'translateY(0)' },
-              '50%': { transform: 'translateY(-15px)' },
-            },
-            fadeIn: {
-              '0%': { opacity: '0' },
-              '100%': { opacity: '1' },
-            }
-          }
-        }
-      }
-    }
-  </script>
-  
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  
-  <style>
-    :root {
-      --primary: #0ea5e9;
-      --primary-dark: #0284c7;
-      --text: #0f172a;
-      --text-muted: #64748b;
-      --bg: #f8fafc;
-      --card: #ffffff;
-    }
-    .dark {
-      --primary: #38bdf8;
-      --primary-dark: #0ea5e9;
-      --text: #f1f5f9;
-      --text-muted: #94a3b8;
-      --bg: #0f172a;
-      --card: #1e293b;
-    }
-    
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    body {
-      font-family: 'Inter', system-ui, -apple-system;
-      line-height: 1.6;
-      background-color: var(--bg);
-      color: var(--text);
-      transition: background-color 0.3s ease, color 0.3s ease;
-      margin: 0;
-      padding: 0;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Utkarsh Singh — Data Analytics Professional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080e;
+  --bg1:#0b0f18;
+  --bg2:#0f1520;
+  --card:#111826;
+  --card2:#141d2c;
+  --a:#c9943a;
+  --alt:#e0b060;
+  --adim:rgba(201,148,58,.1);
+  --abdr:rgba(201,148,58,.2);
+  --iv:#eee9e0;
+  --iv2:#a09890;
+  --iv3:#55504a;
+  --ln:rgba(255,255,255,.055);
+  --r:2px;
+  --green:#4ec48a;
+  --gdim:rgba(78,196,138,.1);
+  --gbdr:rgba(78,196,138,.22);
+  --blue:#5b9cf6;
+  --bdim:rgba(91,156,246,.1);
+  --bbdr:rgba(91,156,246,.22);
+}
+*,::before,::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--iv);font-family:'Syne',sans-serif;overflow-x:hidden;cursor:none}
 
-    /* ===================== */
-    /* HERO SECTION DESIGN */
-    /* ===================== */
-    .hero-container {
-      position: relative;
-      isolation: isolate;
-      background: linear-gradient(135deg, #0c4a6e 0%, #4338ca 100%);
-      overflow: hidden;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+#C{position:fixed;width:7px;height:7px;background:var(--a);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .15s,height .15s,background .2s}
+#CR{position:fixed;width:30px;height:30px;border:1px solid rgba(201,148,58,.38);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .26s,height .26s}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)' opacity='.03'/%3E%3C/svg%3E");pointer-events:none;z-index:2;mix-blend-mode:overlay}
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      padding: 6rem 0;
-    }
+/* NAV */
+nav{position:fixed;inset:0 0 auto;z-index:300;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(6,8,14,.93);backdrop-filter:blur(28px) saturate(1.5);border-bottom:1px solid var(--ln);animation:navIn .7s ease both}
+@keyframes navIn{from{transform:translateY(-100%);opacity:0}to{transform:translateY(0);opacity:1}}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.26rem;font-weight:600;letter-spacing:.04em;color:var(--iv);text-decoration:none;display:flex;align-items:center;gap:9px}
+.ldot{width:7px;height:7px;background:var(--a);border-radius:50%;animation:lp 3s ease-in-out infinite}
+@keyframes lp{0%,100%{box-shadow:0 0 0 0 rgba(201,148,58,.5)}50%{box-shadow:0 0 0 8px rgba(201,148,58,0)}}
+.nl{display:flex;align-items:center;gap:24px;list-style:none}
+.nl a{font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--iv2);text-decoration:none;transition:color .2s}
+.nl a:hover{color:var(--alt)}
+.ncta{border:1px solid var(--a)!important;color:var(--a)!important;padding:6px 15px;border-radius:var(--r);transition:background .2s,color .2s!important}
+.ncta:hover{background:var(--a)!important;color:var(--bg)!important}
 
-    .hero-wave {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 120px;
-      background: var(--bg);
-      clip-path: path('M0,96 C150,192 350,0 500,96 C650,192 850,0 1000,96 L1000,0 L0,0 Z');
-      z-index: 1;
-    }
+/* HERO */
+#hero{min-height:100vh;display:grid;grid-template-columns:1fr 240px;align-items:center;padding:0 5vw;padding-top:64px;position:relative;overflow:hidden;gap:36px}
+.vl{position:absolute;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,var(--abdr) 30%,var(--abdr) 70%,transparent);opacity:.35;pointer-events:none}
 
-    .hero-bg-pattern {
-      position: absolute;
-      inset: 0;
-      background-image: 
-        radial-gradient(circle at 25% 25%, rgba(255,255,255,0.08) 0%, transparent 50%),
-        radial-gradient(circle at 75% 75%, rgba(255,255,255,0.05) 0%, transparent 50%);
-      z-index: 1;
-    }
+.hero-left{position:relative;z-index:2}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.24em;color:var(--a);text-transform:uppercase;margin-bottom:22px;display:flex;align-items:center;gap:14px;opacity:0;animation:fu .7s .3s ease both}
+.eyebrow::before{content:'';width:32px;height:1px;background:var(--a)}
 
-    .hero-bg-grid {
-      position: absolute;
-      inset: 0;
-      background-image: 
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
-      z-index: 1;
-    }
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,7.2vw,7.5rem);font-weight:300;line-height:.93;letter-spacing:-.01em;color:var(--iv);margin-bottom:28px;opacity:0;animation:fu .9s .45s ease both}
+h1 em{font-style:italic;color:var(--alt)}
+h1 span.h1-line{display:block}
 
-    /* Profile image styling */
-    .profile-image {
-      width: 180px;
-      height: 180px;
-      border: 4px solid rgba(255,255,255,0.9);
-      box-shadow: 0 0 30px rgba(14, 165, 233, 0.7);
-    }
+.hdesc{font-size:.98rem;color:var(--iv2);max-width:560px;line-height:1.82;margin-bottom:32px;opacity:0;animation:fu .9s .6s ease both}
+.hdesc strong{color:var(--iv)}
 
-    @media (min-width: 768px) {
-      .profile-image {
-        width: 220px;
-        height: 220px;
-      }
-    }
+.rpills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:36px;opacity:0;animation:fu .9s .73s ease both}
+.rp{font-family:'JetBrains Mono',monospace;font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--a);background:var(--adim);border:1px solid var(--abdr);padding:5px 12px;border-radius:var(--r);transition:background .2s,color .2s}
+.rp:hover{background:rgba(201,148,58,.2);color:var(--alt)}
 
-    /* Social links */
-    .social-link {
-      backdrop-filter: blur(8px);
-      transition: all 0.3s ease;
-    }
+.hctas{display:flex;gap:11px;flex-wrap:wrap;opacity:0;animation:fu .9s .86s ease both}
+.bp{background:var(--a);color:var(--bg);padding:13px 28px;border:none;border-radius:var(--r);font-family:'Syne',sans-serif;font-size:.67rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;cursor:none;transition:background .2s,transform .17s;display:inline-flex;align-items:center;gap:7px}
+.bp:hover{background:var(--alt);transform:translateY(-2px)}
+.bo{background:transparent;color:var(--iv);padding:13px 28px;border:1px solid rgba(240,236,227,.18);border-radius:var(--r);font-family:'Syne',sans-serif;font-size:.67rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;cursor:none;transition:border-color .2s,color .2s,transform .17s;display:inline-flex;align-items:center;gap:7px}
+.bo:hover{border-color:var(--a);color:var(--alt);transform:translateY(-2px)}
 
-    .social-link:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    }
+/* Hero stat panel */
+.hstats{display:flex;flex-direction:column;gap:1px;position:relative;z-index:2;opacity:0;animation:fr .9s .9s ease both}
+@keyframes fr{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:translateX(0)}}
+.hstat{background:var(--card);border:1px solid var(--ln);padding:20px 22px;position:relative;overflow:hidden;transition:background .22s}
+.hstat:not(:first-child){margin-top:1px}
+.hstat::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--a)}
+.hstat:hover{background:var(--card2)}
+.hn{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:600;color:var(--a);line-height:1}
+.hlb{font-family:'JetBrains Mono',monospace;font-size:.52rem;letter-spacing:.13em;color:var(--iv3);text-transform:uppercase;margin-top:5px;line-height:1.5}
 
-    /* ===================== */
-    /* REST OF THE STYLES */
-    /* ===================== */
-    .project-card {
-      transition: all 0.3s ease;
-      border-left: 4px solid var(--primary);
-    }
+@keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-    }
+.sind{position:absolute;bottom:30px;left:5vw;display:flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:.55rem;letter-spacing:.18em;color:var(--iv3);text-transform:uppercase;opacity:0;animation:fu 1s 1.1s ease both}
+.sl{width:36px;height:1px;background:var(--iv3);position:relative;overflow:hidden}
+.sl::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--a);animation:sa 2s 1.6s ease-in-out infinite}
+@keyframes sa{0%{left:-100%}100%{left:100%}}
 
-    .skill-bar {
-      height: 8px;
-      background: rgba(100, 116, 139, 0.1);
-      border-radius: 4px;
-      overflow: hidden;
-    }
+/* TICKER */
+.ticker{overflow:hidden;background:var(--a);padding:10px 0;white-space:nowrap}
+.ti{display:inline-flex;animation:tk 36s linear infinite}
+.ti:hover{animation-play-state:paused}
+.titem{font-family:'JetBrains Mono',monospace;font-size:.57rem;letter-spacing:.18em;text-transform:uppercase;color:var(--bg);padding:0 22px;display:inline-flex;align-items:center;gap:12px}
+.titem::after{content:'◆';opacity:.4;font-size:.4rem}
+@keyframes tk{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-    .skill-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--primary), #6366f1);
-      border-radius: 4px;
-      width: 0;
-      transition: width 1s ease-out;
-    }
+/* SHARED */
+section{padding:100px 5vw;position:relative}
+.sl2{font-family:'JetBrains Mono',monospace;font-size:.61rem;letter-spacing:.22em;color:var(--a);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:11px}
+.sl2::before{content:'';width:26px;height:1px;background:var(--a)}
+.st{font-family:'Cormorant Garamond',serif;font-size:clamp(2.1rem,4.3vw,3.7rem);font-weight:300;line-height:1.06;color:var(--iv);margin-bottom:50px}
+.st em{font-style:italic;color:var(--alt)}
 
-    /* Dark mode toggle */
-    .toggle-checkbox:checked {
-      right: 0;
-      border-color: #68D391;
-    }
-    .toggle-checkbox:checked + .toggle-label {
-      background-color: #68D391;
-    }
+/* ABOUT */
+#about{background:var(--bg1)}
+.ag{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:start}
+.atext p{font-size:.93rem;line-height:1.86;color:var(--iv2);margin-bottom:18px}
+.atext p strong{color:var(--iv);font-weight:600}
+.hlg{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--abdr);border:1px solid var(--abdr)}
+.hli{background:var(--bg1);padding:18px 20px;transition:background .22s}
+.hli:hover{background:var(--bg2)}
+.hli-ic{font-size:.92rem;margin-bottom:5px}
+.hli-lb{font-family:'JetBrains Mono',monospace;font-size:.53rem;letter-spacing:.15em;color:var(--iv3);text-transform:uppercase;margin-bottom:3px}
+.hli-v{font-size:.8rem;font-weight:600;color:var(--iv)}
 
-    /* Project Modal */
-    .project-modal {
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-    }
-    
-    .project-modal.active {
-      opacity: 1;
-      visibility: visible;
-    }
-    
-    .modal-overlay {
-      background: rgba(0,0,0,0.7);
-      backdrop-filter: blur(5px);
-    }
-    
-    .modal-content {
-      transform: translateY(20px);
-      transition: transform 0.3s ease;
-    }
-    
-    .project-modal.active .modal-content {
-      transform: translateY(0);
-    }
+/* EXPERIENCE */
+#experience{background:var(--bg)}
 
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .hero-content {
-        padding-top: 4rem;
-        padding-bottom: 6rem;
-      }
-      
-      .hero-buttons {
-        flex-direction: column;
-      }
-      
-      .social-links {
-        flex-direction: column;
-      }
-    }
+/* Deliverect unicorn card */
+.dv-card{border:1px solid var(--abdr);background:linear-gradient(135deg,var(--card) 0%,rgba(201,148,58,.07) 100%);position:relative;overflow:hidden;margin-bottom:0}
+.dv-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:linear-gradient(to bottom,var(--a),var(--alt),var(--a))}
 
-    /* Fix for white gap */
-    body, html {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      overflow-x: hidden;
-    }
-    
-    /* Badge styling */
-    .badge {
-      display: inline-block;
-      padding: 0.25rem 0.75rem;
-      border-radius: 9999px;
-      font-size: 0.75rem;
-      font-weight: 500;
-      background-color: rgba(14, 165, 233, 0.1);
-      color: #0ea5e9;
-    }
-    
-    /* Hover grow effect */
-    .hover-grow {
-      transition: transform 0.3s ease;
-    }
-    
-    .hover-grow:hover {
-      transform: scale(1.05);
-    }
-    
-    /* Gradient text */
-    .gradient-text {
-      background: linear-gradient(90deg, #0ea5e9, #6366f1);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    
-    /* Custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    
-    ::-webkit-scrollbar-track {
-      background: var(--bg);
-    }
-    
-    ::-webkit-scrollbar-thumb {
-      background: var(--primary);
-      border-radius: 4px;
-    }
-    
-    ::-webkit-scrollbar-thumb:hover {
-      background: var(--primary-dark);
-    }
-  </style>
+/* shimmer top border */
+.dv-card::after{content:'';position:absolute;top:0;left:-100%;right:-100%;height:1px;background:linear-gradient(to right,transparent,var(--a),transparent);animation:shimmer 4s ease-in-out infinite}
+@keyframes shimmer{0%{left:-100%}100%{left:100%}}
+
+.dv-top-row{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:start;padding:32px 34px 24px}
+.dv-left{}
+.dv-role-title{font-size:1.18rem;font-weight:700;color:var(--iv);margin-bottom:6px}
+.dv-company-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.dv-company{font-size:.85rem;color:var(--iv2)}
+.badge{font-family:'JetBrains Mono',monospace;font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;padding:2px 8px;border-radius:var(--r)}
+.bg-g{color:var(--green);background:var(--gdim);border:1px solid var(--gbdr)}
+.bg-a{color:var(--a);background:var(--adim);border:1px solid var(--abdr)}
+.bg-b{color:var(--blue);background:var(--bdim);border:1px solid var(--bbdr)}
+.dv-date-col{text-align:right}
+.dv-date{font-family:'JetBrains Mono',monospace;font-size:.63rem;color:var(--a);letter-spacing:.1em;background:var(--adim);border:1px solid var(--abdr);padding:5px 12px;border-radius:var(--r);display:inline-block;margin-bottom:8px}
+.dv-tagline{font-size:.84rem;color:var(--iv2);line-height:1.76;max-width:680px;margin-bottom:0}
+
+/* Leader exposure strip */
+.leader-strip{padding:0 34px 24px}
+.leader-strip-title{font-family:'JetBrains Mono',monospace;font-size:.57rem;letter-spacing:.18em;color:var(--iv3);text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.leader-strip-title::before{content:'';width:20px;height:1px;background:var(--iv3)}
+.leaders-row{display:flex;gap:1px;background:var(--ln);border:1px solid var(--ln);overflow:hidden}
+.leader-card{background:var(--card2);padding:16px 20px;flex:1;transition:background .22s}
+.leader-card:hover{background:var(--bg2)}
+.lc-role{font-family:'JetBrains Mono',monospace;font-size:.53rem;letter-spacing:.12em;color:var(--a);text-transform:uppercase;margin-bottom:4px}
+.lc-title{font-size:.82rem;font-weight:600;color:var(--iv);line-height:1.3}
+.lc-note{font-size:.72rem;color:var(--iv3);margin-top:3px}
+
+/* impact bar */
+.impact-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--ln);border-top:1px solid var(--ln)}
+.impact-item{background:var(--card);padding:16px 18px;text-align:center;transition:background .22s}
+.impact-item:hover{background:var(--card2)}
+.imp-n{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--alt);line-height:1}
+.imp-l{font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.1em;color:var(--iv3);text-transform:uppercase;margin-top:4px;line-height:1.5}
+
+/* sidebar tab layout */
+.dv-body{display:grid;grid-template-columns:220px 1fr;background:var(--ln);border:1px solid var(--ln);border-top:none}
+.dv-nav{background:var(--card);border-right:1px solid var(--ln);display:flex;flex-direction:column}
+.dv-tab{display:flex;align-items:center;gap:11px;padding:15px 18px;cursor:none;border:none;background:none;text-align:left;border-left:2px solid transparent;transition:background .2s,border-color .2s;width:100%}
+.dv-tab:not(:last-child){border-bottom:1px solid var(--ln)}
+.dv-tab:hover{background:var(--card2)}
+.dv-tab.on{background:var(--card2);border-left-color:var(--a)}
+.dv-tab-icon{font-size:.9rem;flex-shrink:0;width:18px;text-align:center}
+.dv-tab-label{display:flex;flex-direction:column;gap:2px}
+.dv-tab-title{font-family:'JetBrains Mono',monospace;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--iv2);transition:color .2s;white-space:nowrap}
+.dv-tab.on .dv-tab-title{color:var(--a)}
+.dv-tab-sub{font-size:.6rem;color:var(--iv3);white-space:nowrap}
+
+.dv-panels{background:var(--card);overflow:hidden}
+.dv-panel{display:none;padding:32px 34px;animation:pIn .28s ease}
+.dv-panel.on{display:block}
+@keyframes pIn{from{opacity:0;transform:translateX(10px)}to{opacity:1;transform:translateX(0)}}
+
+.ph{margin-bottom:16px}
+.pt2{font-family:'Cormorant Garamond',serif;font-size:1.44rem;font-weight:600;color:var(--iv);margin-bottom:3px;line-height:1.2}
+.ps{font-family:'JetBrains Mono',monospace;font-size:.56rem;letter-spacing:.12em;color:var(--iv3);text-transform:uppercase}
+.ptools{display:flex;flex-wrap:wrap;gap:4px;margin:12px 0 18px}
+.ptl{font-family:'JetBrains Mono',monospace;font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:var(--a);background:var(--adim);border:1px solid var(--abdr);padding:3px 7px;border-radius:var(--r)}
+.pbl{list-style:none;display:flex;flex-direction:column;gap:9px}
+.pbl li{font-size:.86rem;line-height:1.72;color:var(--iv2);padding-left:17px;position:relative}
+.pbl li::before{content:'→';position:absolute;left:0;color:var(--a);font-size:.68rem;top:2px}
+.pbl li strong{color:var(--iv);font-weight:600}
+.pmetrics{display:flex;gap:0;margin-top:20px;border-top:1px solid var(--ln)}
+.pmv{flex:1;padding:13px 15px;border-right:1px solid var(--ln);text-align:center}
+.pmv:last-child{border-right:none}
+.pmvn{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:var(--alt);line-height:1}
+.pmvl{font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.1em;color:var(--iv3);text-transform:uppercase;margin-top:4px;line-height:1.4}
+
+/* Other exp */
+.other-exp{display:flex;flex-direction:column;gap:1px;background:var(--ln);border:1px solid var(--ln);margin-top:50px}
+.oitem{background:var(--card);padding:28px 30px;transition:background .22s;position:relative;overflow:hidden}
+.oitem::before{content:'';position:absolute;top:0;left:0;bottom:0;width:2px;background:var(--a);transform:scaleY(0);transform-origin:top;transition:transform .3s}
+.oitem:hover{background:var(--card2)}
+.oitem:hover::before{transform:scaleY(1)}
+.oh{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:5px}
+.or{font-size:1rem;font-weight:700;color:var(--iv)}
+.od{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--a);letter-spacing:.1em;background:var(--adim);border:1px solid var(--abdr);padding:3px 9px;border-radius:var(--r)}
+.oc{font-size:.79rem;color:var(--iv2);margin-bottom:13px}
+.obl{list-style:none;display:flex;flex-direction:column;gap:8px}
+.obl li{font-size:.84rem;line-height:1.7;color:var(--iv2);padding-left:16px;position:relative}
+.obl li::before{content:'→';position:absolute;left:0;color:var(--a);font-size:.67rem}
+.obl li strong{color:var(--iv);font-weight:600}
+
+/* EXPERTISE */
+#whatido{background:var(--bg1)}
+.e5{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--ln);border:1px solid var(--ln)}
+.e5c{background:var(--card);padding:30px 22px;position:relative;overflow:hidden;transition:background .26s}
+.e5c::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--a),transparent);transform:scaleX(0);transition:transform .36s}
+.e5c:hover{background:var(--card2)}
+.e5c:hover::after{transform:scaleX(1)}
+.e5ic{font-size:1.55rem;margin-bottom:13px}
+.e5ti{font-family:'Cormorant Garamond',serif;font-size:1.14rem;font-weight:600;color:var(--iv);margin-bottom:9px}
+.e5de{font-size:.78rem;line-height:1.74;color:var(--iv2);margin-bottom:13px}
+.e5ts{display:flex;flex-wrap:wrap;gap:4px}
+.tc{font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;color:var(--a);background:var(--adim);border:1px solid var(--abdr);padding:2px 6px;border-radius:var(--r)}
+
+/* PROJECTS */
+#projects{background:var(--bg)}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ln);border:1px solid var(--ln)}
+.pc{background:var(--card);padding:28px 24px;position:relative;overflow:hidden;cursor:none;transition:background .26s}
+.pc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--a);transform:scaleX(0);transform-origin:left;transition:transform .34s}
+.pc:hover{background:var(--card2)}
+.pc:hover::after{transform:scaleX(1)}
+.pc.feat{grid-column:span 3;background:linear-gradient(135deg,var(--card) 0%,rgba(201,148,58,.06) 100%);display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.pno{font-family:'JetBrains Mono',monospace;font-size:.52rem;letter-spacing:.2em;color:var(--iv3);margin-bottom:11px}
+.ptgs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:11px}
+.ptg{font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;color:var(--a);background:var(--adim);border:1px solid var(--abdr);padding:2px 7px;border-radius:var(--r)}
+.pti{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--iv);margin-bottom:10px;line-height:1.2}
+.feat .pti{font-size:1.75rem}
+.pde{font-size:.8rem;line-height:1.72;color:var(--iv2);margin-bottom:13px}
+.pme{display:flex;gap:20px;margin:13px 0;padding:12px 0;border-top:1px solid var(--ln);border-bottom:1px solid var(--ln)}
+.pmn{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:600;color:var(--alt);line-height:1}
+.pml{font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.1em;color:var(--iv3);text-transform:uppercase;margin-top:4px}
+.plk{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.12em;color:var(--a);text-decoration:none;display:inline-flex;align-items:center;gap:5px;text-transform:uppercase;transition:gap .2s}
+.plk:hover{gap:9px}
+.il{list-style:none;display:flex;flex-direction:column;gap:9px}
+.il li{font-size:.8rem;line-height:1.64;color:var(--iv2);padding-left:15px;position:relative}
+.il li::before{content:'◆';position:absolute;left:0;color:var(--a);font-size:.42rem;top:5px}
+.il li strong{color:var(--iv)}
+.ih{font-family:'JetBrains Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:var(--iv3);text-transform:uppercase;margin-bottom:12px}
+
+/* SKILLS */
+#skills{background:var(--bg1)}
+.skg{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--ln);border:1px solid var(--ln)}
+.skgc{background:var(--card);padding:30px 22px;transition:background .22s}
+.skgc:hover{background:var(--card2)}
+.skgt{font-family:'JetBrains Mono',monospace;font-size:.55rem;letter-spacing:.18em;color:var(--a);text-transform:uppercase;margin-bottom:15px;padding-bottom:10px;border-bottom:1px solid var(--abdr)}
+.skl{list-style:none;display:flex;flex-direction:column;gap:8px}
+.skl li{font-size:.8rem;color:var(--iv2);display:flex;align-items:center;gap:7px;transition:color .18s}
+.skl li:hover{color:var(--iv)}
+.skl li::before{content:'';width:3px;height:3px;border-radius:50%;background:var(--a);flex-shrink:0}
+
+/* EDUCATION */
+#education{background:var(--bg)}
+.edug{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ln);border:1px solid var(--ln)}
+.educ{background:var(--card);padding:42px 34px;position:relative;overflow:hidden;transition:background .22s}
+.educ:hover{background:var(--card2)}
+.educ::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--a)}
+.edde{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:600;color:var(--iv);margin-bottom:7px;line-height:1.2}
+.edsc{font-size:.9rem;font-weight:700;color:var(--alt);margin-bottom:3px}
+.edme{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--iv3);letter-spacing:.1em;margin-bottom:15px}
+.edbg{display:inline-flex;align-items:center;gap:6px;background:var(--adim);border:1px solid var(--abdr);padding:5px 11px;border-radius:var(--r);font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.1em;color:var(--a);margin-bottom:15px;margin-right:5px}
+.edco{font-size:.77rem;color:var(--iv3);line-height:1.72}
+.edco strong{display:block;font-family:'JetBrains Mono',monospace;font-size:.52rem;letter-spacing:.15em;color:var(--iv3);text-transform:uppercase;margin-bottom:5px;margin-top:12px}
+
+/* CONTACT */
+#contact{background:var(--bg1)}
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.chi{font-family:'Cormorant Garamond',serif;font-size:clamp(1.75rem,3.2vw,2.8rem);font-weight:300;line-height:1.2;color:var(--iv);margin-bottom:20px}
+.chi em{font-style:italic;color:var(--alt)}
+.csb{font-size:.86rem;line-height:1.8;color:var(--iv2);margin-bottom:30px}
+.cls{display:flex;flex-direction:column;gap:1px;background:var(--ln);border:1px solid var(--ln)}
+.cl{display:flex;align-items:center;justify-content:space-between;background:var(--card);padding:16px 20px;text-decoration:none;transition:background .2s,padding-left .2s;cursor:none}
+.cl:hover{background:var(--card2);padding-left:26px}
+.cll{font-family:'JetBrains Mono',monospace;font-size:.54rem;letter-spacing:.15em;color:var(--iv3);text-transform:uppercase;margin-bottom:2px}
+.clv{font-size:.85rem;font-weight:500;color:var(--iv)}
+.cla{color:var(--a);font-size:.9rem;transition:transform .2s}
+.cl:hover .cla{transform:translateX(4px)}
+
+footer{background:var(--bg);border-top:1px solid var(--ln);padding:24px 5vw;display:flex;align-items:center;justify-content:space-between}
+.fcp{font-family:'JetBrains Mono',monospace;font-size:.54rem;letter-spacing:.12em;color:var(--iv3);text-transform:uppercase}
+.fls{display:flex;gap:20px}
+.fls a{font-family:'JetBrains Mono',monospace;font-size:.54rem;letter-spacing:.12em;color:var(--iv3);text-transform:uppercase;text-decoration:none;transition:color .2s}
+.fls a:hover{color:var(--a)}
+
+.rv{opacity:0;transform:translateY(25px);transition:opacity .65s,transform .65s}
+.rv.in{opacity:1;transform:translateY(0)}
+
+@keyframes pdot{0%,100%{opacity:.14;transform:scale(1)}50%{opacity:.8;transform:scale(2.5)}}
+
+/* RESPONSIVE */
+@media(max-width:1150px){.e5{grid-template-columns:repeat(3,1fr)}.skg{grid-template-columns:1fr 1fr}}
+@media(max-width:980px){
+  #hero{grid-template-columns:1fr}.hstats{display:none}
+  .ag,.cg,.edug{grid-template-columns:1fr;gap:36px}
+  .pgrid{grid-template-columns:1fr}.pc.feat{grid-column:span 1;grid-template-columns:1fr}
+  .dv-body{grid-template-columns:1fr}
+  .dv-nav{flex-direction:row;overflow-x:auto;border-right:none;border-bottom:1px solid var(--ln);scrollbar-width:none}
+  .dv-nav::-webkit-scrollbar{display:none}
+  .dv-tab{border-left:none;border-bottom:2px solid transparent;padding:11px 14px;flex-shrink:0}
+  .dv-tab.on{border-left:none;border-bottom-color:var(--a)}
+  .dv-tab-sub{display:none}
+  .nl{display:none}
+  .leaders-row{flex-wrap:wrap}
+  .leader-card{flex:1 1 45%}
+}
+@media(max-width:640px){.e5{grid-template-columns:1fr 1fr}.skg{grid-template-columns:1fr}.impact-bar{grid-template-columns:1fr 1fr}}
+</style>
 </head>
-<body class="antialiased">
+<body>
+<div id="C"></div><div id="CR"></div>
 
-  <!-- ===================== -->
-  <!-- HERO SECTION -->
-  <!-- ===================== -->
-  <div class="hero-container">
-    <!-- Background elements -->
-    <div class="hero-bg-pattern"></div>
-    <div class="hero-bg-grid"></div>
-    
-    <!-- Content -->
-    <div class="hero-content container mx-auto px-4">
-      <div class="max-w-4xl mx-auto text-center">
-        <!-- Profile Image -->
-        <div class="floating inline-block mb-8" data-aos="fade-up">
-          <img src="https://github.com/utkarsh7653.png" alt="Utkarsh Singh" loading="lazy" 
-               class="profile-image rounded-full mx-auto object-cover hover-grow transition-transform duration-300"/>
-        </div>
-        
-        <!-- Name and Title -->
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight" data-aos="fade-up">
-          Utkarsh Singh
-        </h1>
-        
-        <h2 class="text-2xl md:text-3xl font-medium text-white/90 mb-6 gradient-text" data-aos="fade-up" data-aos-delay="100">
-          Data Strategist
-        </h2>
-        
-        <p class="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="150">
-          Transforming complex data into actionable insights through machine learning, statistical analysis, and business intelligence.
-        </p>
-        
-        <!-- Action Buttons -->
-        <div class="flex flex-wrap justify-center gap-4 mb-10" data-aos="fade-up" data-aos-delay="200">
-          <a href="#contact" class="btn-primary bg-white text-primary-900 hover:bg-primary-50 px-8 py-3 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
-            <i class="fas fa-paper-plane"></i> Contact Me
-          </a>
-          <a href="#projects" class="btn-secondary bg-transparent hover:bg-white/10 text-white px-8 py-3 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 border-2 border-white/30">
-            <i class="fas fa-code"></i> View Projects
-          </a>
-        </div>
-        
-        <!-- Social Links -->
-        <div class="flex justify-center gap-4 flex-wrap" data-aos="fade-up" data-aos-delay="300">
-          <a href="https://github.com/utkarsh7653" target="_blank" rel="noopener" class="social-link bg-white/10 hover:bg-white/20 border border-white/20 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 flex items-center gap-2">
-            <i class="fab fa-github text-lg"></i> GitHub
-          </a>
-          <a href="https://www.linkedin.com/in/utkarsh-singh-a1127a192/" target="_blank" rel="noopener" class="social-link bg-white/10 hover:bg-white/20 border border-white/20 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 flex items-center gap-2">
-            <i class="fab fa-linkedin-in text-lg"></i> LinkedIn
-          </a>
-          <a href="mailto:u25singh@uwaterloo.ca" class="social-link bg-white/10 hover:bg-white/20 border border-white/20 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 flex items-center gap-2">
-            <i class="fas fa-envelope text-lg"></i> Email
-          </a>
-        </div>
-      </div>
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo"><span class="ldot"></span>Utkarsh Singh</a>
+  <ul class="nl">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#whatido">Expertise</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="utkarshsinghresumetech.pdf" download class="ncta">↓ Resume</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="vl" style="left:33%"></div>
+  <div class="vl" style="left:66%"></div>
+
+  <div class="hero-left">
+    <p class="eyebrow">Data Analytics · RevOps · Finance · Customer Success</p>
+    <h1>
+      <span class="h1-line">Turning data</span>
+      <span class="h1-line">into <em>clarity</em></span>
+      <span class="h1-line">for every team.</span>
+    </h1>
+    <p class="hdesc">Analytics professional with dual degrees from <strong>Purdue</strong> and the <strong>University of Waterloo</strong>. I help organizations make sharper decisions — across revenue, operations, finance, and customer success — by building the analytical infrastructure that surfaces what matters.</p>
+    <div class="rpills">
+      <span class="rp">Data Analyst</span>
+      <span class="rp">Revenue Operations</span>
+      <span class="rp">Sales Analyst</span>
+      <span class="rp">Financial Analyst</span>
+      <span class="rp">Customer Success Analytics</span>
+      <span class="rp">Sales Operations</span>
+    </div>
+    <div class="hctas">
+      <a href="#experience" class="bp">View Experience ↓</a>
+      <a href="utkarshsinghresumetech.pdf" download class="bo">↓ Download Resume</a>
     </div>
   </div>
 
-  <!-- NAVIGATION -->
-  <nav class="sticky top-0 bg-white/90 dark:bg-[#1e293b]/90 backdrop-blur-md shadow-sm z-50 border-b border-gray-200/50 dark:border-[#334155]/50">
-    <div class="container mx-auto px-4 flex items-center justify-between py-3">
-      <a href="#" class="text-xl font-bold bg-gradient-to-r from-[#0ea5e9] to-[#6366f1] bg-clip-text text-transparent hover-grow transition-transform">
-        <span class="hidden sm:inline">UTKARSH SINGH</span>
-        <span class="sm:hidden">US</span>
-      </a>
+  <div class="hstats">
+    <div class="hstat"><div class="hn" data-target="37.8" data-dec="1" data-suf="%">—</div><div class="hlb">True revenue capture<br>rate uncovered</div></div>
+    <div class="hstat"><div class="hn" data-target="40" data-dec="0" data-suf="%">—</div><div class="hlb">Manual reporting<br>time reduced</div></div>
+    <div class="hstat"><div class="hn" data-target="25" data-dec="0" data-suf="%">—</div><div class="hlb">Client acquisition<br>increase achieved</div></div>
+    <div class="hstat"><div class="hn" data-target="3.7" data-dec="1" data-suf="">—</div><div class="hlb">GPA · University<br>of Waterloo</div></div>
+  </div>
 
-      <div class="hidden md:flex gap-6 items-center">
-        <a href="#about" class="text-sm font-medium hover:text-[#0ea5e9] dark:hover:text-[#38bdf8] transition-colors px-3 py-2 rounded-lg hover:bg-gray-100/50 dark:hover:bg-[#334155]/50">
-          About
-        </a>
-        <a href="#projects" class="text-sm font-medium hover:text-[#0ea5e9] dark:hover:text-[#38bdf8] transition-colors px-3 py-2 rounded-lg hover:bg-gray-100/50 dark:hover:bg-[#334155]/50">
-          Projects
-        </a>
-        <a href="#skills" class="text-sm font-medium hover:text-[#0ea5e9] dark:hover:text-[#38bdf8] transition-colors px-3 py-2 rounded-lg hover:bg-gray-100/50 dark:hover:bg-[#334155]/50">
-          Skills
-        </a>
-        <a href="#education" class="text-sm font-medium hover:text-[#0ea5e9] dark:hover:text-[#38bdf8] transition-colors px-3 py-2 rounded-lg hover:bg-gray-100/50 dark:hover:bg-[#334155]/50">
-          Education
-        </a>
-        <a href="#contact" class="text-sm font-medium hover:text-[#0ea5e9] dark:hover:text-[#38bdf8] transition-colors px-3 py-2 rounded-lg hover:bg-gray-100/50 dark:hover:bg-[#334155]/50">
-          Contact
-        </a>
-        
-        <!-- Dark mode toggle -->
-        <div class="flex items-center ml-2">
-          <div class="relative inline-block w-10 mr-2 align-middle select-none">
-            <input type="checkbox" id="toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
-            <label for="toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer transition-colors duration-200"></label>
-          </div>
-          <span class="text-sm text-gray-600 dark:text-gray-400">
-            <i class="fas fa-moon dark:hidden"></i>
-            <i class="fas fa-sun hidden dark:inline"></i>
-          </span>
-        </div>
-      </div>
-
-      <div class="md:hidden flex items-center gap-3">
-        <div class="relative inline-block w-10 align-middle select-none">
-          <input type="checkbox" id="toggle-mobile" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
-          <label for="toggle-mobile" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer transition-colors duration-200"></label>
-        </div>
-        <button id="mobileToggle" aria-expanded="false" aria-label="Open menu" class="p-2 rounded-md text-[#0ea5e9] dark:text-[#38bdf8] hover:bg-gray-100/50 dark:hover:bg-[#334155]/50">
-          <i class="fas fa-bars text-xl"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden md:hidden border-t border-gray-200/50 dark:border-[#334155]/50 bg-white/95 dark:bg-[#1e293b]/95 backdrop-blur-md">
-      <div class="px-4 py-3 flex flex-col gap-1">
-        <a href="#about" class="py-3 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">About</a>
-        <a href="#projects" class="py-3 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">Projects</a>
-        <a href="#skills" class="py-3 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">Skills</a>
-        <a href="#education" class="py-3 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">Education</a>
-        <a href="#contact" class="py-3 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">Contact</a>
-      </div>
-    </div>
-  </nav>
-
-  <main class="container mx-auto px-4 py-16 max-w-6xl">
-
-    <!-- ABOUT SECTION -->
-    <section id="about" class="mb-24" data-aos="fade-up">
-      <div class="grid md:grid-cols-3 gap-12 items-start">
-        <div class="md:col-span-2">
-          <h2 class="text-3xl font-bold mb-6">About Me</h2>
-          <p class="text-gray-700 dark:text-gray-300 mb-6 text-lg leading-relaxed">
-            I'm an Analytics Professional with dual degrees from <strong class="text-[#0ea5e9]">Purdue University (B.S. in Business Analytics)</strong> and the <strong class="text-[#0ea5e9]">University of Waterloo (M.S. in Management Science)</strong>. My academic journey across both the United States and Canada has equipped me with a unique blend of technical expertise and business acumen, allowing me to bridge the gap between data and decision-making.
-          </p>
-
-          <p class="text-gray-700 dark:text-gray-300 mb-8 text-lg leading-relaxed">
-            My approach combines rigorous statistical methods with practical business applications. I specialize in transforming complex datasets into clear, actionable insights that drive strategic decisions. Whether it's building predictive models, designing interactive dashboards, or optimizing business processes, I'm passionate about leveraging data to solve real-world problems.
-          </p>
-
-          <div class="flex flex-wrap gap-4">
-            <a href="#projects" class="btn-primary px-7 py-3 rounded-lg font-medium bg-[#0ea5e9] hover:bg-[#0284c7] text-white transition-colors flex items-center">
-              <i class="fas fa-code mr-2"></i> View Projects
-            </a>
-            <a href="#contact" class="px-7 py-3 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors flex items-center">
-              <i class="fas fa-paper-plane mr-2"></i> Get In Touch
-            </a>
-          </div>
-        </div>
-
-        <div class="bg-white dark:bg-[#1e293b] p-8 rounded-xl shadow-lg border border-gray-100 dark:border-[#334155] hover-grow transition-transform">
-          <h3 class="font-semibold text-xl mb-6 dark:text-gray-200 flex items-center gap-2">
-            <i class="fas fa-star text-[#0ea5e9]"></i>
-            Professional Highlights
-          </h3>
-          <ul class="text-gray-700 dark:text-gray-300 space-y-5">
-            <li class="flex items-start gap-4">
-              <div class="flex-shrink-0 h-6 w-6 text-[#0ea5e9] mt-0.5 bg-[#0ea5e9]/10 rounded-full flex items-center justify-center">
-                <i class="fas fa-graduation-cap text-sm"></i>
-              </div>
-              <span><strong class="text-gray-800 dark:text-gray-200">Education:</strong> Purdue University & University of Waterloo</span>
-            </li>
-            <li class="flex items-start gap-4">
-              <div class="flex-shrink-0 h-6 w-6 text-[#0ea5e9] mt-0.5 bg-[#0ea5e9]/10 rounded-full flex items-center justify-center">
-                <i class="fas fa-map-marker-alt text-sm"></i>
-              </div>
-              <span><strong class="text-gray-800 dark:text-gray-200">Location:</strong> Waterloo, Ontario, Canada (Open to relocation)</span>
-            </li>
-            <li class="flex items-start gap-4">
-              <div class="flex-shrink-0 h-6 w-6 text-[#0ea5e9] mt-0.5 bg-[#0ea5e9]/10 rounded-full flex items-center justify-center">
-                <i class="fas fa-briefcase text-sm"></i>
-              </div>
-              <span><strong class="text-gray-800 dark:text-gray-200">Work preferences:</strong> Flexible — Remote / Hybrid / On-site</span>
-            </li>
-            <li class="flex items-start gap-4">
-              <div class="flex-shrink-0 h-6 w-6 text-[#0ea5e9] mt-0.5 bg-[#0ea5e9]/10 rounded-full flex items-center justify-center">
-                <i class="fas fa-code text-sm"></i>
-              </div>
-              <span><strong class="text-gray-800 dark:text-gray-200">Technical Focus:</strong> Data Science, Machine Learning, Business Analytics</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS SECTION -->
-    <section id="projects" class="mb-24" data-aos="fade-up">
-     
-          </select>
-        </div>
-      </div>
-
-      <div id="projectGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Parkinson's Disease Project -->
-        <article class="project-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all bg-white dark:bg-[#1e293b]" data-tech="ml,python" data-aos="fade-up" data-aos-delay="50">
-          <div class="flex justify-between items-start mb-4">
-            <h3 class="font-semibold text-xl">Parkinson's Disease Progression Prediction</h3>
-            <span class="text-xs px-2 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full">ML</span>
-          </div>
-          <p class="text-gray-600 dark:text-gray-400 mb-5">Developed neural network and ensemble models to predict UPDRS scores from protein/peptide biomarkers with 16.6% R² improvement over baseline.</p>
-          <div class="flex gap-2 mb-6 flex-wrap">
-            <span class="badge">Python</span>
-            <span class="badge">TensorFlow</span>
-            <span class="badge">Scikit-learn</span>
-            <span class="badge">XGBoost</span>
-          </div>
-          <div class="mt-auto flex gap-3">
-            <button class="open-project-details btn-primary px-4 py-2 rounded-lg font-medium flex items-center" 
-                    data-project="parkinsons">
-              <i class="fas fa-info-circle mr-2"></i> View Details
-            </button>
-            <a href="https://github.com/utkarsh7653/Parkinson-s-Disease-Progression-Prediction" target="_blank" class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors flex items-center">
-              <i class="fab fa-github mr-2"></i> Code
-            </a>
-          </div>
-        </article>
-
-        <!-- Text-to-SQL Project -->
-        <article class="project-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all bg-white dark:bg-[#1e293b]" data-tech="nlp,python" data-aos="fade-up" data-aos-delay="100">
-          <div class="flex justify-between items-start mb-4">
-            <h3 class="font-semibold text-xl">Lightweight Text-to-SQL with Transformers</h3>
-            <span class="text-xs px-2 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full">NLP</span>
-          </div>
-          <p class="text-gray-600 dark:text-gray-400 mb-5">Evaluated T5-Small, BART-Small, and GPT-2 models on the Spider dataset for schema-aware SQL generation in low-resource settings.</p>
-          <div class="flex gap-2 mb-6 flex-wrap">
-            <span class="badge">NLP</span>
-            <span class="badge">Transformers</span>
-            <span class="badge">PyTorch</span>
-            <span class="badge">HuggingFace</span>
-          </div>
-          <div class="mt-auto flex gap-3">
-            <button class="open-project-details btn-primary px-4 py-2 rounded-lg font-medium flex items-center" 
-                    data-project="text2sql">
-              <i class="fas fa-info-circle mr-2"></i> View Details
-            </button>
-            <a href="https://github.com/chirag300/Seqt2SQL" target="_blank" class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors flex items-center">
-              <i class="fab fa-github mr-2"></i> Code
-            </a>
-          </div>
-        </article>
-
-        <!-- Youth Substance Use Project -->
-        <article class="project-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all bg-white dark:bg-[#1e293b]" data-tech="python,stats,analytics" data-aos="fade-up" data-aos-delay="150">
-          <div class="flex justify-between items-start mb-4">
-            <h3 class="font-semibold text-xl">Youth Substance Use Determinants (Canada)</h3>
-            <span class="text-xs px-2 py-1 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full">Analytics</span>
-          </div>
-          <p class="text-gray-600 dark:text-gray-400 mb-5">Advanced statistical modeling of 60K+ student records identifying peer influence as strongest predictor (OR=951.35).</p>
-          <div class="flex gap-2 mb-6 flex-wrap">
-            <span class="badge">Bayesian Stats</span>
-            <span class="badge">PyMC3</span>
-            <span class="badge">Lasso</span>
-            <span class="badge">Multilevel Models</span>
-            <span class="badge">PSM</span>
-          </div>
-          <div class="mt-auto flex gap-3">
-            <button class="open-project-details btn-primary px-4 py-2 rounded-lg font-medium flex items-center" 
-                    data-project="substance-use">
-              <i class="fas fa-info-circle mr-2"></i> View Details
-            </button>
-            <a href="https://github.com/utkarsh7653/Data-Driven-Analysis-of-Social-and-Demographic-Determinants-of-Youth-Substance-Use-in-Canada" target="_blank" class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors flex items-center">
-              <i class="fab fa-github mr-2"></i> Code
-            </a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- PROJECT MODALS -->
-    <!-- Parkinson's Disease Modal -->
-    <div id="parkinsons-modal" class="project-modal fixed inset-0 z-50 flex items-center justify-center p-4">
-      <div class="modal-overlay absolute inset-0"></div>
-      <div class="modal-content relative bg-white dark:bg-[#1e293b] rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-        <button class="close-modal absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">
-          <i class="fas fa-times text-xl"></i>
-        </button>
-        
-        <div class="p-8">
-          <div class="flex items-start justify-between mb-6">
-            <div>
-              <h3 class="text-2xl font-bold">Parkinson's Disease Progression Prediction</h3>
-              <div class="flex gap-2 mt-2 flex-wrap">
-                <span class="badge">Python</span>
-                <span class="badge">TensorFlow</span>
-                <span class="badge">Scikit-learn</span>
-                <span class="badge">XGBoost</span>
-              </div>
-            </div>
-            <a href="https://github.com/utkarsh7653/Parkinson-s-Disease-Progression-Prediction" target="_blank" class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors flex items-center gap-2">
-              <i class="fab fa-github"></i> View Code
-            </a>
-          </div>
-          
-          <div class="grid md:grid-cols-2 gap-8">
-            <div>
-              <h4 class="font-semibold text-lg mb-3 text-[#0ea5e9]">Project Overview</h4>
-              <p class="text-gray-700 dark:text-gray-300 mb-6">
-                Developed a comprehensive machine learning solution to predict Parkinson's disease progression using protein and peptide biomarkers. The system provides both continuous UPDRS scores and severity categories to support clinical decision-making.
-              </p>
-              
-              <h4 class="font-semibold text-lg mb-3 text-[#0ea5e9]">Key Features</h4>
-              <ul class="text-gray-700 dark:text-gray-300 space-y-3 mb-6">
-                <li class="flex items-start gap-3">
-                  <i class="fas fa-check text-[#0ea5e9] mt-1"></i>
-                  <span>Multi-output neural network (128-64-32 architecture) with batch normalization and dropout</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i class="fas fa-check text-[#0ea5e9] mt-1"></i>
-                  <span>16.6% R² score improvement (3x over baseline) in predicting all 4 UPDRS progression metrics</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i class="fas fa-check text-[#0ea5e9] mt-1"></i>
-                  <span>Complementary Random Forest classifiers (F1=0.89 for UPDRS-1) for severity categorization</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i class="fas fa-check text-[#0ea5e9] mt-1"></i>
-                  <span>Reduced MAE from 5.16 (baseline) to 4.64 through strategic feature engineering</span>
-                </li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 class="font-semibold text-lg mb-3 text-[#0ea5e9]">Technical Details</h4>
-              <ul class="text-gray-700 dark:text-gray-300 space-y-3 mb-6">
-                <li class="flex items-start gap-3">
-                  <i class="fas fa-cog text-[#0ea5e9] mt-1"></i>
-                  <span><strong>Model Architecture:</strong> 3-layer neural network with batch normalization and 20% dropout for regularization</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i class="fas fa-cog text-[#0ea5e9] mt-1"></i>
-                  <span><strong>Training:</strong> Adam optimizer with MSE loss, 50 epochs with early stopping</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i class="fas fa-cog text-[#0ea5e9] mt-1"></i>
-                  <span><strong>Key Findings:</strong> Medication status was the most important feature (35.2% importance)</span>
-                </li>
-                <li class="fas fa-cog text-[#0ea5e9] mt-1"></i>
-                  <span><strong>Data Processing:</strong> Strategic binning to address class imbalance in severity categories</span>
-                </li>
-              </ul>
-              
-              <h4 class="font-semibold text-lg mb-3 text-[#0ea5e9]">Impact</h4>
-              <p class="text-gray-700 dark:text-gray-300">
-                This solution provides clinicians with both continuous progression scores and severity categories, enabling more personalized treatment plans. The model's ability to identify key biomarkers contributes to earlier intervention strategies.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Text-to-SQL Modal -->
-    <div id="text2sql-modal" class="project-modal fixed inset-0 z-50 flex items-center justify-center p-4">
-      <div class="modal-overlay absolute inset-0"></div>
-      <div class="modal-content relative bg-white dark:bg-[#1e293b] rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-        <button class="close-modal absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">
-          <i class="fas fa-times text-xl"></i>
-        </button>
-        
-        <div class="p-8">
-          <div class="flex items-start justify-between mb-6">
-            <div>
-              <h3 class="text-2xl font-bold">Lightweight Text-to-SQL with Transformers</h3>
-              <div class="flex gap-2 mt-2 flex-wrap">
-                <span class="badge">NLP</span>
-                <span class="badge">Transformers</span>
-                <span class="badge">PyTorch</span>
-                <span class="badge">HuggingFace</span>
-              </div>
-            </div>
-            <a href="https://github.com/chirag300/Seqt2SQL" target="_blank" class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors flex items-center gap-2">
-              <i class="fab fa-github"></i> View Code
-            </a>
-          </div>
-          
-          <div class="grid md:grid-cols-2 gap-8">
-            <div>
-              <h4 class="font-semibold text-lg mb-3 text-[#0ea5e9]">Project Overview</h4>
-              <p class="text-gray-700 dark:text-gray-300 mb-6">
-                Developed a model-agnostic pipeline for text-to-SQL generation using compact transformers (60M-139M parameters) on the Spider benchmark. The system translates natural language questions into SQL queries while considering database schema constraints.
-              </p>
-              
-              <h4 class="font-semibold text-lg mb-3 text-[#0ea5e9]">Key Features</h4>
-              <ul class="text-gray-700 dark:text-gray-300 space-y-3 mb-6">
-                <li class="flex items-start gap-3">
-                  <i class="fas fa-check text-[#0ea5e9] mt-1"></i>
-                  <span>Fine-tuned T5-Small achieved 27.8% Logical Form Accuracy (LFAcc)</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i class="fas fa-check text-[#0ea5e9] mt-1"></i>
-                  <span>Outperformed BART-Small (23.98%) and GPT-2 (20.1%) through schema-aware formatting</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i class="fas fa-check text-[#0ea5e9] mt-1"></i>
-                  <span>Implemented constrained decoding to ensure syntactically valid SQL</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i class="fas fa-check text-[#0ea5e9] mt-1"></i>
-                  <span>Modular pipeline supports future enhancements with alternative base models</span>
-                </li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 class="font-semibold text-lg mb-3 text-[#0ea5e9]">Technical Details</h4>
-              <ul class="text-gray-700 dark:text-gray-300 space-y-3 mb-6">
-                <li class="flex items-start gap-3">
-                  <i class="fas fa-cog text-[#0ea5e9] mt-1"></i>
-                  <span><strong>Models Evaluated:</strong> T5-Small, BART-Small, and GPT-2 on Spider dataset</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i class="fas fa-cog text-[#0ea5e9] mt-1"></i>
-                  <span><strong>Evaluation Metrics:</strong> LFAcc (Logical Form Accuracy), BLEU, Exact Match</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i class="fas fa-cog text-[#0ea5e9] mt-1"></i>
-                  <span><strong>Key Innovation:</strong> Schema-aware input formatting for improved performance</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i class="fas fa-cog text-[#0ea5e9] mt-1"></i>
-                  <span><strong>Performance:</strong> Demonstrated encoder-decoder models' superiority in structured query generation</span>
-                </li>
-              </ul>
-              
-              <h4 class="font-semibold text-lg mb-3 text-[#0ea5e9]">Impact</h4>
-              <p class="text-gray-700 dark:text-gray-300">
-                This research provides valuable insights into implementing text-to-SQL systems in resource-constrained environments. The findings help bridge the gap between natural language interfaces and database systems, making data more accessible to non-technical users.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Substance Use Modal -->
-    <div id="substance-use-modal" class="project-modal fixed inset-0 z-50 flex items-center justify-center p-4">
-      <div class="modal-overlay absolute inset-0"></div>
-      <div class="modal-content relative bg-white dark:bg-[#1e293b] rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-        <button class="close-modal absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">
-          <i class="fas fa-times text-xl"></i>
-        </button>
-        
-        <div class="p-8">
-          <div class="flex items-start justify-between mb-6">
-            <div>
-              <h3 class="text-2xl font-bold">Youth Substance Use Determinants (Canada)</h3>
-              <div class="flex gap-2 mt-2 flex-wrap">
-                <span class="badge">Bayesian Stats</span>
-                <span class="badge">PyMC3</span>
-                <span class="badge">Lasso</span>
-                <span class="badge">Multilevel Models</span>
-                <span class="badge">PSM</span>
-              </div>
-            </div>
-            <a href="https://github.com/utkarsh7653/Data-Driven-Analysis-of-Social-and-Demographic-Determinants-of-Youth-Substance-Use-in-Canada" target="_blank" class="px-4 py-2 border rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors flex items-center gap-2">
-              <i class="fab fa-github"></i> View Code
-            </a>
-          </div>
-          
-          <div class="grid md:grid-cols-2 gap-8">
-            <div>
-              <h4 class="font-semibold text-lg mb-3 text-[#0ea5e9]">Project Overview</h4>
-              <p class="text-gray-700 dark:text-gray-300 mb-6">
-                Comprehensive statistical analysis of 2018/2019 CSTADS data (60K+ Canadian students) to identify key determinants of youth substance use. Employed multiple modeling approaches to uncover relationships between social, demographic factors and substance use patterns.
-              </p>
-              
-              <h4 class="font-semibold text-lg mb-3 text-[#0ea5e9]">Key Features</h4>
-              <ul class="text-gray-700 dark:text-gray-300 space-y-3 mb-6">
-                <li class="flex items-start gap-3">
-                  <i class="fas fa-check text-[#0ea5e9] mt-1"></i>
-                  <span>Bayesian Logistic Regression (WAIC: -13901.97) identified grade level and income as key predictors</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i class="fas fa-check text-[#0ea5e9] mt-1"></i>
-                  <span>Lasso Regression achieved 0.7779 AUC for alcohol use prediction</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i class="fas fa-check text-[#0ea5e9] mt-1"></i>
-                  <span>Multilevel Modeling revealed peer influence as dominant factor (OR=951.35, p<0.001)</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i class="fas fa-check text-[#0ea5e9] mt-1"></i>
-                  <span>Propensity Score Matching quantified +0.52 smoking risk from social exposure</span>
-                </li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 class="font-semibold text-lg mb-3 text-[#0ea5e9]">Technical Details</h4>
-              <ul class="text-gray-700 dark:text-gray-300 space-y-3 mb-6">
-                <li class="flex items-start gap-3">
-                  <i class="fas fa-cog text-[#0ea5e9] mt-1"></i>
-                  <span><strong>Data Source:</strong> Canadian Student Tobacco, Alcohol and Drugs Survey (CSTADS)</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i class="fas fa-cog text-[#0ea5e9] mt-1"></i>
-                  <span><strong>Key Finding:</strong> 99.98% of smokers reported peer influence vs 54.92% non-smokers (χ²=187.29, p<0.001)</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i class="fas fa-cog text-[#0ea5e9] mt-1"></i>
-                  <span><strong>Random Forest:</strong> Ranked grade level (importance=0.41) as top predictor</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i class="fas fa-cog text-[#0ea5e9] mt-1"></i>
-                  <span><strong>Methodologies:</strong> Bayesian modeling, Lasso regression, Multilevel modeling, PSM</span>
-                </li>
-              </ul>
-              
-              <h4 class="font-semibold text-lg mb-3 text-[#0ea5e9]">Impact</h4>
-              <p class="text-gray-700 dark:text-gray-300">
-                This analysis provides evidence-based insights for public health policymakers to design targeted substance use prevention programs. The strong association between peer influence and substance use suggests that interventions should focus on social environments.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-<div class="text-center mt-12" data-aos="fade-up">
-  <a href="https://github.com/utkarsh7653?tab=repositories" target="_blank" 
-     class="inline-flex items-center px-5 py-2.5 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-[#0ea5e9] hover:bg-[#0284c7] transition-colors">
-    <i class="fab fa-github mr-2"></i>
-    View All Projects on GitHub
-  </a>
-</div>
-
-    <!-- SKILLS SECTION -->
-<section id="skills" class="mb-24" data-aos="fade-up">
-  <h2 class="text-3xl font-bold mb-10">Technical Skills</h2>
+  <div class="sind"><div class="sl"></div>Scroll to explore</div>
 </section>
 
-      <div class="grid md:grid-cols-3 gap-8 mb-12">
-        <!-- Programming Languages -->
-        <div class="bg-white dark:bg-[#1e293b] p-6 rounded-xl shadow-lg border border-gray-100 dark:border-[#334155] hover-grow transition-transform">
-          <div class="flex items-center mb-5 gap-3">
-            <div class="p-3 rounded-lg bg-[#0ea5e9]/10 text-[#0ea5e9]">
-              <i class="fas fa-code"></i>
-            </div>
-            <h3 class="font-semibold text-xl">Programming Languages</h3>
-          </div>
-          <ul class="text-gray-700 dark:text-gray-300 space-y-4">
-            <li class="flex items-center gap-4">
-              <div class="w-3 h-3 rounded-full bg-[#0ea5e9] flex-shrink-0"></div>
-              <span class="font-medium">Python (Pandas, NumPy, SciPy)</span>
-            </li>
-            <li class="flex items-center gap-4">
-              <div class="w-3 h-3 rounded-full bg-[#0ea5e9] flex-shrink-0"></div>
-              <span class="font-medium">R (Statistical Modeling, Tidyverse)</span>
-            </li>
-            <li class="flex items-center gap-4">
-              <div class="w-3 h-3 rounded-full bg-[#0ea5e9] flex-shrink-0"></div>
-              <span class="font-medium">SQL (PostgreSQL, MySQL, BigQuery)</span>
-            </li>
-            <li class="flex items-center gap-4">
-              <div class="w-3 h-3 rounded-full bg-[#0ea5e9] flex-shrink-0"></div>
-              <span class="font-medium">JavaScript / HTML / CSS</span>
-            </li>
-          </ul>
-        </div>
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ti">
+    <span class="titem">Data Analytics</span><span class="titem">Revenue Operations</span><span class="titem">HubSpot · Salesforce · Planhat</span><span class="titem">MRR · ARR · Net ARR</span><span class="titem">ETL Pipelines</span><span class="titem">Financial Modeling</span><span class="titem">Churn &amp; Retention</span><span class="titem">Customer Success Analytics</span><span class="titem">ICP Segmentation</span><span class="titem">Power BI · Looker · Tableau</span><span class="titem">Quota Attainment</span><span class="titem">Win/Loss Analysis</span><span class="titem">Lead Assignment</span><span class="titem">Commission Reconciliation</span><span class="titem">Pipeline Health</span><span class="titem">FP&amp;A · Scenario Analysis</span>
+    <span class="titem">Data Analytics</span><span class="titem">Revenue Operations</span><span class="titem">HubSpot · Salesforce · Planhat</span><span class="titem">MRR · ARR · Net ARR</span><span class="titem">ETL Pipelines</span><span class="titem">Financial Modeling</span><span class="titem">Churn &amp; Retention</span><span class="titem">Customer Success Analytics</span><span class="titem">ICP Segmentation</span><span class="titem">Power BI · Looker · Tableau</span><span class="titem">Quota Attainment</span><span class="titem">Win/Loss Analysis</span><span class="titem">Lead Assignment</span><span class="titem">Commission Reconciliation</span><span class="titem">Pipeline Health</span><span class="titem">FP&amp;A · Scenario Analysis</span>
+  </div>
+</div>
 
-        <!-- Tools & Frameworks -->
-        <div class="bg-white dark:bg-[#1e293b] p-6 rounded-xl shadow-lg border border-gray-100 dark:border-[#334155] hover-grow transition-transform">
-          <div class="flex items-center mb-5 gap-3">
-            <div class="p-3 rounded-lg bg-[#0ea5e9]/10 text-[#0ea5e9]">
-              <i class="fas fa-tools"></i>
-            </div>
-            <h3 class="font-semibold text-xl">Tools & Frameworks</h3>
-          </div>
-          <ul class="text-gray-700 dark:text-gray-300 space-y-4">
-            <li class="flex items-center gap-4">
-              <div class="w-3 h-3 rounded-full bg-[#0ea5e9] flex-shrink-0"></div>
-              <span class="font-medium">TensorFlow, PyTorch, Keras</span>
-            </li>
-            <li class="flex items-center gap-4">
-              <div class="w-3 h-3 rounded-full bg-[#0ea5e9] flex-shrink-0"></div>
-              <span class="font-medium">Scikit-learn, LightGBM, XGBoost</span>
-            </li>
-            <li class="flex items-center gap-4">
-              <div class="w-3 h-3 rounded-full bg-[#0ea5e9] flex-shrink-0"></div>
-              <span class="font-medium">Tableau, Power BI, Matplotlib</span>
-            </li>
-            <li class="flex items-center gap-4">
-              <div class="w-3 h-3 rounded-full bg-[#0ea5e9] flex-shrink-0"></div>
-              <span class="font-medium">Git, Advanced Excel, Google Sheets</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Methodologies -->
-        <div class="bg-white dark:bg-[#1e293b] p-6 rounded-xl shadow-lg border border-gray-100 dark:border-[#334155] hover-grow transition-transform">
-          <div class="flex items-center mb-5 gap-3">
-            <div class="p-3 rounded-lg bg-[#0ea5e9]/10 text-[#0ea5e9]">
-              <i class="fas fa-project-diagram"></i>
-            </div>
-            <h3 class="font-semibold text-xl">Methodologies</h3>
-          </div>
-          <ul class="text-gray-700 dark:text-gray-300 space-y-4">
-            <li class="flex items-center gap-4">
-              <div class="w-3 h-3 rounded-full bg-[#0ea5e9] flex-shrink-0"></div>
-              <span class="font-medium">Predictive Modeling & Statistical Analysis</span>
-            </li>
-            <li class="flex items-center gap-4">
-              <div class="w-3 h-3 rounded-full bg-[#0ea5e9] flex-shrink-0"></div>
-              <span class="font-medium">Feature Engineering & ETL Pipelines</span>
-            </li>
-            <li class="flex items-center gap-4">
-              <div class="w-3 h-3 rounded-full bg-[#0ea5e9] flex-shrink-0"></div>
-              <span class="font-medium">Big Data Processing & Optimization</span>
-            </li>
-            <li class="flex items-center gap-4">
-              <div class="w-3 h-3 rounded-full bg-[#0ea5e9] flex-shrink-0"></div>
-              <span class="font-medium">NLP & Explainable AI Techniques</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- Skill Proficiency Bars -->
-        <div class="bg-white dark:bg-[#1e293b] p-8 rounded-xl shadow-lg border border-gray-100 dark:border-[#334155] hover-grow transition-transform">
-          <h4 class="font-semibold text-xl mb-8">Skill Proficiency</h4>
-          <div class="space-y-6">
-            <div>
-              <div class="flex justify-between text-sm mb-3 font-medium">
-                <span>Python & Data Science</span>
-                <span class="text-[#0ea5e9]">95%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-fill" data-percent="95"></div>
-              </div>
-            </div>
-            <div>
-              <div class="flex justify-between text-sm mb-3 font-medium">
-                <span>SQL & Database Systems</span>
-                <span class="text-[#0ea5e9]">90%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-fill" data-percent="90"></div>
-              </div>
-            </div>
-            <div>
-              <div class="flex justify-between text-sm mb-3 font-medium">
-                <span>Machine Learning</span>
-                <span class="text-[#0ea5e9]">88%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-fill" data-percent="88"></div>
-              </div>
-            </div>
-            <div>
-              <div class="flex justify-between text-sm mb-3 font-medium">
-                <span>Data Visualization</span>
-                <span class="text-[#0ea5e9]">92%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-fill" data-percent="92"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skills Radar Chart -->
-        <div class="bg-white dark:bg-[#1e293b] p-8 rounded-xl shadow-lg border border-gray-100 dark:border-[#334155] hover-grow transition-transform">
-          <h4 class="font-semibold text-xl mb-8">Skills Radar</h4>
-          <canvas id="skillsRadar" width="400" height="320" aria-label="Radar chart showing skill strengths"></canvas>
-        </div>
-      </div>
-    </section>
-
-    <!-- EDUCATION SECTION -->
-    <section id="education" class="mb-24" data-aos="fade-up">
-      <h2 class="text-3xl font-bold mb-10">Education</h2>
-      <div class="space-y-6">
-        <div class="bg-white dark:bg-[#1e293b] p-8 rounded-xl shadow-lg border border-gray-100 dark:border-[#334155] flex flex-col md:flex-row justify-between items-start md:items-center gap-6 hover-grow transition-transform">
-          <div class="flex items-start gap-4">
-            <div class="p-3 rounded-lg bg-[#0ea5e9]/10 text-[#0ea5e9] flex-shrink-0">
-              <i class="fas fa-university"></i>
-            </div>
-            <div>
-              <h3 class="font-semibold text-xl text-[#0ea5e9]">M.S. — Management Science</h3>
-              <p class="text-gray-600 dark:text-gray-400">University of Waterloo — Waterloo, ON</p>
-              <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Specialized in Data Analytics and Operations Research</p>
-            </div>
-          </div>
-          <div class="px-5 py-2 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-sm font-medium flex items-center gap-2">
-            <i class="fas fa-check"></i>
-            Graduated 
-          </div>
-        </div>
-
-        <div class="bg-white dark:bg-[#1e293b] p-8 rounded-xl shadow-lg border border-gray-100 dark:border-[#334155] flex flex-col md:flex-row justify-between items-start md:items-center gap-6 hover-grow transition-transform">
-          <div class="flex items-start gap-4">
-            <div class="p-3 rounded-lg bg-[#0ea5e9]/10 text-[#0ea5e9] flex-shrink-0">
-              <i class="fas fa-university"></i>
-            </div>
-            <div>
-              <h3 class="font-semibold text-xl text-[#0ea5e9]">B.S. — Business Analytics</h3>
-              <p class="text-gray-600 dark:text-gray-400">Purdue University — West Lafayette, IN</p>
-              <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Concentration in Management Information Systems</p>
-            </div>
-          </div>
-          <div class="px-5 py-2 bg-[#0ea5e9]/10 text-[#0ea5e9] rounded-full text-sm font-medium flex items-center gap-2">
-            <i class="fas fa-check"></i>
-            Graduated
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="mb-16" data-aos="fade-up">
-      <h2 class="text-3xl font-bold mb-10">Get In Touch</h2>
-      <div class="grid md:grid-cols-2 gap-10">
-        <!-- Contact Information -->
-        <div class="bg-white dark:bg-[#1e293b] p-8 rounded-xl shadow-lg border border-gray-100 dark:border-[#334155] hover-grow transition-transform">
-          <h3 class="font-semibold text-xl mb-8 flex items-center gap-3">
-            <i class="fas fa-address-card text-[#0ea5e9]"></i>
-            Contact Information
-          </h3>
-          <div class="space-y-6">
-            <div class="flex items-start gap-5">
-              <div class="p-3 rounded-lg bg-[#0ea5e9]/10 text-[#0ea5e9] flex-shrink-0">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div>
-                <h4 class="font-medium text-gray-700 dark:text-gray-300 mb-1">University Email</h4>
-                <a href="mailto:u25singh@uwaterloo.ca" class="text-[#0ea5e9] hover:underline flex items-center gap-2">
-                  u25singh@uwaterloo.ca
-                  <i class="fas fa-external-link-alt text-xs"></i>
-                </a>
-              </div>
-            </div>
-            <div class="flex items-start gap-5">
-              <div class="p-3 rounded-lg bg-[#0ea5e9]/10 text-[#0ea5e9] flex-shrink-0">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div>
-                <h4 class="font-medium text-gray-700 dark:text-gray-300 mb-1">Personal Email</h4>
-                <a href="mailto:utkarshsingh.1052@gmail.com" class="text-[#0ea5e9] hover:underline flex items-center gap-2">
-                  utkarshsingh.1052@gmail.com
-                  <i class="fas fa-external-link-alt text-xs"></i>
-                </a>
-              </div>
-            </div>
-            <div class="flex items-start gap-5">
-              <div class="p-3 rounded-lg bg-[#0ea5e9]/10 text-[#0ea5e9] flex-shrink-0">
-                <i class="fab fa-github"></i>
-              </div>
-              <div>
-                <h4 class="font-medium text-gray-700 dark:text-gray-300 mb-1">GitHub</h4>
-                <a href="https://github.com/utkarsh7653" target="_blank" class="text-[#0ea5e9] hover:underline flex items-center gap-2">
-                  github.com/utkarsh7653
-                  <i class="fas fa-external-link-alt text-xs"></i>
-                </a>
-              </div>
-            </div>
-            <div class="flex items-start gap-5">
-              <div class="p-3 rounded-lg bg-[#0ea5e9]/10 text-[#0ea5e9] flex-shrink-0">
-                <i class="fab fa-linkedin-in"></i>
-              </div>
-              <div>
-                <h4 class="font-medium text-gray-700 dark:text-gray-300 mb-1">LinkedIn</h4>
-                <a href="https://www.linkedin.com/in/utkarsh-singh-a1127a192/" target="_blank" class="text-[#0ea5e9] hover:underline flex items-center gap-2">
-                  linkedin.com/in/utkarsh-singh
-                  <i class="fas fa-external-link-alt text-xs"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Contact Form -->
-        <div class="bg-white dark:bg-[#1e293b] p-8 rounded-xl shadow-lg border border-gray-100 dark:border-[#334155] hover-grow transition-transform">
-          <h3 class="font-semibold text-xl mb-8 flex items-center gap-3">
-            <i class="fas fa-paper-plane text-[#0ea5e9]"></i>
-            Send Me a Message
-          </h3>
-          <form id="contactForm" class="space-y-6" novalidate>
-            <div>
-              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name</label>
-              <input id="c_name" required 
-                     class="w-full px-4 py-3 border border-gray-300 dark:border-[#334155] rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent bg-white dark:bg-[#1e293b]"/>
-            </div>
-            <div>
-              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
-              <input id="c_email" type="email" required 
-                     class="w-full px-4 py-3 border border-gray-300 dark:border-[#334155] rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent bg-white dark:bg-[#1e293b]"/>
-            </div>
-            <div>
-              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
-              <textarea id="c_msg" rows="5" required 
-                        class="w-full px-4 py-3 border border-gray-300 dark:border-[#334155] rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent bg-white dark:bg-[#1e293b]"></textarea>
-            </div>
-            <div class="flex gap-4 pt-2">
-              <button type="submit" class="btn-primary px-7 py-3 rounded-lg font-medium bg-[#0ea5e9] hover:bg-[#0284c7] text-white transition-colors flex items-center gap-2">
-                <i class="fas fa-paper-plane"></i>
-                Send Message
-              </button>
-              <button type="button" id="clearForm" class="px-6 py-3 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors">
-                Clear
-              </button>
-            </div>
-            <p id="contactStatus" class="text-sm text-green-500 hidden mt-2 flex items-center">
-              <i class="fas fa-check-circle mr-2"></i>Thank you for your message! I'll get back to you soon.
-            </p>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="bg-white dark:bg-[#0f172a] border-t border-gray-200 dark:border-[#1e293b] py-10">
-    <div class="container mx-auto px-4">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-        <div class="text-center md:text-left">
-          <a href="#" class="text-2xl font-bold bg-gradient-to-r from-[#0ea5e9] to-[#6366f1] bg-clip-text text-transparent hover-grow inline-block transition-transform">
-            UTKARSH SINGH
-          </a>
-          <div class="text-sm text-gray-600 dark:text-gray-400 mt-2">Data Science & Business Analytics Professional</div>
-        </div>
-        
-        <div class="flex gap-6">
-          <a href="https://github.com/utkarsh7653" target="_blank" rel="noopener" 
-             class="text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] dark:hover:text-[#38bdf8] transition-colors text-2xl">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/utkarsh-singh-a1127a192/" target="_blank" rel="noopener" 
-             class="text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] dark:hover:text-[#38bdf8] transition-colors text-2xl">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="mailto:utkarshsingh.1052@gmail.com" 
-             class="text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] dark:hover:text-[#38bdf8] transition-colors text-2xl">
-            <i class="fas fa-envelope"></i>
-          </a>
-        </div>
-      </div>
-      
-      <div class="border-t border-gray-200/50 dark:border-[#1e293b]/50 mt-8 pt-8 text-center text-sm text-gray-600 dark:text-gray-400">
-        <div>© <span id="year"></span> Utkarsh Singh. All rights reserved.</div>
-        <div class="mt-2">Purdue University & University of Waterloo</div>
+<!-- ABOUT -->
+<section id="about">
+  <p class="sl2 rv">About me</p>
+  <h2 class="st rv">Analytical depth.<br><em>Commercial instinct.</em></h2>
+  <div class="ag">
+    <div class="atext rv">
+      <p>I'm a data analytics professional who bridges the gap between raw data and business decisions. I've worked across <strong>revenue operations, sales analytics, financial modelling, and customer success</strong> — giving me a 360° view of how organizations grow and where the friction is.</p>
+      <p>With a <strong>B.S. in Business Analytics from Purdue</strong> and an <strong>M.S. in Management Science from the University of Waterloo</strong>, I combine statistical rigour with business fluency. I've built ETL pipelines, executive dashboards, financial models, cohort analyses, and competitive intelligence frameworks — and presented findings to C-suite leaders at a <strong>unicorn-stage SaaS company</strong>.</p>
+      <p>Whatever the function — finance, sales, operations, or customer success — I help teams <strong>understand what the data is saying and what to do about it</strong>.</p>
+    </div>
+    <div class="rv">
+      <div class="hlg">
+        <div class="hli"><div class="hli-ic">📍</div><div class="hli-lb">Location</div><div class="hli-v">Toronto / Waterloo, ON</div></div>
+        <div class="hli"><div class="hli-ic">🌐</div><div class="hli-lb">Work Style</div><div class="hli-v">Remote / Hybrid / On-site</div></div>
+        <div class="hli"><div class="hli-ic">🎓</div><div class="hli-lb">Education</div><div class="hli-v">Purdue + Waterloo (3.7)</div></div>
+        <div class="hli"><div class="hli-ic">✅</div><div class="hli-lb">Authorization</div><div class="hli-v">Authorized · Canada</div></div>
+        <div class="hli"><div class="hli-ic">🎯</div><div class="hli-lb">Open to</div><div class="hli-v">Analytics · RevOps · Finance · CS</div></div>
+        <div class="hli"><div class="hli-ic">🦄</div><div class="hli-lb">Experience at</div><div class="hli-v">Unicorn-stage SaaS (Deliverect)</div></div>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script>
-    // Initialize AOS animation library
-    AOS.init({
-      duration: 800,
-      easing: 'ease-in-out',
-      once: true,
-      offset: 100
-    });
+<!-- EXPERIENCE -->
+<section id="experience">
+  <p class="sl2 rv">Work history</p>
+  <h2 class="st rv">Where I've <em>delivered</em> the work.</h2>
 
-    // Helper functions for DOM selection
-    const $ = s => document.querySelector(s), $$ = s => Array.from(document.querySelectorAll(s));
-    document.getElementById('year').textContent = new Date().getFullYear();
+  <!-- DELIVERECT CARD -->
+  <div class="dv-card rv">
+    <div class="dv-top-row">
+      <div class="dv-left">
+        <div class="dv-role-title">Go-To-Market (GTM) Analyst</div>
+        <div class="dv-company-row">
+          <span class="dv-company">Deliverect &nbsp;·&nbsp; Toronto, ON</span>
+          <span class="badge bg-b">Unicorn SaaS</span>
+          <span class="badge bg-a">GTM · RevOps · Sales Ops</span>
+        </div>
+        <p class="dv-tagline">Embedded within the GTM team of a global unicorn-stage SaaS company — building the data infrastructure, dashboards, models, and strategic analyses that powered commercial decision-making across sales, finance, partnerships, and international leadership. Worked closely with senior leaders including the <strong style="color:var(--iv)">Head of Sales, Head of Account Management, and Regional Leader of LATAM</strong>, and submitted weekly sales, revenue, and churn reports directly to the <strong style="color:var(--iv)">President of the Americas</strong>.</p>
+      </div>
+      <div class="dv-date-col">
+        <div class="dv-date">Nov 2025 — Mar 2026</div>
+      </div>
+    </div>
 
-    // Dark mode functionality
-    function setDark(isDark) {
-      if (isDark) { 
-        document.documentElement.classList.add('dark'); 
-        localStorage.setItem('theme','dark'); 
-      }
-      else { 
-        document.documentElement.classList.remove('dark'); 
-        localStorage.setItem('theme','light'); 
-      }
-    }
-    
-    // Initialize theme
-    const savedTheme = localStorage.getItem('theme') || 
-                      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    setDark(savedTheme === 'dark');
-    
-    // Theme toggle buttons
-    document.querySelectorAll('[id^="toggle"]').forEach(toggle => {
-      toggle.addEventListener('change', (e) => {
-        setDark(e.target.checked);
-      });
-      
-      // Set initial state
-      if (savedTheme === 'dark') {
-        toggle.checked = true;
-      }
-    });
+    <!-- Leader exposure -->
+    <div class="leader-strip">
+      <div class="leader-strip-title">Leadership exposure</div>
+      <div class="leaders-row">
+        <div class="leader-card">
+          <div class="lc-role">Weekly reports submitted to</div>
+          <div class="lc-title">President, Americas</div>
+          <div class="lc-note">Sales, revenue &amp; churn reports</div>
+        </div>
+        <div class="leader-card">
+          <div class="lc-role">Collaborated with</div>
+          <div class="lc-title">Head of Sales</div>
+          <div class="lc-note">GTM strategy &amp; win/loss</div>
+        </div>
+        <div class="leader-card">
+          <div class="lc-role">Partnered with</div>
+          <div class="lc-title">Head, Account Management</div>
+          <div class="lc-note">Churn · retention · CS analytics</div>
+        </div>
+        <div class="leader-card">
+          <div class="lc-role">Worked with</div>
+          <div class="lc-title">Regional Leader, LATAM</div>
+          <div class="lc-note">Reporting standards · market insights</div>
+        </div>
+        <div class="leader-card">
+          <div class="lc-role">Aligned with</div>
+          <div class="lc-title">ENT &amp; MM Sales Leaders</div>
+          <div class="lc-note">Territory · lead assignment</div>
+        </div>
+      </div>
+    </div>
 
-    // Mobile menu functionality
-    const mobileToggle = $('#mobileToggle'), mobileMenu = $('#mobileMenu');
-    if (mobileToggle) {
-      mobileToggle.addEventListener('click', () => {
-        const isHidden = mobileMenu.classList.toggle('hidden');
-        mobileToggle.setAttribute('aria-expanded', String(!isHidden));
-        mobileToggle.innerHTML = isHidden ? '<i class="fas fa-bars text-xl"></i>' : '<i class="fas fa-times text-xl"></i>';
-      });
-    }
-    
-    // Close mobile menu when clicking links
-    document.querySelectorAll('#mobileMenu a').forEach(a => {
-      a.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        mobileToggle.innerHTML = '<i class="fas fa-bars text-xl"></i>';
-        mobileToggle.setAttribute('aria-expanded', 'false');
-      });
-    });
+    <!-- Impact bar -->
+    <div class="impact-bar">
+      <div class="impact-item"><div class="imp-n">37.8%</div><div class="imp-l">True revenue capture<br>rate surfaced</div></div>
+      <div class="impact-item"><div class="imp-n">40%</div><div class="imp-l">Manual reporting<br>time reduced</div></div>
+      <div class="impact-item"><div class="imp-n">3 CRMs</div><div class="imp-l">Unified into one<br>source of truth</div></div>
+      <div class="impact-item"><div class="imp-n">Bi-weekly</div><div class="imp-l">Territory model used<br>by ENT + MM leaders</div></div>
+    </div>
+  </div>
 
-    // Typewriter effect
-    const phrases = [
-      'Data Scientist • Machine Learning • Business Analytics',
-      'B.S. — Business Analytics (Purdue University)',
-      'M.S. — Management Science (University of Waterloo)',
-      'I build data-driven solutions & clear dashboards for decision-makers',
-      'Open to new opportunities in analytics, machine learning, supply chain'
-    ];
-    let pIdx = 0, cIdx = 0, forward = true;
-    const speed = 50;
-    const tw = $('#typewriter');
-    
-    function typeLoop() {
-      const text = phrases[pIdx];
-      if (forward) { 
-        cIdx++; 
-        tw.textContent = text.slice(0, cIdx); 
-        if (cIdx === text.length) { 
-          forward = false; 
-          setTimeout(typeLoop, 1500); 
-          return; 
-        } 
-      }
-      else { 
-        cIdx--; 
-        tw.textContent = text.slice(0, cIdx); 
-        if (cIdx === 0) { 
-          forward = true; 
-          pIdx = (pIdx + 1) % phrases.length; 
-        } 
-      }
-      setTimeout(typeLoop, forward ? speed : speed/2);
-    }
-    setTimeout(typeLoop, 1000);
+  <!-- Sidebar tabs -->
+  <div class="dv-body rv">
+    <div class="dv-nav">
+      <button class="dv-tab on" data-p="rev"><span class="dv-tab-icon">📈</span><div class="dv-tab-label"><span class="dv-tab-title">Revenue &amp; MRR</span><span class="dv-tab-sub">Visibility &amp; tracking</span></div></button>
+      <button class="dv-tab" data-p="etl"><span class="dv-tab-icon">⚙️</span><div class="dv-tab-label"><span class="dv-tab-title">Data Infrastructure</span><span class="dv-tab-sub">ETL &amp; pipelines</span></div></button>
+      <button class="dv-tab" data-p="dash"><span class="dv-tab-icon">📊</span><div class="dv-tab-label"><span class="dv-tab-title">Dashboards &amp; BI</span><span class="dv-tab-sub">Looker &amp; Excel</span></div></button>
+      <button class="dv-tab" data-p="sops"><span class="dv-tab-icon">🎯</span><div class="dv-tab-label"><span class="dv-tab-title">Sales Operations</span><span class="dv-tab-sub">Leads &amp; territory</span></div></button>
+      <button class="dv-tab" data-p="cs"><span class="dv-tab-icon">🔄</span><div class="dv-tab-label"><span class="dv-tab-title">Churn &amp; CS</span><span class="dv-tab-sub">Retention analytics</span></div></button>
+      <button class="dv-tab" data-p="wl"><span class="dv-tab-icon">🏆</span><div class="dv-tab-label"><span class="dv-tab-title">Win/Loss</span><span class="dv-tab-sub">Competitive intel</span></div></button>
+      <button class="dv-tab" data-p="xfn"><span class="dv-tab-icon">🤝</span><div class="dv-tab-label"><span class="dv-tab-title">Cross-Functional</span><span class="dv-tab-sub">Finance, Partners, Regions</span></div></button>
+    </div>
 
-    // Animate skill bars when they come into view
-    const skillFills = $$('.skill-fill');
-    const skillObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          skillFills.forEach(el => {
-            el.style.width = el.dataset.percent + '%';
-          });
-          skillObserver.disconnect();
-        }
-      });
-    }, { threshold: 0.2 });
-    
-    const skillsSection = $('#skills'); 
-    if (skillsSection) skillObserver.observe(skillsSection);
+    <div class="dv-panels">
 
-    // Skills radar chart
-    const ctx = document.getElementById('skillsRadar')?.getContext('2d');
-    if (ctx) {
-      new Chart(ctx, {
-        type: 'radar',
-        data: {
-          labels: ['Python','SQL','ML','Visualization','NLP','Cloud'],
-          datasets: [{
-            label: 'Proficiency',
-            data: [95,90,88,92,75,65],
-            backgroundColor: 'rgba(14, 165, 233, 0.2)',
-            borderColor: 'rgba(14, 165, 233, 1)',
-            pointBackgroundColor: 'rgba(14, 165, 233, 1)',
-            pointBorderColor: '#fff',
-            pointHoverBackgroundColor: '#fff',
-            pointHoverBorderColor: 'rgba(14, 165, 233, 1)',
-            borderWidth: 2,
-            pointRadius: 5
-          }]
-        },
-        options: { 
-          scales: { 
-            r: { 
-              angleLines: { color: 'rgba(100, 116, 139, 0.2)' },
-              grid: { color: 'rgba(100, 116, 139, 0.2)' },
-              suggestedMin: 0, 
-              suggestedMax: 100, 
-              ticks: { 
-                stepSize: 20,
-                backdropColor: 'transparent',
-                color: 'rgba(100, 116, 139, 0.8)'
-              },
-              pointLabels: {
-                color: 'rgba(100, 116, 139, 0.9)',
-                font: { weight: '500', size: 13 }
-              }
-            } 
-          }, 
-          plugins: { 
-            legend: { display: false },
-            tooltip: {
-              backgroundColor: 'rgba(15, 23, 42, 0.9)',
-              titleColor: '#f1f5f9',
-              bodyColor: '#e2e8f0',
-              borderColor: 'rgba(14, 165, 233, 0.5)',
-              borderWidth: 1,
-              padding: 12,
-              displayColors: false,
-              callbacks: {
-                label: function(context) {
-                  return context.raw + '% proficiency';
-                }
-              }
-            }
-          },
-          elements: {
-            line: {
-              tension: 0.1
-            }
-          }
-        }
-      });
-    }
+      <div class="dv-panel on" id="dp-rev">
+        <div class="ph"><div class="pt2">Revenue Visibility &amp; MRR Tracking</div><div class="ps">Consolidating the full revenue picture across all account types</div></div>
+        <div class="ptools"><span class="ptl">HubSpot</span><span class="ptl">Planhat</span><span class="ptl">Looker</span><span class="ptl">Python</span><span class="ptl">Excel</span></div>
+        <ul class="pbl">
+          <li>Drove critical <strong>sales and growth visibility</strong> by consolidating and modeling data across HubSpot, Planhat, and Looker — ensuring accurate MRR tracking for new business, white label, and existing accounts</li>
+          <li>Filtered customer billing data in Planhat, performed <strong>left joins in Python</strong> to consolidate account records, and built an Excel tracking sheet providing full visibility into monthly and annual billing cycles — eliminating the need to manually navigate individual accounts in Planhat</li>
+          <li>Surfaced discrepancies between CRM deal values and actual billed amounts — gaps that were previously invisible to finance and GTM leadership</li>
+        </ul>
+        <div class="pmetrics">
+          <div class="pmv"><div class="pmvn">3</div><div class="pmvl">Account types unified<br>(NB · White Label · Existing)</div></div>
+          <div class="pmv"><div class="pmvn">100%</div><div class="pmvl">Monthly &amp; annual<br>billing visibility</div></div>
+          <div class="pmv"><div class="pmvn">0</div><div class="pmvl">Manual Planhat<br>lookups required</div></div>
+        </div>
+      </div>
 
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          window.scrollTo({
-            top: target.offsetTop - 90,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
+      <div class="dv-panel" id="dp-etl">
+        <div class="ph"><div class="pt2">Data Infrastructure &amp; ETL Pipelines</div><div class="ps">Building the plumbing that makes everything else possible</div></div>
+        <div class="ptools"><span class="ptl">Python</span><span class="ptl">pandas</span><span class="ptl">HubSpot API</span><span class="ptl">Planhat</span><span class="ptl">Looker</span><span class="ptl">Excel</span></div>
+        <ul class="pbl">
+          <li>Built <strong>automated ETL pipelines in Python</strong> to extract and reconcile data from HubSpot, Planhat, and Looker — creating a unified source of truth across three disconnected systems</li>
+          <li>Performed <strong>left joins and data consolidation</strong> in Python to merge Planhat billing records with HubSpot CRM data, resolving account-level mismatches and ensuring clean reporting inputs</li>
+          <li>Reduced <strong>manual reporting time by 40%</strong> by automating previously ad-hoc data extraction, reconciliation, and formatting workflows</li>
+          <li>Standardized data collection workflows and defined data requirements cross-functionally to ensure <strong>consistency across sales, CS, and finance reporting</strong></li>
+        </ul>
+        <div class="pmetrics">
+          <div class="pmv"><div class="pmvn">40%</div><div class="pmvl">Reporting time<br>reduced</div></div>
+          <div class="pmv"><div class="pmvn">3</div><div class="pmvl">Systems<br>integrated</div></div>
+          <div class="pmv"><div class="pmvn">1</div><div class="pmvl">Unified source<br>of truth</div></div>
+        </div>
+      </div>
 
-    // Contact form handling
-    const contactForm = $('#contactForm');
-    if (contactForm) {
-      contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const status = $('#contactStatus');
-        status.classList.remove('hidden');
-        contactForm.reset();
-        setTimeout(() => status.classList.add('hidden'), 5000);
-      });
-    }
+      <div class="dv-panel" id="dp-dash">
+        <div class="ph"><div class="pt2">Reporting Dashboards &amp; BI Infrastructure</div><div class="ps">Weekly revenue visibility delivered to GTM &amp; C-suite leadership</div></div>
+        <div class="ptools"><span class="ptl">Looker</span><span class="ptl">Excel</span><span class="ptl">HubSpot</span><span class="ptl">Planhat</span></div>
+        <ul class="pbl">
+          <li>Developed <strong>Excel-based reporting dashboards</strong> tracking MRR, ARR, Net ARR, churn, and quota attainment — leveraging Looker as the primary data source to deliver <strong>weekly revenue visibility to GTM leadership, with sales and revenue reports submitted directly to the President of Americas</strong></li>
+          <li>Developed and maintained <strong>strategic BI infrastructure in Looker</strong> to support sales forecasting, pipeline health, and deliver actionable insights to GTM, Account Management, and leadership teams</li>
+          <li>Designed all outputs to be <strong>executive-ready</strong> — translating multi-source complexity into clear, decision-relevant views that C-suite and senior leaders could act on immediately</li>
+          <li>Continuously improved reporting quality by partnering cross-functionally to define data requirements and streamline collection workflows</li>
+        </ul>
+        <div class="pmetrics">
+          <div class="pmv"><div class="pmvn">Weekly</div><div class="pmvl">Revenue reporting<br>cadence</div></div>
+          <div class="pmv"><div class="pmvn">5+</div><div class="pmvl">KPIs tracked<br>(MRR, ARR, churn…)</div></div>
+          <div class="pmv"><div class="pmvn">C-suite</div><div class="pmvl">Audience level<br>for deliverables</div></div>
+        </div>
+      </div>
 
-    // Clear form button
-    const clearForm = $('#clearForm');
-    if (clearForm) {
-      clearForm.addEventListener('click', () => {
-        contactForm.reset();
-      });
-    }
-    
-    // Project modal functionality
-    const projectModals = {
-      'parkinsons': $('#parkinsons-modal'),
-      'text2sql': $('#text2sql-modal'),
-      'substance-use': $('#substance-use-modal')
-    };
-    
-    // Open project modal
-    $$('.open-project-details').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const projectId = btn.dataset.project;
-        projectModals[projectId].classList.add('active');
-        document.body.style.overflow = 'hidden';
-      });
-    });
-    
-    // Close project modal
-    $$('.close-modal').forEach(btn => {
-      btn.addEventListener('click', () => {
-        btn.closest('.project-modal').classList.remove('active');
-        document.body.style.overflow = '';
-      });
-    });
-    
-    // Close modal when clicking outside content
-    $$('.project-modal').forEach(modal => {
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-          modal.classList.remove('active');
-          document.body.style.overflow = '';
-        }
-      });
-    });
-  </script>
+      <div class="dv-panel" id="dp-sops">
+        <div class="ph"><div class="pt2">Sales Operations &amp; Lead Assignment</div><div class="ps">Territory models, commission reconciliation, and pipeline optimization</div></div>
+        <div class="ptools"><span class="ptl">Excel</span><span class="ptl">VLOOKUP / XLOOKUP</span><span class="ptl">HubSpot</span><span class="ptl">Python</span></div>
+        <ul class="pbl">
+          <li>Built a <strong>lead assignment optimization framework in Excel</strong> by extracting and filtering rep performance, capacity, and lead quality data from HubSpot — improving prospect distribution and reducing pipeline waste</li>
+          <li>Developed a <strong>bi-weekly VLOOKUP-based territory model</strong> — the operational tool ENT and MM leaders used to assign leads to reps based on territory, priority guidelines, integration partners, and company size</li>
+          <li>Worked alongside the <strong>Partnerships and Finance departments</strong> to identify and remove inconsistencies in commission statements — reconciling discrepancies between CRM deal data and payroll records for accurate rep compensation</li>
+          <li>Collaborated directly with <strong>ENT and MM regional leaders</strong> on territory planning and lead prioritization, ensuring high-value opportunities reached the right reps at the right time</li>
+        </ul>
+        <div class="pmetrics">
+          <div class="pmv"><div class="pmvn">Bi-weekly</div><div class="pmvl">Territory model<br>cadence</div></div>
+          <div class="pmv"><div class="pmvn">ENT + MM</div><div class="pmvl">Segment leaders<br>served</div></div>
+          <div class="pmv"><div class="pmvn">3 depts</div><div class="pmvl">Sales · Finance<br>· Partnerships</div></div>
+        </div>
+      </div>
+
+      <div class="dv-panel" id="dp-cs">
+        <div class="ph"><div class="pt2">Churn, Retention &amp; Customer Success Analytics</div><div class="ps">Surfacing at-risk accounts before they become lost revenue</div></div>
+        <div class="ptools"><span class="ptl">Python</span><span class="ptl">Excel</span><span class="ptl">Planhat</span><span class="ptl">Looker</span><span class="ptl">Cohort Analysis</span></div>
+        <ul class="pbl">
+          <li>Conducted <strong>cohort-based churn and retention analysis</strong> in Python and Excel — segmenting accounts by cohort, product type, and region to surface contraction trends invisible in aggregate reporting</li>
+          <li>Identified <strong>at-risk accounts</strong> through usage and billing trend signals, enabling the GTM and Account Management teams to prioritize targeted re-engagement before churn events occurred</li>
+          <li>Delivered contraction trend insights to the <strong>Head of Account Management and GTM leadership</strong>, directly informing CS resource allocation and renewal prioritization</li>
+          <li>Integrated churn signals into weekly revenue dashboards, giving leadership a <strong>forward-looking view of retention risk</strong> alongside current MRR performance</li>
+        </ul>
+      </div>
+
+      <div class="dv-panel" id="dp-wl">
+        <div class="ph"><div class="pt2">Win/Loss &amp; Competitive Intelligence</div><div class="ps">The analysis that exposed the deal-count vs. revenue gap</div></div>
+        <div class="ptools"><span class="ptl">Python</span><span class="ptl">HubSpot CRM</span><span class="ptl">Excel</span><span class="ptl">AI Categorization</span><span class="ptl">ReportLab</span></div>
+        <ul class="pbl">
+          <li>Designed an <strong>end-to-end enterprise win/loss analysis</strong> across 59 closed deals — using AI-assisted CRM categorization to surface competitive loss patterns and isolate integration objections as the primary driver in 4 of 6 competitive losses</li>
+          <li>Built a <strong>revenue-weighted win rate framework</strong> exposing a 37.8% revenue capture rate vs. a misleading 55.9% deal-count win rate — finding included in weekly sales reports submitted to the <strong>Head of Sales and President of Americas</strong></li>
+          <li>Identified <strong>highest-converting ICP</strong> (100% win rate, 12 Casual/Full Service + Large Enterprise deals) and highest-revenue-risk segment (QSR Large Enterprise) — reshaping ICP prioritization</li>
+          <li>Developed a <strong>competitive response playbook</strong> with 3 data-backed counter-narratives, a 4-step talk track, and 5 discovery questions — adopted by the GTM team</li>
+          <li>Phase 1 CRM audit revealed <strong>only 46% of lost deals had usable context</strong> — itself a finding that changed post-loss capture processes going forward</li>
+        </ul>
+        <div class="pmetrics">
+          <div class="pmv"><div class="pmvn">37.8%</div><div class="pmvl">True revenue<br>capture rate</div></div>
+          <div class="pmv"><div class="pmvn">59</div><div class="pmvl">Deals<br>analysed</div></div>
+          <div class="pmv"><div class="pmvn">3</div><div class="pmvl">GTM counter-<br>narratives adopted</div></div>
+        </div>
+      </div>
+
+      <div class="dv-panel" id="dp-xfn">
+        <div class="ph"><div class="pt2">Cross-Functional &amp; Regional Collaboration</div><div class="ps">Bridging data, sales, finance, partnerships, and international leadership</div></div>
+        <div class="ptools"><span class="ptl">Reporting Frameworks</span><span class="ptl">NOAM / LATAM</span><span class="ptl">ENT / MM</span><span class="ptl">Stakeholder Mgmt</span></div>
+        <ul class="pbl">
+          <li>Worked closely with the <strong>Regional Leader of LATAM and NOAM</strong> to align on reporting standards, surface market-level insights, and build a standardized weekly reporting framework adopted across both regions</li>
+          <li>Submitted weekly sales, revenue, and churn reports directly to the <strong>President of the Americas</strong>, and partnered closely with the Head of Sales on GTM strategy — translating complex multi-source data into executive-ready narratives</li>
+          <li>Partnered with <strong>Finance and Partnerships departments</strong> to identify and remove inconsistencies in commission statements — bridging analytical findings and corrective action across compensation workflows</li>
+          <li>Collaborated with <strong>ENT and MM sales leaders</strong> on territory planning, lead prioritization, and integration partner alignment — ensuring the right leads reached the right reps at the right time</li>
+          <li>Enhanced reporting quality by partnering cross-functionally to <strong>define data requirements, streamline collection workflows</strong>, and translate complex findings into impactful recommendations for GTM, Account Management, and leadership</li>
+        </ul>
+      </div>
+
+    </div>
+  </div><!-- /dv-body -->
+
+  <!-- Other exp -->
+  <div class="other-exp rv">
+    <div class="oitem">
+      <div class="oh"><div class="or">Operations Strategy &amp; People Analytics Extern</div><div class="od">Jun – Aug 2025</div></div>
+      <div class="oc">Extern (Amazon Fulfillment Centre Engagement) &nbsp;·&nbsp; Remote</div>
+      <ul class="obl">
+        <li>Conducted structured analysis of Amazon Fulfillment Centre operations — identifying <strong>workforce attrition risks and operational inefficiencies</strong> through qualitative data analysis and thematic coding</li>
+        <li>Developed <strong>four detailed workforce cohort profiles</strong> and built a business case for targeted interventions, packaged into executive briefing decks for senior leadership</li>
+        <li>Documented business and functional requirements to bridge analytical findings with implementation planning across fulfillment operations</li>
+      </ul>
+    </div>
+    <div class="oitem">
+      <div class="oh"><div class="or">Financial Sales &amp; Client Onboarding Representative</div><div class="od">Sep – Dec 2024</div></div>
+      <div class="oc">Kognitive Sales Solutions (on behalf of Scotiabank) &nbsp;·&nbsp; Waterloo, ON</div>
+      <ul class="obl">
+        <li>Managed consultative sales for <strong>400+ weekly clients via Salesforce CRM</strong> — achieving a 25% increase in client acquisitions while exceeding quarterly targets by 15%</li>
+        <li>Drove same-session conversion rates that consistently <strong>outpaced team benchmarks</strong> through seamless onboarding and real-time issue resolution</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="whatido">
+  <p class="sl2 rv">Areas of expertise</p>
+  <h2 class="st rv">Five functions.<br><em>One common language.</em></h2>
+  <div class="e5 rv">
+    <div class="e5c"><div class="e5ic">📊</div><div class="e5ti">Data Analytics</div><div class="e5de">Transforming raw, multi-source data into decision-ready insights. Dashboards, ETL pipelines, variance analysis, and communicating complexity clearly to any audience.</div><div class="e5ts"><span class="tc">SQL</span><span class="tc">Python</span><span class="tc">Power BI</span><span class="tc">Looker</span><span class="tc">Tableau</span><span class="tc">Excel</span></div></div>
+    <div class="e5c"><div class="e5ic">⚙️</div><div class="e5ti">Revenue Operations</div><div class="e5de">Building the reporting infrastructure that aligns sales, marketing, and finance. Pipeline analytics, CRM data quality, MRR tracking, and unified sources of truth.</div><div class="e5ts"><span class="tc">HubSpot</span><span class="tc">Salesforce</span><span class="tc">Planhat</span><span class="tc">MRR / ARR</span><span class="tc">ETL</span></div></div>
+    <div class="e5c"><div class="e5ic">🎯</div><div class="e5ti">Sales Operations</div><div class="e5de">Quota tracking, ICP segmentation, territory planning, lead assignment models, competitive intelligence, and commission reconciliation.</div><div class="e5ts"><span class="tc">Lead Assignment</span><span class="tc">VLOOKUP</span><span class="tc">Territory</span><span class="tc">Quota</span><span class="tc">Commission</span></div></div>
+    <div class="e5c"><div class="e5ic">💹</div><div class="e5ti">Financial Analysis</div><div class="e5de">Financial modelling, forecasting, and scenario analysis that inform budgeting, investment, and strategic decisions from FP&amp;A reporting to ad-hoc business cases.</div><div class="e5ts"><span class="tc">Fin. Modeling</span><span class="tc">Scenario Analysis</span><span class="tc">Variance</span><span class="tc">Forecasting</span></div></div>
+    <div class="e5c"><div class="e5ic">🔄</div><div class="e5ti">Customer Success</div><div class="e5de">Cohort-based churn and retention analysis, at-risk account identification, contraction trend monitoring, and CS analytics to reduce revenue leakage.</div><div class="e5ts"><span class="tc">Churn Analysis</span><span class="tc">Cohort Analysis</span><span class="tc">Planhat</span><span class="tc">Retention</span></div></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <p class="sl2 rv">Selected projects</p>
+  <h2 class="st rv">Work that <em>shipped.</em></h2>
+  <div class="pgrid rv">
+    <div class="pc feat">
+      <div>
+        <div class="pno">01 — Featured</div>
+        <div class="ptgs"><span class="ptg">RevOps</span><span class="ptg">Win/Loss</span><span class="ptg">CRM Analytics</span><span class="ptg">Python</span><span class="ptg">HubSpot</span><span class="ptg">GTM Strategy</span></div>
+        <h3 class="pti">Enterprise Win/Loss Analysis — Revenue Intelligence at Deliverect</h3>
+        <p class="pde">A 3-phase strategic analysis across 59 closed deals. A 55.9% deal-count win rate was masking a 37.8% revenue capture rate — the business was winning small deals and losing large ones. Findings surfaced through weekly reports to the Head of Sales and President of Americas, directly reshaping ICP prioritization and the GTM playbook.</p>
+        <div class="pme">
+          <div><div class="pmn">37.8%</div><div class="pml">Revenue capture rate</div></div>
+          <div><div class="pmn">59</div><div class="pml">Deals analysed</div></div>
+          <div><div class="pmn">46%</div><div class="pml">Lost deals w/ usable data</div></div>
+          <div><div class="pmn">3</div><div class="pml">GTM narratives adopted</div></div>
+        </div>
+        <span class="plk">Deliverect · Feb 2026 →</span>
+      </div>
+      <div>
+        <div class="ih">Key insights surfaced</div>
+        <ul class="il">
+          <li><strong>Best ICP:</strong> 100% win rate across 12 Casual/Full Service + Large Enterprise deals — the segment to double down on</li>
+          <li><strong>Highest revenue risk:</strong> QSR Large Enterprise — quietly bleeding the most per loss</li>
+          <li><strong>Root cause:</strong> Integration objections in 4 of 6 competitive losses — a positioning gap, not pricing</li>
+          <li><strong>CRM finding:</strong> 54% of lost deals lacked usable context — changed post-loss capture going forward</li>
+          <li><strong>Outcome:</strong> 4-step talk track + 5 discovery questions embedded in GTM competitive playbook</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pc">
+      <div class="pno">02</div>
+      <div class="ptgs"><span class="ptg">Sales Ops</span><span class="ptg">Lead Assignment</span><span class="ptg">Excel</span><span class="ptg">HubSpot</span></div>
+      <h3 class="pti">Lead Assignment Optimization Framework</h3>
+      <p class="pde">Bi-weekly VLOOKUP territory model used by ENT and MM leaders to assign leads based on territory, priority guidelines, integration partners, and company size. Reduced pipeline waste and improved distribution.</p>
+      <span class="plk">Deliverect · 2025–2026 →</span>
+    </div>
+    <div class="pc">
+      <div class="pno">03</div>
+      <div class="ptgs"><span class="ptg">Financial Analysis</span><span class="ptg">Forecasting</span><span class="ptg">Excel</span></div>
+      <h3 class="pti">Operational Cost Analysis &amp; Forecasting</h3>
+      <p class="pde">Cost-benefit analysis of employee benefits programs including variance analysis (actual vs. projected), cost trajectory forecasting, and scenario/sensitivity testing tools — delivered as leadership recommendations.</p>
+      <span class="plk">Apr – Jun 2025 →</span>
+    </div>
+    <div class="pc">
+      <div class="pno">04</div>
+      <div class="ptgs"><span class="ptg">Data Analytics</span><span class="ptg">Segmentation</span><span class="ptg">Allocation</span></div>
+      <h3 class="pti">Strategic Resource Allocation — Global Development</h3>
+      <p class="pde">Segmentation framework across 167 countries' socioeconomic indicators to guide NGO funding decisions — 40% improvement in allocation efficiency with geospatial visualizations for leadership.</p>
+      <div class="pme">
+        <div><div class="pmn">40%</div><div class="pml">Efficiency gain</div></div>
+        <div><div class="pmn">167</div><div class="pml">Countries</div></div>
+      </div>
+      <a href="https://github.com/utkarsh7653" class="plk" target="_blank">GitHub →</a>
+    </div>
+
+    <div class="pc">
+      <div class="pno">05</div>
+      <div class="ptgs"><span class="ptg">Statistical Analysis</span><span class="ptg">Bayesian Modeling</span><span class="ptg">Public Health</span></div>
+      <h3 class="pti">Youth Substance Use Determinants — Canada</h3>
+      <p class="pde">Advanced statistical analysis of 60K+ student records from the Canadian Student Tobacco, Alcohol and Drugs Survey (CSTADS). Applied Bayesian logistic regression, multilevel modeling, Lasso regression, and propensity score matching to identify key social and demographic predictors of youth substance use — providing evidence-based insights for public health policy design.</p>
+      <div class="pme">
+        <div><div class="pmn">60K+</div><div class="pml">Student records<br>analysed</div></div>
+        <div><div class="pmn">0.78</div><div class="pml">AUC (Lasso<br>alcohol model)</div></div>
+      </div>
+      <a href="https://github.com/utkarsh7653/Data-Driven-Analysis-of-Social-and-Demographic-Determinants-of-Youth-Substance-Use-in-Canada" class="plk" target="_blank">GitHub →</a>
+    </div>
+
+    <div class="pc">
+      <div class="pno">06</div>
+      <div class="ptgs"><span class="ptg">People Analytics</span><span class="ptg">Cohort Analysis</span><span class="ptg">Operations</span></div>
+      <h3 class="pti">Workforce Attrition &amp; Operations Analysis — Amazon FC</h3>
+      <p class="pde">Structured analysis of Amazon Fulfillment Centre operations to identify workforce attrition risks and operational inefficiencies through qualitative data analysis and thematic coding. Developed four detailed workforce cohort profiles and built a business case for targeted interventions — packaged into executive briefing decks for senior leadership.</p>
+      <span class="plk">Jun – Aug 2025 →</span>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <p class="sl2 rv">Technical skills</p>
+  <h2 class="st rv">The <em>toolkit.</em></h2>
+  <div class="skg rv">
+    <div class="skgc"><div class="skgt">Analytics &amp; Reporting</div><ul class="skl"><li>SQL — Advanced</li><li>Python (pandas, NumPy, ETL)</li><li>R — Statistical Modeling</li><li>Excel — Advanced</li><li>Power Query</li><li>Pivot Tables &amp; Solver</li><li>VLOOKUP / XLOOKUP</li></ul></div>
+    <div class="skgc"><div class="skgt">BI &amp; Visualization</div><ul class="skl"><li>Power BI (DAX, data modeling)</li><li>Looker</li><li>Tableau</li><li>Excel Dashboards</li><li>Matplotlib / Seaborn</li><li>Executive PowerPoint</li></ul></div>
+    <div class="skgc"><div class="skgt">Revenue, Sales &amp; CS Tools</div><ul class="skl"><li>HubSpot CRM</li><li>Salesforce</li><li>Planhat</li><li>MRR / ARR / Net ARR</li><li>Win/Loss Frameworks</li><li>Churn &amp; Retention Analysis</li><li>ICP Segmentation</li><li>Commission Reconciliation</li><li>Territory &amp; Lead Models</li></ul></div>
+    <div class="skgc"><div class="skgt">Strategy &amp; Finance</div><ul class="skl"><li>Financial Modeling</li><li>Variance Analysis</li><li>Scenario &amp; Sensitivity Testing</li><li>Cost-Benefit Analysis</li><li>KPI Framework Design</li><li>Business Case Development</li><li>Competitive Intelligence</li></ul></div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <p class="sl2 rv">Education</p>
+  <h2 class="st rv">Academic <em>foundation.</em></h2>
+  <div class="edug rv">
+    <div class="educ"><div class="edde">M.S. Management Science</div><div class="edsc">University of Waterloo</div><div class="edme">Waterloo, ON &nbsp;·&nbsp; Sep 2024 – Aug 2025</div><span class="edbg">⭐ GPA: 3.7 / 4.0</span><div class="edco"><strong>Relevant Coursework</strong>Operations Research · Applied Economics · Statistics for Data Analytics · Advanced Machine Learning</div></div>
+    <div class="educ"><div class="edde">B.S. Business Analytics</div><div class="edsc">Purdue University</div><div class="edme">West Lafayette, IN &nbsp;·&nbsp; Aug 2020 – Dec 2023</div><span class="edbg">🏆 Dean's List — 2021</span><div class="edco"><strong>Relevant Coursework</strong>Financial Data Modeling · Econometrics · Operations Management · Financial Management · Data Mining</div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="sl2 rv">Contact</p>
+  <div class="cg">
+    <div class="rv">
+      <h2 class="chi">Need an analyst who <em>gets things done</em>?</h2>
+      <p class="csb">Open to full-time roles in data analytics, revenue operations, sales analytics, financial analysis, sales operations, and customer success analytics. Based in Toronto/Waterloo — open to relocation, flexible on remote or hybrid.</p>
+      <a href="utkarshsinghresumetech.pdf" download class="bp">↓ Download Resume</a>
+    </div>
+    <div class="cls rv">
+      <a href="mailto:utkarshsingh.1052@gmail.com" class="cl"><div><div class="cll">Personal Email</div><div class="clv">utkarshsingh.1052@gmail.com</div></div><span class="cla">→</span></a>
+      <a href="mailto:u25singh@uwaterloo.ca" class="cl"><div><div class="cll">University Email</div><div class="clv">u25singh@uwaterloo.ca</div></div><span class="cla">→</span></a>
+      <a href="https://www.linkedin.com/in/utkarsh-singh-a1127a192/" target="_blank" class="cl"><div><div class="cll">LinkedIn</div><div class="clv">utkarsh-singh-a1127a192</div></div><span class="cla">→</span></a>
+      <a href="https://github.com/utkarsh7653" target="_blank" class="cl"><div><div class="cll">GitHub</div><div class="clv">github.com/utkarsh7653</div></div><span class="cla">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="fcp">© 2026 Utkarsh Singh · Purdue &amp; University of Waterloo</span>
+  <div class="fls">
+    <a href="https://github.com/utkarsh7653" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/utkarsh-singh-a1127a192/" target="_blank">LinkedIn</a>
+    <a href="mailto:utkarshsingh.1052@gmail.com">Email</a>
+  </div>
+</footer>
+
+<script>
+// Cursor
+const C=document.getElementById('C'),CR=document.getElementById('CR');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
+(function t(){C.style.left=mx+'px';C.style.top=my+'px';rx+=(mx-rx)*.11;ry+=(my-ry)*.11;CR.style.left=rx+'px';CR.style.top=ry+'px';requestAnimationFrame(t)})();
+document.querySelectorAll('a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{C.style.width='13px';C.style.height='13px';CR.style.width='46px';CR.style.height='46px'});
+  el.addEventListener('mouseleave',()=>{C.style.width='7px';C.style.height='7px';CR.style.width='30px';CR.style.height='30px'});
+});
+
+// Scroll reveal
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('in'),i*60)});
+},{threshold:.06});
+document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+
+// Animated counters
+function animCount(el){
+  const target=parseFloat(el.dataset.target),dec=parseInt(el.dataset.dec||0),suf=el.dataset.suf||'';
+  let step=0,steps=110;
+  const iv=setInterval(()=>{
+    step++;const v=target*Math.min(step/steps,1);
+    el.textContent=v.toFixed(dec)+suf;
+    if(step>=steps){el.textContent=target.toFixed(dec)+suf;clearInterval(iv)}
+  },16);
+}
+const so=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('[data-target]').forEach(animCount);so.disconnect()}});
+},{threshold:.4});
+const se=document.querySelector('.hstats');if(se)so.observe(se);
+
+// Hero dots
+const hero=document.getElementById('hero');
+for(let i=0;i<14;i++){
+  const d=document.createElement('div');
+  d.style.cssText=`position:absolute;width:1px;height:1px;background:var(--a);border-radius:50%;left:${5+Math.random()*62}%;top:${8+Math.random()*84}%;pointer-events:none;animation:pdot ${3+Math.random()*3}s ${Math.random()*5}s ease-in-out infinite`;
+  hero.appendChild(d);
+}
+
+// Deliverect sidebar tabs
+document.querySelectorAll('.dv-tab').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const p=btn.dataset.p;
+    document.querySelectorAll('.dv-tab').forEach(b=>b.classList.remove('on'));
+    document.querySelectorAll('.dv-panel').forEach(pn=>pn.classList.remove('on'));
+    btn.classList.add('on');
+    const panel=document.getElementById('dp-'+p);
+    if(panel)panel.classList.add('on');
+  });
+});
+</script>
 </body>
 </html>
